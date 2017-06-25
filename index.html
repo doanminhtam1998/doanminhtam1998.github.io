@@ -21,17 +21,23 @@
 
 </head>
 <body>
-	<header>
+	<header class="container-fluid">
 		<div class="row">
 		<br/>
-			<div id="logo" class="col-xs-6 col-xs-offset-2 text-center col-md-3 col-lg-3" >
-				<p id="logoname" ><img src="images.jpg" id="logo" align="left"><br>NEWS BLOG</p><p id="logodescrip">You'll never late to get information</p>
+			<div id="logo" class="text-center col-md-5 col-lg-5" >
+				<p id="logoname" ><img src="images.jpg" id="logo" >  NEWS BLOG <br/><small id="logodescrip"> The Streight of knownlege</small></p>
 			</div>
-			<div  class="col-xs-6 col-xs-offset-2 col-md-6 text-right">
-				<div class="container-fluid" id="socialicon">
+			<div class="col-md-3"></div>
+			<div  class=" col-md-3  col-lg-3 ">
+				<div class="container-fluid text-center" id="login">
+					<button class="btn btn-success">Đăng nhập</button>
+					<button class="btn btn-info">Đăng ký</button>
+				</div>
+				<div class="container-fluid text-center" id="socialicon">
 					<span><img id="facebook" src="facebook.png"></span>
 					<span><img id="instagram" src="instagram.png"></span>
-					<span><img id="facebook" src="facebook.png"></span>
+					<span><img id="google" src="google+.png"></span>
+
 				</div>
 			</div>
 		</div>
@@ -46,35 +52,80 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Title</a>
+				
 			</div>
 	
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Link</a></li>
-					<li><a href="#">Link</a></li>
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Trang chủ</a></li>
+					<li><a href="#">Tin xã hội</a></li>
+					<li><a href="#">Tin giải trí</a></li>
+					<li><a href="#">Cộng đồng I.T</a></li>
+					<li><a href="#">Blog của tôi</a></li>
 				</ul>
-				<form class="navbar-form navbar-left" role="search">
+				<form class="navbar-form navbar-right" role="search">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search">
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<button type="submit" class="btn btn-danger">Submit</button>
 				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li><a href="#">Separated link</a></li>
-						</ul>
-					</li>
-				</ul>
+				
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</nav>
+	<div class="row container-fluid">
+		<div class="col-md-2 col-lg-2">
+			
+		</div>
+		<div class="col-lg-6 col-md-6" id="place">
+			<h3>Tin trong nước</h3>
+			<hr>
+				<div id="post1" class="container-fluid">
+					<div class="row">
+						<div class="col-md-5">
+							<img src="thiho.jpg" id="post1" class="img-thumbnail" >
+						</div>
+						<div class="col-md-7">
+							<a href="#"><h2 id="post1"> Thi hộ tốt nghiệp với giá 100 triệu đồng.</h2></a>
+							<hr>
+							<p >  Công an đã bắt giữ được</p>
+							<p class="text-right"><button class="btn btn-info">Xem thêm...</button></p>
+						</div>
+					</div>
+
+				</div>
+				<div id="post2" class="container-fluid">
+					<div class="row">
+						<div class="col-md-5">
+							<img src="thiho.jpg" id="post2" class="img-thumbnail" >
+						</div>
+						<div class="col-md-7">
+							<a href="#"><h2 id="post1"> Thi hộ tốt nghiệp với giá 100 triệu đồng.</h2></a>
+							<hr>
+							<p >  Công an đã bắt giữ được</p>
+							<p class="text-right"><button class="btn btn-info">Xem thêm...</button></p>
+						</div>
+					</div>
+
+				</div>
+		</div>
+		<aside class="col-md-3 col-lg-3">
+			<h4>Tin bài mới</h4>
+		</aside>
+		
+	</div>
+	<div class="text-center" id="pager">
+		<ul class="pager">
+			<li><a href="#">Previous</a></li>
+			<li><<a href="">2</a></li>
+			<li><<a href="">3</a></li>
+			<li><<a href="">...</a></li>
+			<li><a href="#">Last</a></li>
+		</ul>
+		</div>
+	<footer>
+		
+	</footer>	
 </body>
 </html>

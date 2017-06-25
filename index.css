@@ -13,13 +13,40 @@ div #logo{
 header{
 	background-color: #ccc;
 }
-#logodescrip{
-	font-size: large;
-	font-size: Arial;
+span #logodescrip{
+	font-size: medium; 
+	font-family: Arial;
+	color: #000000;
+}
+#socialicon{
+	padding-top: 20px;
 }
 #facebook{
 	width:40px;
 }
+#google{
+	width:40px;
+}
 #instagram{
 	width: 40px;
+}
+#post{
+	border: 1px solid #000;
+	padding-bottom: 15px;
+}
+#place{
+	border: 1px solid #000;
+	border-radius: 2px;
+	padding-bottom: 15px;
+}
+div #post1{
+	margin-bottom:20px;;
+}
+#post1{
+	
+	margin-top:20px 
+	
+}
+footer{
+	
 }
