@@ -1,0 +1,25 @@
+#logoname{
+	font-size: xx-large;
+	color:blue;
+	font-family: "Logo";
+	src:url('FontDep.com-Royalacid_o.ttf');
+	display:inline;
+	font-weight: bold;
+}
+div #logo{
+	position: relative;
+
+}
+header{
+	background-color: #ccc;
+}
+#logodescrip{
+	font-size: large;
+	font-size: Arial;
+}
+#facebook{
+	width:40px;
+}
+#instagram{
+	width: 40px;
+}
