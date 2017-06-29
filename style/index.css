@@ -1,9 +1,15 @@
+.wrapped-text{
+	z-index:0;
+}
+.main-view{
+	z-index:10;
+}
 /*----------------------------------------------------------------------------
 My menu
 -----------------------------------------------------------------------------*/
 .my-menu{
 	
-	z-index: 999;
+	z-index: 600;
 }
 .img-logo {
 	padding-top:0px;
@@ -46,9 +52,128 @@ My header
 .post_cover{
 
 }
+.divided{
+	border: whitesmoke inset 2px;
+}
+.post-details{
+	padding-right:8px;
+}
 
 
-#logoname{
+
+/*---------------------------*/
+/*Sidebar
+------------------------------*/
+.sidebar1{
+	border-bottom: 2px blue solid;
+}
+
+/*---------------------------*/
+/*Footer
+------------------------------*/
+
+.tag{
+	font-size: large;
+}
+
+.footer-contain{
+	background-color: #252525;
+	color:white;
+}
+.footer-section3{
+	border-left: 2px white inset;
+}
+   /*---------------------------*/
+   /*
+   Bootsnip here
+   */
+   /*---------------------------*/
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+
+/*---------------------------*/
+/*Form Bootsnipp */
+/*---------------------------*/
+.myForm{
+	background-color: #2f71aa;
+    color: white;
+    width: 700px;
+}
+h1,h2,h3.form-message {
+	margin:0 0 35px 0;
+	font-family: 'Patua One', cursive;
+	text-transform: uppercase;
+	letter-spacing:1px;
+}
+
+p.form-message{
+	margin:0 0 25px;
+	font-size:18px;
+	line-height:1.6em;
+}
+a.form-message{
+	color:#26a5d3;
+}
+ a.form-message:hover,a.form-message:focus{
+	text-decoration:none;
+	color:#26a5d3;
+}
+
+ /*#contact{
+	background:#333333;
+	color:#f4f4f4;
+	padding-bottom:80px;
+	z-index: 999;
+
+}*/
+
+textarea.form-control{
+    height:100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#logoname{
 	font-size: xx-large;
 	color:blue;
 	font-family: "Logo";
@@ -99,4 +224,4 @@ div #post1{
 }
 footer{
 	
-}
+}*/
