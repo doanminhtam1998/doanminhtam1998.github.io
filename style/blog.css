@@ -52,7 +52,7 @@
 		border-right:3px solid white;
 		border-left: 3px solid white;
 		background-color: #000;
-		
+		color:white;
 		width:40px;
 		height: 40px;
 	}
@@ -87,7 +87,9 @@
 	background-image: url("../images/header_blog.jpg");
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	
+	background-size: cover;
+	background-position: 60% 0;
+	/*height: 400px;*/
 	position: relative;
 }
 		/*----------------------------------------
@@ -284,7 +286,7 @@
 		border-bottom: 3px outset red;
 		background-color: white;
 		position: relative;
-		height: 380px;
+		min-height: 380px;
 
 	}
 	.post>.rm{
