@@ -34,9 +34,12 @@ My header
 	background-image: url("../images/header.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 50% 0;
+	background-position: 60% 0;
 	height: 400px;
-	opacity: 0.7;
+	
+}
+.header-cover{
+	background-color: rgba(0, 0, 0, 0.6);
 }
 .header-title{
 	z-index:20;
