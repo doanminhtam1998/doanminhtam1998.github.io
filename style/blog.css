@@ -172,6 +172,12 @@
 	color: #f13f3f;
 	font-size: 20px;
 }
+.button-down>a{
+	color: #f13f3f;
+}
+.button-down>a:hover{
+	color: #bd3b3b;
+}
 
 		/*----------------------------------------
 				END LOGO
@@ -303,6 +309,7 @@
 		text-align: right;
 		/*position: relative;*/
 			}
+
 	.post>img{
 		 margin: 0px;
     	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -394,11 +401,20 @@
 				FOOTER
 	----------------------------------------
 	*/
+	.bg-footer{
+		background-image: url(../images/header_blog.jpg);
+    	background-attachment: fixed;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: 60% 80%;
+	    /* height: 400px; */
+	    position: relative;
+	}
 	.img-footer{
 		margin-bottom: 5px;
 	}
 	.footer-contain{
-		background-color: #3c3c3c;
+		background-color: rgba(0,0,0,0.8);
 		margin-top: 20px;
 		color: white;
 		/*border-bottom: 2px outline #f13f3f;*/
