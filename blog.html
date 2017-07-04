@@ -22,6 +22,30 @@
 			Header Top
 	---------------------------------------------- -->
 		
+		
+		<div class="modal fade" id="modal-id">
+			<div class="modal-dialog ">
+				<div class="modal-content search-menu">
+					
+					<div class="modal-body search-body">
+						
+						<form action="" method="POST" role="form">
+							
+						
+							<div class="form-group">
+								
+								<input type="text" class="form-control" id="" placeholder="Input field">
+							</div>
+						
+							
+						
+							<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
 		<div class="header_top">
 			<div class=" text-center container social_icon">
 
@@ -34,7 +58,7 @@
 	                    <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus fa-1x social"></i></a>
 	                    <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope fa-1x social"></i></a>
                     </div>
-                    <button class=" text-right search">
+                    <button class=" text-right search" data-toggle="modal" href='#modal-id'>
 						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 					</button>
 			</div>
@@ -292,7 +316,21 @@
 	                            
 	                </div>
 	                <div class="footer-section2 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-footer">
-	                            
+	                    <h4 class="text-center">Popular Tags</h4>
+	                    <p class="text-center"><span class="badge">Traveling</span>-<span class="badge">Tour</span>-<span class="badge">Soccer</span>-<span class="badge">Schcool</span>-<span class="badge">Children</span>-<span class="badge">Food</span></p>
+	                    <hr>     
+	                    <h4 class="text-center">Popular Images</h4>
+	                    <div class="row ">
+	                    	<div class="img-footer col-sm-4  col-lg-4 col-xs-4 col-md-4 snip1581">
+	                    		<img src="images/train.jpg" class="img-responsive ">
+	                    	</div>
+	                    	<div class="img-footer col-sm-4  col-lg-4 col-xs-4 col-md-4 snip1581">
+	                    		<img src="images/train.jpg" class="img-responsive ">
+	                    	</div>
+	                    	<div class="img-footer col-sm-4  col-lg-4 col-xs-4 col-md-4 snip1581">
+	                    		<img src="images/train.jpg" class="img-responsive ">
+	                    	</div>
+	                    </div>   
 	                </div>
 	                <div class="footer-section3 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-footer">
 	                    <h4 class="text-center">Contact for more information</h4>
@@ -320,10 +358,10 @@
 		
 	</div>
 </body>
-/*<script
+<script
             src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>*/
+            crossorigin="anonymous"></script>
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
