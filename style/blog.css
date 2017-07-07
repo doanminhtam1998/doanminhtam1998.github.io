@@ -324,9 +324,9 @@
 		background-color: white;
 		position: relative;
 		min-height: 380px;
-		-webkit-box-shadow: 5px 5px 10px 10px #777777;
+		/*-webkit-box-shadow: 5px 5px 10px 10px #777777;
 		-moz-box-shadow: 5px 5px 10px 10px #777777;
-		box-shadow: 5px 5px 10px 10px #777777;
+		box-shadow: 5px 5px 10px 10px #777777;*/
 
 
 	}
@@ -429,6 +429,28 @@
 		}
 /*----------------------------------------
 				END BODY PAGE
+	----------------------------------------
+	*/
+	/*----------------------------------------
+				SPECIAL BUTTON
+	----------------------------------------
+	*/
+	.btn-round{
+		border-radius: 50%;
+	}
+	.btn-up{
+		height: 40px;
+    	min-width: 40px;
+    	width: 40px;
+	}
+	.btn-fixed{
+		position: fixed;
+    	bottom: 40px;
+    	right: 10px;
+    	z-index: 90;
+	}
+	/*----------------------------------------
+				END SPECIAL BUTTON
 	----------------------------------------
 	*/
 /*----------------------------------------
