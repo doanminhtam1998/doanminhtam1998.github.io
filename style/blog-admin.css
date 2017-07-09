@@ -1,13 +1,33 @@
-
-	/*--------------------------------------------------
+/*--------------------------------------------------
 			BODY PAGE
 	------------------------------------------------*/
 .body-page{
 	padding-top: 50px ;
 	padding-left: 0px;
-
+	
 }
 
 .nav-beside-place{
 	background-color: #333;
 }
+
+
+	/*--------------------------------------------------
+			POST MANAGE
+	------------------------------------------------*/
+	.form-group>.search-post{
+		font-size: 10px;
+		height: 18px;
+	}
+	.btn-search-post{
+		font-size: 10px;
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+	.post-table{
+		margin-top: 30px;
+	}
+	.single-post-manage{
+		
+	}
+
