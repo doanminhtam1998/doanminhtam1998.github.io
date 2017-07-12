@@ -1,0 +1,41 @@
+.wrapped-page {}
+
+.header-top {
+    background-color: #2e7d32;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.left-header {
+    float: left;
+    width: 600px;
+}
+
+.left-header>.date {
+    float: left;
+}
+
+.left-header>.sign-in {
+    float: left;
+}
+
+.right-header {
+    float: right;
+}
+
+.menu-item {
+    display: list-item;
+}
+
+.main-nav {
+    height: 80px
+}
+
+.main-nav>.my-list-item {
+    height: 80px;
+}
+
+.main-nav>.my-list-item>a {
+    height: 80px;
+    padding-top: 26px
+}

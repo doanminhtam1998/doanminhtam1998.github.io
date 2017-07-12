@@ -1,3 +1,10 @@
-.container-fluid{
-	padding: 15px 25px;
+.container-fluid {
+    padding: 15px 25px;
+}
+
+.btn-default {
+    background-image: -webkit-linear-gradient(top, #989898 0, #5a5656 100%);
+    background-image: -o-linear-gradient(top, #989898 0, #5a5656 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#989898), to(#5a5656));
+    background-image: linear-gradient(to bottom, #989898 0, #5a5656 100%);
 }

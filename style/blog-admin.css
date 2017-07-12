@@ -1,72 +1,186 @@
 /*<HTML>*/
 
-html{
-	height: 100%
-	}
-body{
-	height: 100%;
-	font-family: arial;
+html {
+    height: 100%
+}
+
+body {
+    height: 100%;
+    font-family: arial;
     font-size: 12px;
 }
-.wrapped-page{
-	height: 100%
+
+.wrapped-page {
+    height: 100%
 }
-div, header, nav, footer{
-	margin: 0px;
+
+div,
+header,
+nav,
+footer {
+    margin: 0px;
 }
-h1,h2,h3,h4,h5{
-	margin: 0px;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0px;
 }
+
+.link_button {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.link_button:hover {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+
+/*----------------------------------------
+			Button for all
+-----------------------------------------*/
+
+.button {
+    background-color: #323537;
+    position: relative;
+    padding: 10px 10px;
+    color: white;
+    border: 1px solid #323537;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    z-index: 500;
+    margin-left: 5px;
+    border-radius: 10%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #000;
+}
+
+
+/*----------------------------------------
+			End Button for all
+-----------------------------------------*/
+
 
 /*----------------------------------------
 			My header
 -----------------------------------------*/
 
-.my-head{
-	position: relative;
-	width: 100%;
-	background: linear-gradient(to bottom,#de9696 0%,#ce4122 100%);
-	background: #208ed3;
-    background: -moz-linear-gradient(top,#de9696 0%,#ce4122 100%);
-    background: - webkit-gradient(linear,left top,left bottom,color-stop(0%,#de9696),color-stop(100%,#ce4122));
-    background: -webkit-linear-gradient(top,#de9696 0%,#ce4122 100%);
-    background: -o-linear-gradient(top,#de9696 0%,#ce4122 100%);
-    background: -ms-linear-gradient(top,#de9696 0%,#ce4122 100%);
-	font: inherit;
-	padding: 15px 25px;
-	height: 55px;
-}
-.my-head>.head-title{
-	font-family:;
-	letter-spacing: -1px;
-	float: left;
-}
-.my-head>.head-search{
-	float: right;
-
-}
-.my-head>.head-search>.form-group{
-	padding-right: 5px;
-}
-.my-head>.head-search>.form-group>.search{
-	border-radius: 16px;
-	font-size: 12px;
-	height: 25px;
-	width: 200px;
-
-}
-.my-head>.head-search>.btn-search{
-	color: white;
-	text-decoration: none;
-	cursor: pointer; 
-}
-.my-head>.head-search>.btn-search:hover{
-	color: #000;
+.my-head {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, #de9696 0%, #ce4122 100%);
+    background: #208ed3;
+    background: -moz-linear-gradient(top, #de9696 0%, #ce4122 100%);
+    background: - webkit-gradient(linear, left top, left bottom, color-stop(0%, #de9696), color-stop(100%, #ce4122));
+    background: -webkit-linear-gradient(top, #de9696 0%, #ce4122 100%);
+    background: -o-linear-gradient(top, #de9696 0%, #ce4122 100%);
+    background: -ms-linear-gradient(top, #de9696 0%, #ce4122 100%);
+    font: inherit;
+    padding: 15px 25px;
+    height: 55px;
 }
 
-.notification{
-	position: relative;
+.my-head>.head-title {
+    letter-spacing: -3px;
+    float: left;
+}
+
+.my-head>.head-search {
+    float: right;
+}
+
+.my-head>.head-search>.form-group {
+    width: 150px;
+}
+
+.my-head>.head-search>.form-group>.search {
+    border-radius: 16px;
+    font-size: 12px;
+    height: 25px;
+    width: 100%;
+}
+
+.my-head>.head-search>.btn-search {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.my-head>.head-search>.btn-search:hover {
+    color: #000;
+}
+
+
+/*----------------------------------------
+			User Place
+-----------------------------------------*/
+
+.user {
+    position: relative;
     height: 65px;
     width: 100%;
     z-index: 1000;
+    font: inherit;
+    background-color: #3b3e40;
+}
+
+.user>.profile {
+    width: 300px;
+    float: left;
+}
+
+.user>.profile>.user_avatar {
+    font-size: 14px;
+    color: white;
+}
+
+.user>.profile>.user_avatar>.img-avatar {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user>.notificaion {
+    float: right;
+    text-align: right;
+    width: 500px;
+}
+
+.user>.notificaion>.button-dropdown {
+    top: 10px;
+}
+
+.user>.notificaion>.button-log-out {
+    background-color: #ce4122;
+    border: #ce4122 solid 1px;
+    top: 10px;
+}
+
+.user>.notificaion>.button-log-out:hover {
+    background-color: #000;
+    border: 1px #000 solid;
+}
+
+.user>.notificaion>.button>.link_button>.number-item {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    border-radius: 50%;
+    background-color: red;
+    top: -5px;
+    right: -5px;
+    padding: 2px 5px;
 }
