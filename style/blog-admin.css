@@ -1,33 +1,72 @@
-/*--------------------------------------------------
-			BODY PAGE
-	------------------------------------------------*/
-.body-page{
-	padding-top: 50px ;
-	padding-left: 0px;
-	
+/*<HTML>*/
+
+html{
+	height: 100%
+	}
+body{
+	height: 100%;
+	font-family: arial;
+    font-size: 12px;
+}
+.wrapped-page{
+	height: 100%
+}
+div, header, nav, footer{
+	margin: 0px;
+}
+h1,h2,h3,h4,h5{
+	margin: 0px;
 }
 
-.nav-beside-place{
-	background-color: #333;
+/*----------------------------------------
+			My header
+-----------------------------------------*/
+
+.my-head{
+	position: relative;
+	width: 100%;
+	background: linear-gradient(to bottom,#de9696 0%,#ce4122 100%);
+	background: #208ed3;
+    background: -moz-linear-gradient(top,#de9696 0%,#ce4122 100%);
+    background: - webkit-gradient(linear,left top,left bottom,color-stop(0%,#de9696),color-stop(100%,#ce4122));
+    background: -webkit-linear-gradient(top,#de9696 0%,#ce4122 100%);
+    background: -o-linear-gradient(top,#de9696 0%,#ce4122 100%);
+    background: -ms-linear-gradient(top,#de9696 0%,#ce4122 100%);
+	font: inherit;
+	padding: 15px 25px;
+	height: 55px;
+}
+.my-head>.head-title{
+	font-family:;
+	letter-spacing: -1px;
+	float: left;
+}
+.my-head>.head-search{
+	float: right;
+
+}
+.my-head>.head-search>.form-group{
+	padding-right: 5px;
+}
+.my-head>.head-search>.form-group>.search{
+	border-radius: 16px;
+	font-size: 12px;
+	height: 25px;
+	width: 200px;
+
+}
+.my-head>.head-search>.btn-search{
+	color: white;
+	text-decoration: none;
+	cursor: pointer; 
+}
+.my-head>.head-search>.btn-search:hover{
+	color: #000;
 }
 
-
-	/*--------------------------------------------------
-			POST MANAGE
-	------------------------------------------------*/
-	.form-group>.search-post{
-		font-size: 10px;
-		height: 18px;
-	}
-	.btn-search-post{
-		font-size: 10px;
-		padding-top: 2px;
-		padding-bottom: 2px;
-	}
-	.post-table{
-		margin-top: 30px;
-	}
-	.single-post-manage{
-		
-	}
-
+.notification{
+	position: relative;
+    height: 65px;
+    width: 100%;
+    z-index: 1000;
+}
