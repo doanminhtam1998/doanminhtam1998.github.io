@@ -1,131 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>My Blog</title>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
+    <!-- This is bootsnipp -->
+    <link rel="stylesheet" href="style/bootstrap_overwrite.css">
+    <link rel="stylesheet" type="text/css" href="style/main-blog.css">
+</head>
+
+<body>
+
+
+    <div class="wrapped-page">
+        <div class="container my-page">
+            <div class="row">
+            	<!-- -----------------------------------------
+            		Header Top
+            	---------------------------------------- -->
+                <header class="col-xs-12 hidden-xs col-sm-12 hidden-sm col-md-12 col-lg-12 header-top">
+                    <!----------Please input Jquery here-------->
+                    <div class="left-header">
+                        <div class="date">
+                            <p>Wednesday, July 12, 2017</p>
+                        </div>
+                        <div class="sign-in">
+                            <a href="blog-admin.html">Sign in</a>/
+                            <a href="blog-admin.html">Sign up</a>
+                        </div>
+                    </div>
+                    <div class="right-header">
+                        <div class="icon">
+                            <a href="www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="www.facebook.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="www.facebook.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="www.facebook.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+
+                        </div>
+                    </div>
+                    <!----------Please input Jquery here-------->
+                </header>
+				<!-- -----------------------------------------
+            		Navigation
+            	---------------------------------------- -->
+
+                <nav class="navbar navbar-default col-xs-12 col-sm-12 col-lg-12 my-nav" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                               <span class="sr-only">Toggle navigation</span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                           </button>
+                        <a><img src="http://via.placeholder.com/224x80" alt="" class="img-responsive"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        
+                        <ul class="nav navbar-nav navbar-right main-nav">
+                            <li class="active my-list-item my-active"><a href="#">HOME</a></li>
+                            <li class=" my-list-item"><a href="#">FOOTBALL <i class="fa fa-chevron-down" aria-hidden="true"></i>
+</a></li>
+                            <li class=" my-list-item"><a href="#">TENNIS <i class="fa fa-chevron-down" aria-hidden="true"></i>
+</a></li>
+                            <li class=" my-list-item"><a href="#">VIDEO <i class="fa fa-chevron-down" aria-hidden="true"></i>
+</a></li>
+                            <li class=" my-list-item"><a href="#">MORE <i class="fa fa-chevron-down" aria-hidden="true"></i>
+</a></li>
+							<li class=" my-list-item"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+</a></li>
+                        </ul>
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+				<!-- -----------------------------------------
+            		Main Page
+            	---------------------------------------- -->
+                <div class="main-page col-lg-12 col-sm-12  col-xs-12 col-md-12">
+                	<div class="new-post-text col-sm-12 hidden-sm col-xs-12 hidden-xs">
+                		<div class="trending">
+                			Trending now
+                		</div>
+                		<!----------Please input Jquery here-------->
+                		<marquee class="trending-info">Manchester City wins the trophy</marquee>
+                	</div>
+
+                	<div class="image-category">
+                		<div class="container-fluid">
+                			<div class="row">
+                				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 main-image">
+									<div class="bg-image">
+										<img src="http://via.placeholder.com/600x470" class="img-responsive img-bg">
+	                					<div class="cover-image" >
+	                						<a><span class="trending">Football</span><br>
+	                						<h4>Manchester City won the troply</h4>
+	                						<p>Tom . July 5<sup>th</sup></p>
+											</a>
+	                					</div>
+	                				</div>
+                				</div>
+                				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-image">
+                					<div class="row">
+                						<div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
+                							<div class="bg-image">
+												<img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+			                					<div class="cover-image" >
+			                						<a><span class="trending">Golf</span><br>
+			                						<h4>Everything is ready for the season</h4>
+			                						
+													</a>
+	                							</div>
+	                						</div>
+                						</div>
+                						<div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
+                							<div class="bg-image">
+												<img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+			                					<div class="cover-image" >
+			                						<a><span class="trending">Golf</span><br>
+			                						<h4>Everything is ready for the season</h4>
+			                						
+													</a>
+	                							</div>
+	                						</div>
+                						</div>
+                						<div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
+                							<div class="bg-image">
+												<img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+			                					<div class="cover-image" >
+			                						<a><span class="trending">Golf</span><br>
+			                						<h4>Everything is ready for the season</h4>
+			                						
+													</a>
+	                							</div>
+	                						</div>
+                						</div>
+                						<div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
+                							<div class="bg-image">
+												<img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+			                					<div class="cover-image" >
+			                						<a><span class="trending">Golf</span><br>
+			                						<h4>Everything is ready for the season</h4>
+			                						
+													</a>
+	                							</div>
+	                						</div>
+                						</div>
+                					</div>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+
+                	<div class="main-blog">
+                		<div class="row">
+                			<div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 post-place">
+                				<div class="post-title">
+                					<p class="title">
+                						Popular News
+                					</p>
+                				</div>
+                				<div class="row post-pop-detail">
+                					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pop-col">
+                						<div class="img-post-detail">
+                						<img src="http://via.placeholder.com/400x200" class="img-responsive">
+                						<div class="trending category">Football</div>
+                						</div>
+                						<h4><a>Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
+                						<div class="post-info">
+                						<p class="author">Tom .  Apr 8, 2015</p>
+                						<p class="comments">1</p>
+                						</div>
+                						<p>All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
+                					</div>
+                				
+
+                					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pop-col">
+                						<div class="img-post-detail">
+                						<img src="http://via.placeholder.com/400x200" class="img-responsive">
+                						<div class="trending category">Football</div>
+                						</div>
+                						<h4><a>Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
+                						<p class="author">Tom .  Apr 8, 2015</p>
+                						<p class="comments">1</p>
+                						<p>All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
+                					</div>
+                				</div>
+                			</div>
+                			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
+                				<div class="post-title">
+                					<p class="title">
+                						Popular News
+                					</p>
+                				</div>
+                				<div class="widget-page">
+                					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=200px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="100%" height="200px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<!--Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="style/index.css">
+<script src="script/blog.js"></script>
 
-</head>
-<body>
-	<header class="container">
-		<div class="row">
-		<br/>
-			<div id="logo" class="text-center col-md-5 col-lg-5" >
-				<p id="logoname" ><img src="images.jpg" id="logo" >  NEWS BLOG <br/><small id="logodescrip"> The Streight of knownlege</small></p>
-			</div>
-			<div class="col-md-3"></div>
-			<div  class=" col-md-3  col-lg-3 ">
-				<div class="container-fluid text-center" id="login">
-					<button class="btn btn-success">Đăng nhập</button>
-					<button class="btn btn-info">Đăng ký</button>
-				</div>
-				<div class="container-fluid text-center" id="socialicon">
-					<span><img id="facebook" src="facebook.png"></span>
-					<span><img id="instagram" src="instagram.png"></span>
-					<span><img id="google" src="google+.png"></span>
-
-				</div>
-			</div>
-		</div>
-	</header>
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
-			</div>
-	
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Trang chủ</a></li>
-					<li><a href="#">Tin xã hội</a></li>
-					<li><a href="#">Tin giải trí</a></li>
-					<li><a href="#">Cộng đồng I.T</a></li>
-					<li><a href="#">Blog của tôi</a></li>
-				</ul>
-				<form class="navbar-form navbar-right" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search">
-					</div>
-					<button type="submit" class="btn btn-danger">Submit</button>
-				</form>
-				
-			</div><!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<div class="row container-fluid">
-		<div class="col-md-2 col-lg-2">
-			
-		</div>
-		<div class="col-lg-6 col-md-6" id="place">
-			<h3>Tin trong nước</h3>
-			<hr>
-				<div id="post1" class="container-fluid">
-					<div class="row">
-						<div class="col-md-5">
-							<img src="thiho.jpg" id="post1" class="img-thumbnail" >
-						</div>
-						<div class="col-md-7">
-							<a href="#"><h2 id="post1"> Thi hộ tốt nghiệp với giá 100 triệu đồng.</h2></a>
-							<hr>
-							<p >  Công an đã bắt giữ được</p>
-							<p class="text-right"><button class="btn btn-info">Xem thêm...</button></p>
-						</div>
-					</div>
-
-				</div>
-				<div id="post2" class="container-fluid">
-					<div class="row">
-						<div class="col-md-5">
-							<img src="thiho.jpg" id="post2" class="img-thumbnail" >
-						</div>
-						<div class="col-md-7">
-							<a href="#"><h2 id="post1"> Thi hộ tốt nghiệp với giá 100 triệu đồng.</h2></a>
-							<hr>
-							<p >  Công an đã bắt giữ được</p>
-							<p class="text-right"><button class="btn btn-info">Xem thêm...</button></p>
-						</div>
-					</div>
-
-				</div>
-		</div>
-		<aside class="col-md-3 col-lg-3">
-			<h4>Tin bài mới</h4>
-		</aside>
-		
-	</div>
-	<div class="text-center" id="pager">
-		<ul class="pager">
-			<li><a href="#">Previous</a></li>
-			<li><<a href="">2</a></li>
-			<li><<a href="">3</a></li>
-			<li><<a href="">...</a></li>
-			<li><a href="#">Last</a></li>
-		</ul>
-		</div>
-	<footer>
-		
-	</footer>	
-</body>
 </html>
