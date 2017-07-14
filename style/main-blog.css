@@ -144,6 +144,9 @@
     overflow: hidden;
     max-height: 355px;
 }
+.post-pop-detail>.pop-col>h4>a{
+    cursor: pointer;
+}
 .post-pop-detail>.pop-col>.img-post-detail>.category{
     position: absolute;
     bottom: 0px;
@@ -168,5 +171,5 @@
 
 .widget-page{
     padding-top: 20px;
-    
+    padding-bottom: 20px;
 }
