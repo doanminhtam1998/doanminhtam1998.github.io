@@ -1,8 +1,42 @@
-
 .wrapped-page {}
+
+h4>a {
+    color: black;
+    cursor: pointer;
+}
+
+h3>a {
+    color: black;
+    cursor: pointer;
+}
+
+.for-title {
+    color: black;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.justified {
+    text-align: justify;
+    margin-bottom: 0px;
+}
+
+.emphasis-small {
+    padding: 2px;
+    font-size: 10px;
+    color: white;
+    background-color: #000;
+    border: 1px #000 solid;
+    display: inline-block;
+    margin-bottom: 0px;
+    box-shadow: 1px 1px 2px #000;
+}
+
+
 /*---------------------
     Header Top
 ---------------------*/
+
 .header-top {
     background-color: #2e7d32;
     padding-top: 5px;
@@ -25,10 +59,13 @@
 .right-header {
     float: right;
 }
+
+
 /*---------------------
     Navigation
 ---------------------*/
-.my-nav{
+
+.my-nav {
     background-color: #0a0a0a;
     background-image: none;
 }
@@ -56,120 +93,181 @@
     height: 80px;
     padding-top: 26px
 }
-.main-nav>.my-list-item>a:hover{
+
+.main-nav>.my-list-item>a:hover {
     color: white;
 }
 
-.navbar-default .navbar-nav>.active>a{
+.navbar-default .navbar-nav>.active>a {
     color: white;
     background-color: red;
     background-image: none;
 }
-.navbar-default .navbar-nav>.active>a:hover{
+
+.navbar-default .navbar-nav>.active>a:hover {
     color: white;
     background-color: red;
-    background-image: none;   
+    background-image: none;
 }
+
+
 /*---------------------
     Page
 ---------------------*/
 
-.trending{
+.trending {
     float: left;
     border: 1px #000 solid;
-    box-shadow: 1px 1px 2px;
+    box-shadow: 1px 1px 2px #000;
     padding: 3px;
     background-color: #000;
     color: white;
-
 }
-.trending-info{
+
+.trending-info {
     width: 300px;
     padding-top: 2px;
 }
-.new-post-text{
+
+.new-post-text {
     margin-bottom: 20px;
 }
-.image-category{
+
+.image-category {
     position: relative;
     margin-bottom: 20px;
 }
-.main-image{
+
+.main-image {
     position: relative;
     padding-left: 0px;
     padding-right: 5px;
 }
 
-.image-category .cover-image{
+.image-category .cover-image {
     position: absolute;
-    z-index:1000;
-    bottom:50px;
-    left:15px;
+    z-index: 1000;
+    bottom: 50px;
+    left: 15px;
     padding-right: 10px;
 }
-.other-image{
+
+.other-image {
     padding-left: 5px;
     padding-right: 5px;
 }
-.small-image{
+
+.small-image {
     padding-right: 0px;
     padding-left: 10px;
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
-.other-image .cover-image{
+
+.other-image .cover-image {
     position: absolute;
     top: 50px;
     left: 30px;
 }
 
-.post-title{
+.post-title {
     border-bottom: #000 1px solid;
 }
 
-.post-title>.title{
+.post-title>.title {
     color: white;
     background-color: #000;
     border: 1px #000 solid;
     display: inline-block;
     padding: 5px;
     margin-bottom: 0px;
+    box-shadow: 1px 1px 2px #000;
 }
 
-.post-pop-detail{
+.post-pop-detail {
     padding-top: 20px;
-
+    padding-bottom: 20px;
 }
-.post-pop-detail>.pop-col{
+
+.post-pop-detail>.pop-col {
     position: relative;
     overflow: hidden;
-    max-height: 355px;
+    /*max-height: 355px;*/
 }
-.post-pop-detail>.pop-col>h4>a{
+
+.post-pop-detail>.pop-col>h4>a {
     cursor: pointer;
+    padding: 10px 0px;
 }
-.post-pop-detail>.pop-col>.img-post-detail>.category{
+
+.include-post>.section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.include-post>.section h5 {
+    margin: 0px;
+}
+
+.include-post>.section h5>a {
+    cursor: pointer;
+    color: black;
+}
+
+.post-pop-detail>.pop-col>.img-post-detail>.category {
     position: absolute;
     bottom: 0px;
     left: 0px;
 }
-.img-post-detail{
+
+.img-post-detail {
     position: relative;
 }
-.post-info{
+
+.post-info {
     position: relative;
     display: block;
 }
-.author{
+
+.author {
     display: inline-block;
     position: relative;
-}
-.comments{
-    display: inline-block;
-    position: relative;
-    left:50%;
 }
 
-.widget-page{
-    padding-top: 20px;
-    padding-bottom: 20px;
+.comments {
+    display: inline-block;
+    position: relative;
+    left: 50%;
 }
+
+.post-latest-detail {
+    padding-top: 20px;
+}
+
+.widget {
+    padding-right: 5px;
+}
+
+.widget-page {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.widget-page-section {
+    padding-top: 10px;
+}
+
+.emphasis {
+    color: white;
+    background-color: #000;
+    border: 1px #000 solid;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 0px;
+    box-shadow: 1px 1px 2px #000;
+}
+
+.post-info-latest {
+    padding: 10px 0px;
+}
+
+.rm {}
