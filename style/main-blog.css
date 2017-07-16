@@ -5,15 +5,45 @@ h4>a {
     cursor: pointer;
 }
 
+h4>a:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 h3>a {
     color: black;
     cursor: pointer;
+}
+
+h3>a:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h5>a {
+    color: black;
+    cursor: pointer;
+}
+
+h5>a:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .for-title {
     color: black;
     cursor: pointer;
     margin: 0px;
+}
+
+.for-title:hover {
+    color: red;
+    cursor: pointer;
+    margin: 0px;
+    text-decoration: none;
 }
 
 .justified {
@@ -140,35 +170,54 @@ h3>a {
 
 .main-image {
     position: relative;
-    padding-left: 0px;
-    padding-right: 5px;
+    
 }
 
+.bg-image{
+    padding-bottom: 30px;
+}
 .image-category .cover-image {
     position: absolute;
     z-index: 1000;
-    bottom: 50px;
-    left: 15px;
+    bottom: 30px;
+    left: 20px;
     padding-right: 10px;
 }
 
+.image-category .cover-image a{
+    cursor: pointer;
+    color:black;
+}
+
+.image-category .cover-image a:hover{
+    cursor: pointer;
+    color:red;
+    text-decoration: none;
+}
+
 .other-image {
-    padding-left: 5px;
-    padding-right: 5px;
+    
 }
 
 .small-image {
-    padding-right: 0px;
-    padding-left: 10px;
-    padding-bottom: 5px;
+    
 }
 
 .other-image .cover-image {
     position: absolute;
-    top: 50px;
-    left: 30px;
+    bottom: 30px;
+    left: 20px;
+    padding-right: 10px;
 }
-
+.other-image .cover-image a{
+    cursor: pointer;
+    color:black;
+}
+.other-image .cover-image a:hover{
+    cursor: pointer;
+    color:  red;
+    text-decoration: none;
+}
 .post-title {
     border-bottom: #000 1px solid;
 }
@@ -244,7 +293,7 @@ h3>a {
 }
 
 .widget {
-    padding-right: 5px;
+   
 }
 
 .widget-page {
