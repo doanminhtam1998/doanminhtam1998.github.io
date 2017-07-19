@@ -1,8 +1,9 @@
 .wrapped-page {}
 
-*{
+* {
     font-family: 'Droid Serif', serif;
 }
+
 h4>a {
     color: black;
     cursor: pointer;
@@ -113,8 +114,8 @@ h5>a:hover {
     font-size: 12px;
 }
 
-.my-button{
-   color: white;
+.my-button {
+    color: white;
     background-color: #000;
     border: 2px #000 solid;
     display: inline-block;
@@ -122,10 +123,91 @@ h5>a:hover {
     margin-bottom: 0px;
     box-shadow: 1px 1px 2px #000;
 }
-.my-button:hover{
+
+.my-button:hover {
     background-color: white;
     color: black;
 }
+
+
+/*---------------------
+    Header Top
+---------------------*/
+
+.header-top {
+    background-color: #2e7d32;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.left-header {
+    float: left;
+    width: 600px;
+}
+
+.left-header>.date {
+    float: left;
+}
+
+.left-header>.sign-in {
+    float: left;
+}
+
+.right-header {
+    float: right;
+}
+
+
+/*---------------------
+    Navigation
+---------------------*/
+
+.my-nav {
+    background-color: #0a0a0a;
+    background-image: none;
+}
+
+.menu-item {
+    display: list-item;
+}
+
+.main-nav {
+    height: 80px
+}
+
+.main-nav>.my-list-item {
+    height: 80px;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>.my-list-item>a:hover {
+    height: 80px;
+    background-color: red;
+    color: white;
+}
+
+.main-nav>.my-list-item>a {
+    height: 80px;
+    padding-top: 26px
+}
+
+.main-nav>.my-list-item>a:hover {
+    color: white;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    color: white;
+    background-color: red;
+    background-image: none;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: red;
+    background-image: none;
+}
+
+
 /* -----------------------------
 .MAIN POST
 ------------------------------ */
@@ -143,7 +225,6 @@ h5>a:hover {
 /* Share-Place */
 
 a.socialbox {
-    
     font-weight: 200;
     display: inline-block;
     text-decoration: none;
@@ -220,16 +301,18 @@ a.socialbox .description span {
     padding-right: 10px;
 }
 
-.direction{
+.direction {
     padding: 10px 0px;
 }
-.comments-place{
+
+.comments-place {
     padding: 20px 0px;
 }
 
-.comments-place .input-place:focus{
-    border-color: red ;
+.comments-place .input-place:focus {
+    border-color: red;
 }
+
 
 /* -----------------------------
 .widget
