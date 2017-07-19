@@ -1,5 +1,8 @@
 .wrapped-page {}
 
+*{
+    font-family: 'Droid Serif', serif;
+}
 h4>a {
     color: black;
     cursor: pointer;
@@ -110,7 +113,19 @@ h5>a:hover {
     font-size: 12px;
 }
 
-
+.my-button{
+   color: white;
+    background-color: #000;
+    border: 2px #000 solid;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 0px;
+    box-shadow: 1px 1px 2px #000;
+}
+.my-button:hover{
+    background-color: white;
+    color: black;
+}
 /* -----------------------------
 .MAIN POST
 ------------------------------ */
@@ -128,7 +143,7 @@ h5>a:hover {
 /* Share-Place */
 
 a.socialbox {
-    font-family: "Open Sans";
+    
     font-weight: 200;
     display: inline-block;
     text-decoration: none;
@@ -205,6 +220,16 @@ a.socialbox .description span {
     padding-right: 10px;
 }
 
+.direction{
+    padding: 10px 0px;
+}
+.comments-place{
+    padding: 20px 0px;
+}
+
+.comments-place .input-place:focus{
+    border-color: red ;
+}
 
 /* -----------------------------
 .widget

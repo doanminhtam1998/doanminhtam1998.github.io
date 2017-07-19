@@ -6,6 +6,9 @@
 														font-family: 'Expression';
 														src: url('../fonts/EXPRESSI.TTF');
 													}
+*{
+	font-family: 'Droid Serif', serif;
+}
 /*----------------------------------------
 Post body
 ----------------------------------------*/

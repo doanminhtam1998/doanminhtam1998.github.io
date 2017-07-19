@@ -1,5 +1,8 @@
 .wrapped-page {}
 
+*{
+	font-family: 'Droid Serif', serif;
+}
 h4>a {
     color: black;
     cursor: pointer;

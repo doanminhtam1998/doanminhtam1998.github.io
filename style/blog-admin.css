@@ -1,5 +1,13 @@
 /*<HTML>*/
 
+button>a{
+    color: white;
+}
+button>a:hover{
+    text-decoration: none;
+    color: white;
+}
+
 html {
     height: 100%
 }
@@ -7,7 +15,7 @@ html {
 body {
     height: 100%;
     font-family: arial;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .wrapped-page {
@@ -40,7 +48,9 @@ h5 {
     color: white;
     font-size: 14px;
 }
-
+.title{
+    padding-top: 20px;
+}
 
 /*----------------------------------------
 			Button for all
@@ -67,7 +77,10 @@ h5 {
 .button:hover {
     background-color: #000;
 }
-
+small>button.button{
+    bottom: 10px;
+    padding: 5px;
+}
 
 /*----------------------------------------
 			End Button for all
@@ -183,4 +196,38 @@ h5 {
     top: -5px;
     right: -5px;
     padding: 2px 5px;
+}
+/*----------------------------------------
+            My Nav
+-----------------------------------------*/
+.nav-place{
+    height: 100%;
+    
+    padding: 20px 10px;
+}
+
+
+
+
+/*----------------------------------------
+            Main Page
+-----------------------------------------*/
+.blog_manage{
+    width:auto;
+    height: 500px;
+    float:left;
+}
+
+.blog_manage h1{
+    display: inline-block;
+
+}
+
+.post-table>.post-table-place>.post-title-place{
+    background-image: none;
+    background-color: black;
+    color: white;
+}
+.panel-body>.single-post-manage:odd{
+    background-color: #ddd;
 }
