@@ -28,64 +28,80 @@
         <!-- -----------------------------------------
             		Header Top
             	---------------------------------------- -->
-        <header class="col-xs-12 hidden-xs col-sm-12 hidden-sm col-md-12 col-lg-12 header-top">
-            <!----------Please input Jquery here-------->
-            <div class="left-header">
-                <div class="date">
-                    <p>Wednesday, July 12, 2017</p>
+        <header class="header-top">
+            <div class="container">
+                <h1>TOM BLOG</h1>
+                <div class="right-header ">
+                
                 </div>
-                <div class="sign-in">
-                    <a href="blog-admin.html">Sign in</a>/
-                    <a href="blog-admin.html">Sign up</a>
+                <div class="right-header hidden-sm hidden-xs">
+                <a class="log-in" data-toggle="modal" href='#modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
+                    <div class="modal fade" id="modal-id">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <input type="text" name="">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <a href=".search" data-toggle="collapse" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <form class="search collapse">
+                    <input type="text" name=""><button class="my-button"><b>Go !</b></button>
+                </form>
                 </div>
-            </div>
-            <div class="right-header">
-                <div class="icon">
-                    <a href="www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="www.facebook.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="www.facebook.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="www.facebook.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-
                 </div>
-            </div>
-            <!----------Please input Jquery here-------->
+           
         </header>
         <!-- -----------------------------------------
             		Navigation
             	---------------------------------------- -->
 
-        <nav class="navbar navbar-default col-xs-12 col-sm-12 col-lg-12 my-nav" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                               <span class="sr-only">Toggle navigation</span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                           </button>
-                <a><img src="http://via.placeholder.com/224x80" alt="" class="img-responsive"></a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-                <ul class="nav navbar-nav navbar-right main-nav">
-                    <li class="active my-list-item my-active"><a href="#">HOME</a></li>
-                    <li class=" my-list-item"><a href="#">FOOTBALL <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                    <li class=" my-list-item"><a href="#">TENNIS <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                    <li class=" my-list-item"><a href="#">VIDEO <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                    <li class=" my-list-item"><a href="#">MORE <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                    <li class=" my-list-item"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-</a></li>
-                </ul>
-
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
+       <nav class="navbar navbar-default my-nav" role="navigation">
+           <div class="container">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+               </div>
+       
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
+                   <ul class="nav navbar-nav">
+                       <li class="active"><a href="#">HOME</a></li>
+                       <li><a href="#">FOOTBALL</a></li>
+                       
+                       <li><a href="#">TENNIS</a></li>
+                       <li ><a href="#">WRC</a></li>
+                       <li ><a href="#">VIDEO</a></li>
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
+                           <ul class="dropdown-menu">
+                               <li><a href="#">Our Company</a></li>
+                               <li><a href="#">Partners</a></li>
+                               
+                           </ul>
+                       </li>
+                   </ul>
+                   
+                   
+               </div><!-- /.navbar-collapse -->
+           </div>
+       </nav>
         <!-- -----------------------------------------
             		Main Page
             	---------------------------------------- -->
@@ -103,7 +119,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 main-image">
                         <div class="bg-image">
-                            <img src="http://via.placeholder.com/600x470" class="img-responsive img-bg">
+                            <img src="http://via.placeholder.com/1200x940" class="img-responsive img-bg">
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">Football</span><br>
 	                						<h4>Manchester City won the troply</h4>

@@ -1,4 +1,11 @@
-.wrapped-page {}
+.wrapped-page {
+    background-image: url(../images/tennis.jpg);
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
 
 * {
     font-family: 'Droid Serif', serif;
@@ -129,20 +136,77 @@ h5>a:hover {
     color: black;
 }
 
+/*---------------------
+    Header 
+---------------------*/
+    .detail-header{
+        background-color:rgba(0,0,0,0.4);
+        height:500px;
+        
+        margin: 0px -10px;
+        position: relative;
+    }
 
+    .detail-header>.link-post{
+        position: absolute;
+        top:10px;
+        left:10px;
+
+    }
+    .detail-header>.link-post>a{
+        color: white;
+        padding-right: 5px;
+    }
+    .detail-header>.link-post>a:hover{
+        color: red;
+        text-decoration: none;
+    }
+
+    .main-title{
+        position: absolute;
+        color: white;
+        bottom:10px;
+        left: 10px;
+    }
+    .more-inf{
+        padding: 0px 10px;
+    }
 /*---------------------
     Header Top
 ---------------------*/
 
 .header-top {
-    background-color: #2e7d32;
-    padding-top: 5px;
+    background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, red, #63161c); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, red, #63161c); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, red, #63161c); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, red, #63161c); /* Standard syntax */
+    padding-top: 30px;
     padding-bottom: 5px;
+    height: 96px;
+    color: white;
 }
+.header-top a{
+    color: white;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+.header-top a:hover{
+    color: white;
+    padding-right: 10px;
+    background-color: black;
+    text-decoration: none;
 
+}
+ .header-top>.container>h1{
+        margin: 0px;
+        display: inline-block;
+ }
+ .header-top>.container>h1
 .left-header {
     float: left;
-    width: 600px;
+    text-align: left;
 }
 
 .left-header>.date {
@@ -157,7 +221,29 @@ h5>a:hover {
     float: right;
 }
 
+.search>.my-button{
+    color: white;
+    background-color: #000;
+    border: 2px #000 solid;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 0px;
+    box-shadow: 1px 1px 2px #000;
+}
 
+.search>.my-button:hover{
+    background-color: white;
+    color: black;
+
+}
+
+
+.search>input{
+    color: black;
+    width: 80%;
+    font-size: 14px;
+    height: 33px;
+}
 /*---------------------
     Navigation
 ---------------------*/
@@ -165,44 +251,41 @@ h5>a:hover {
 .my-nav {
     background-color: #0a0a0a;
     background-image: none;
+    border: 1px #000 solid;
+    border-radius: 0px;
+    font-size: 16px;
+    margin-bottom: 0px;
+
 }
 
-.menu-item {
-    display: list-item;
+.menu-place{
+    padding-left:0px;
 }
 
-.main-nav {
-    height: 80px
-}
-
-.main-nav>.my-list-item {
-    height: 80px;
-    font-weight: bold;
-}
-
-.navbar-default .navbar-nav>.my-list-item>a:hover {
-    height: 80px;
-    background-color: red;
+.my-nav>.container>.menu-place>.navbar-nav>li>a{
     color: white;
-}
-
-.main-nav>.my-list-item>a {
-    height: 80px;
-    padding-top: 26px
-}
-
-.main-nav>.my-list-item>a:hover {
-    color: white;
-}
-
-.navbar-default .navbar-nav>.active>a {
-    color: white;
-    background-color: red;
     background-image: none;
 }
-
-.navbar-default .navbar-nav>.active>a:hover {
+.my-nav>.container>.menu-place>.navbar-nav>li>a:hover{
     color: white;
+    background-color: red;
+}
+.my-nav>.container>.menu-place>.navbar-nav>.active>a{
+    background-color: red;
+}
+.my-nav>.container>.menu-place>.navbar-nav>li>a:active{
+    color: white;
+    background-color: red;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+     background-color: red; 
+    border-color: #337ab7; 
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: red;
+}
+.my-nav>.container>.menu-place>.navbar-nav>li>ul>li>a:hover{
     background-color: red;
     background-image: none;
 }
@@ -211,7 +294,11 @@ h5>a:hover {
 /* -----------------------------
 .MAIN POST
 ------------------------------ */
-
+.post-section{
+    background-color: white;
+    margin: 0px -10px;
+    padding: 10px;
+}
 .main-page {
     font-size: 16px;
 }
@@ -312,8 +399,25 @@ a.socialbox .description span {
 .comments-place .input-place:focus {
     border-color: red;
 }
-
-
+.comments-out{
+    padding-bottom: 10px;
+}
+.image-com{
+    position: relative;
+}
+.img-comments{
+    width:50px;
+    position: absolute;
+    left:50%;
+    margin-left:-25px;
+}
+.detail-coms>.text-in-page{
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+.detail-coms>p.text-in-page{
+    font-size: 14px;
+}
 /* -----------------------------
 .widget
 ------------------------------ */

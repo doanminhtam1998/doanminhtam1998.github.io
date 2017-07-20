@@ -23,72 +23,97 @@
 
     <div class="wrapped-page">
         <!-- -----------------------------------------
-            		Header Top
-            	---------------------------------------- -->
-        <header class="col-xs-12 hidden-xs col-sm-12 hidden-sm col-md-12 col-lg-12 header-top">
+                    Header Top
+                ---------------------------------------- -->
+       
+        <header class="header-top">
             <div class="container">
-                <!----------Please input Jquery here-------->
-                <div class="left-header">
-                    <div class="date">
-                        <p>Wednesday, July 12, 2017</p>
-                    </div>
-                    <div class="sign-in">
-                        <a href="blog-admin.html">Sign in</a>/
-                        <a href="blog-admin.html">Sign up</a>
-                    </div>
+                <h1>TOM BLOG</h1>
+                <div class="right-header ">
+                
                 </div>
-                <div class="right-header">
-                    <div class="icon">
-                        <a href="www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="www.facebook.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="www.facebook.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="www.facebook.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-
+                <div class="right-header hidden-sm hidden-xs">
+                <a class="log-in" data-toggle="modal" href='#modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
+                    <div class="modal fade" id="modal-id">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <input type="text" name="">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                <a href=".search" data-toggle="collapse" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <form class="search collapse">
+                    <input type="text" name=""><button class="my-button"><b>Go !</b></button>
+                </form>
                 </div>
-                <!----------Please input Jquery here-------->
-            </div>
+                </div>
+           
         </header>
         <!-- -----------------------------------------
-            		Navigation
-            	---------------------------------------- -->
+                    Navigation
+                ---------------------------------------- -->
 
-        <nav class="navbar navbar-default col-xs-12 col-sm-12 col-lg-12 my-nav" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                               <span class="sr-only">Toggle navigation</span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                               <span class="icon-bar"></span>
-                           </button>
-                    <a><img src="http://via.placeholder.com/224x80" alt="" class="img-responsive"></a>
-                </div>
+       <nav class="navbar navbar-default my-nav" role="navigation">
+           <div class="container">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+               </div>
+       
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
+                   <ul class="nav navbar-nav">
+                       <li class="active"><a href="#">HOME</a></li>
+                       <li><a href="#">FOOTBALL</a></li>
+                       
+                       <li><a href="#">TENNIS</a></li>
+                       <li ><a href="#">WRC</a></li>
+                       <li ><a href="#">VIDEO</a></li>
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
+                           <ul class="dropdown-menu">
+                               <li><a href="#">Our Company</a></li>
+                               <li><a href="#">Partners</a></li>
+                               
+                           </ul>
+                       </li>
+                   </ul>
+                   
+                   
+               </div><!-- /.navbar-collapse -->
+           </div>
+       </nav>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-                    <ul class="nav navbar-nav navbar-right main-nav">
-                        <li class="active my-list-item my-active"><a href="#">HOME</a></li>
-                        <li class=" my-list-item"><a href="#">FOOTBALL <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                        <li class=" my-list-item"><a href="#">TENNIS <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                        <li class=" my-list-item"><a href="#">VIDEO <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                        <li class=" my-list-item"><a href="#">MORE <i class="fa fa-chevron-down" aria-hidden="true"></i>
-</a></li>
-                        <li class=" my-list-item"><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-</a></li>
-                    </ul>
-
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-        </nav>
         <div class="container my-page">
-            <div>
+        <header class="detail-header">
+            <div class="link-post">
+                <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="">Tennis</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="">Cincinnati Masters: Federer downs Murray to set up Raonic SF challenge</a>
+            </div>
+            <div class="main-title">
+                <span class="emphasis">Tennis</span>
+                <h1 class="text-in-page">Cincinnati Masters: Federer downs Murray to set up Raonic SF challenge</h1>
+                <p class="author text-in-page">By Tom Thomas . May 15<sup>th</sup> <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
+            </div>
+            
+        </header>
+            <div class="post-section">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 main-page">
                         <div class="share-place">
@@ -122,7 +147,7 @@
                                 </a>
                                 <p class="text-in-page justified"><i>All right. Well, take care yourself. I guess that’s what you’re best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies to her European
                                     languages are members.</i></p>
-                                <h2 class="text-in-page justified">Pedal power sees Amy complete world toughest cycle challenge</h2>
+                               
                                 <p class="text-in-page justified">Remember, a Jedi can feel the Force flowing through him. I can’t get involved! I’ve got work to do! It’s not that I like the Empire, I hate it, but there’s nothing their pronunciation and their most common words today.</p>
                                 <figure class="text-in-page">
                                     <a href="">
@@ -206,6 +231,34 @@
 
                                     <button type="submit" class="my-button">Send it</button>
                                 </form>
+
+                                <div class="row comments-out">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com" >
+                                        <img src="images/user.jpg" class="img-comments">
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms" >
+                                    <h4 class="text-in-page">Tom Thomas</h4>
+                                    <p class="text-in-page">You should read it. This is so cool</p>
+                                    </div>
+                                </div>
+                                <div class="row comments-out">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com" >
+                                        <img src="images/user.jpg" class="img-comments">
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms" >
+                                    <h4 class="text-in-page">Marvin Lackson</h4>
+                                    <p class="text-in-page">Yes I think like you Tom</p>
+                                    </div>
+                                </div>
+                                <div class="row comments-out">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com" >
+                                        <img src="images/user.jpg" class="img-comments">
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-9 detail-coms" >
+                                    <h4 class="text-in-page">Michale Roll</h4>
+                                    <p class="text-in-page">Good job. Thanks for information</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
