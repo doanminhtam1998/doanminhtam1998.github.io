@@ -298,6 +298,7 @@ h5>a:hover {
     background-color: white;
     margin: 0px -10px;
     padding: 10px;
+    min-width: 300px;
 }
 .main-page {
     font-size: 16px;
@@ -391,7 +392,10 @@ a.socialbox .description span {
 .direction {
     padding: 10px 0px;
 }
-
+.all-comments{
+    padding-top: 10px;
+    border-top:1px inset #a0a0a0;
+}
 .comments-place {
     padding: 20px 0px;
 }
@@ -411,13 +415,25 @@ a.socialbox .description span {
     left:50%;
     margin-left:-25px;
 }
+
 .detail-coms>.text-in-page{
     padding-top: 0px;
     padding-bottom: 10px;
 }
 .detail-coms>p.text-in-page{
-    font-size: 14px;
+    font-size: 13px;
 }
+.user-comments{
+    margin:0px;
+    padding-bottom: 10px;
+
+}
+.date{
+    float: right;
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
 /* -----------------------------
 .widget
 ------------------------------ */

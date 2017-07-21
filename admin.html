@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <title>Document</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Latest compiled and minified CSS -->
@@ -16,28 +18,45 @@
 
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
-    <link rel="stylesheet" type="text/css" href="style/main-blog.css">
+    <link rel="stylesheet" type="text/css" href="style/admin.css">
 </head>
 
 <body>
-    <div class="wrapped-page">
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="col-lg-3 col-md-3 col-sm-3 col-xs-6 my-nav">
-
-                </nav>
-                <div class="">
-
-                </div>
-            </div>
+		<div class="run-page">
+        	<div class="run">
+        		
+        	</div>
         </div>
+    <div class="wrapped-page">
+    	<header class="admin-header">
+    		
+    	</header>
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 admin-nav">
+    				
+    				
+    			</div>
+    			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
+    				<textarea name="editor1"></textarea>
+        <script>
+            CKEDITOR.replace( 'editor1' );
+        </script>
+    			</div>
+    		</div>
+    		
+    	</div>
+       
     </div>
 </body>
+<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script src="script/detail-blog.js"></script>
+
+<script src="script/admin.js"></script>
 
 </html>
