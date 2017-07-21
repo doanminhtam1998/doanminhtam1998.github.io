@@ -1,9 +1,12 @@
-$(document).ready(function() {
-	$(".run").animate({
-            width:'100%'
-        },20000,function(){
-        	$('.run').hide();
-        });
-	
-});
+// $.noConflict();
+// jQuery(document).ready(function() {
+//     $(".run").animate({
+//         width: '100%'
+//     }, 5000, function() {
+//         $('.run').hide();
+//     });
 
+
+
+
+// });

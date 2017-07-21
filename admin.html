@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
 
@@ -14,49 +14,53 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif">
 
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
+
+
+
     <link rel="stylesheet" type="text/css" href="style/admin.css">
 </head>
 
 <body>
-		<div class="run-page">
-        	<div class="run">
-        		
-        	</div>
+    <div class="run-page">
+        <div class="run">
+
         </div>
+    </div>
     <div class="wrapped-page">
-    	<header class="admin-header">
-    		
-    	</header>
-    	<div class="container-fluid">
-    		<div class="row">
-    			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 admin-nav">
-    				
-    				
-    			</div>
-    			<div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
-    				<textarea name="editor1"></textarea>
-        <script>
-            CKEDITOR.replace( 'editor1' );
-        </script>
-    			</div>
-    		</div>
-    		
-    	</div>
-       
+        <header class="admin-header">
+
+        </header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 admin-nav">
+
+
+                </div>
+                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
+
+                    <text-angular ng-model="htmlVariable"></text-angular>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </body>
-<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--<script src="/script/admin.js"></script>-->
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+<script src="/script/app-admin.js"></script>
 
-
-<script src="script/admin.js"></script>
 
 </html>
