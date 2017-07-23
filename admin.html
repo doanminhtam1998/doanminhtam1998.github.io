@@ -31,18 +31,86 @@
         </div>
     </div>
     <div class="wrapped-page">
-        <header class="admin-header">
-
-        </header>
+        
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-2 admin-nav">
+                <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2 admin-nav">
+                    <div class="blog-name hidden-sm hidden-xs text-center">
+                        <h2><b>TOM</b> BLOG</h2>
+                    </div>
+                    <div class="welcome hidden-sm hidden-xs">
+                        <img class="admin-img-welcome" src="images/mancity.png">
+                        <p>Welcome Tom!</p>
+                    </div>
+                    <p class="place-title hidden-sm hidden-xs"><strong>General</strong></p>
+                    <ul class="nav-detail none-style">
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Dashboard</span> </a>
+                            
+                        </li>
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text" data-toggle="collapse" data-target=".post-show"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Post</span> </a>
+                            <ul class="post-show collapse none-style in-menu">
+                                <li class="single-detail"><a href="" class="single-detail-text">All Post</a></li>
+                                <li class="single-detail"><a href="" class="single-detail-text">Add New</a></li>
+                            </ul>
+                        </li>
+                       <li class="single-detail">
+                            <a href="" class="single-detail-text" ><i class="fa fa-comments-o" aria-hidden="true" ></i> <span class="hidden-sm hidden-xs">Comments </span><span class=" hidden-sm hidden-xs right number">4</span></a>
+                            
+                        </li>
+                        <li class="single-detail">
+                            <a href=""  class="single-detail-text" data-toggle="collapse" data-target=".cat-show"><i class="fa fa-list-alt" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Categories </span></a>
+                            <ul class="none-style cat-show collapse in-menu">
+                                <li class="single-detail"><a href="" class="single-detail-text">All Categories</a></li>
+                                <li class="single-detail"><a href="" class="single-detail-text">Add New</a></li>
+                            </ul>
+                        </li>
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Messengers </span> <span class=" hidden-sm hidden-xs right number">1</span></a>
+                            
+                        </li>
+                    </ul>
+                    <p class="place-title hidden-sm hidden-xs"><strong>More</strong></p>
+                    <ul class="nav-detail none-style">
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text" data-toggle="collapse" data-target=".social-show"><i class="fa fa-share-square-o" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Social</span> </a>
+                            <ul class="social-show collapse none-style in-menu">
+                                <li class="single-detail"><a href="" class="single-detail-text">Facebook</a></li>
+                                <li class="single-detail"><a href="" class="single-detail-text">Twitter</a></li>
+                                <li class="single-detail"><a href="" class="single-detail-text">Instagram</a></li>
+                            </ul>
+                            
+                        </li>
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text" ><i class="fa fa-question-circle" aria-hidden="true"></i> <span class="hidden-sm  hidden-xs">Help</span> </a>
+                            
+                        </li>
+                        <li class="single-detail">
+                            <a href="" class="single-detail-text" ><i class="fa fa-users" aria-hidden="true"></i></i> <span class="hidden-sm hidden-xs">User Profile</span> </a>
+                            
+                        </li>
 
 
                 </div>
-                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-10">
+                <div class="col-xs-11 col-sm-11 col-md-10 col-lg-10">
+                    <div class=" text-right noficaition">
+                        <a href="" class="nof"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="number fly-in">1</span></a>
+                        <a href="" class="nof admin-inf">
+                            <img src="images/mancity.png" class="admin-img"> Thomas Tom <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            
+                        </a>
+                        <ul class="text-left toggle-menu collapse none-style ">
+                            <li><a>Profile</a></li>
+                            <li><a>Settings <span class="right process"><strong>50%</strong></span></a></li>
+                            <li><a>Help</a></li>
+                            <hr>
+                            <li><a>Log out <span class="glyphicon glyphicon-log-out right" aria-hidden="true"></span></a></li>
+                        </ul>
 
-                    <text-angular ng-model="htmlVariable"></text-angular>
+                    </div>
+            
+                   <text-angular ng-model="htmlVariable"></text-angular>
 
                 </div>
             </div>
@@ -54,6 +122,7 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/script/admin.js"></script>
 <!--<script src="/script/admin.js"></script>-->
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
