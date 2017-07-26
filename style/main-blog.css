@@ -1,7 +1,7 @@
 .wrapped-page {}
 
-*{
-	font-family: 'Droid Serif', serif;
+* {
+    font-family: 'Droid Serif', serif;
 }
 
 h4>a {
@@ -77,35 +77,42 @@ h5>a:hover {
 ---------------------*/
 
 .header-top {
-    background: red; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, red, #63161c); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, red, #63161c); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, red, #63161c); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, red, #63161c); /* Standard syntax */
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, red, #63161c);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red, #63161c);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red, #63161c);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, red, #63161c);
+    /* Standard syntax */
     padding-top: 30px;
     padding-bottom: 5px;
     height: 96px;
     color: white;
 }
-.header-top a{
+
+.header-top a {
     color: white;
     margin-left: 10px;
     padding: 10px;
     font-size: 16px;
 }
-.header-top a:hover{
+
+.header-top a:hover {
     color: white;
     padding-right: 10px;
     background-color: black;
     text-decoration: none;
-
 }
- .header-top>.container>h1{
-        margin: 0px;
-        display: inline-block;
- }
- .header-top>.container>h1
-.left-header {
+
+.header-top>.container>h1 {
+    margin: 0px;
+    display: inline-block;
+}
+
+.header-top>.container>h1 .left-header {
     float: left;
     text-align: left;
 }
@@ -122,7 +129,7 @@ h5>a:hover {
     float: right;
 }
 
-.search>.my-button{
+.search>.my-button {
     color: white;
     background-color: #000;
     border: 2px #000 solid;
@@ -132,19 +139,19 @@ h5>a:hover {
     box-shadow: 1px 1px 2px #000;
 }
 
-.search>.my-button:hover{
+.search>.my-button:hover {
     background-color: white;
     color: black;
-
 }
 
-
-.search>input{
+.search>input {
     color: black;
     width: 80%;
     font-size: 14px;
     height: 33px;
 }
+
+
 /*---------------------
     Navigation
 ---------------------*/
@@ -155,41 +162,51 @@ h5>a:hover {
     border: 1px #000 solid;
     border-radius: 0px;
     font-size: 16px;
-
 }
 
-.menu-place{
+.menu-place {
     padding-left: 10px;
     margin-left: -10px;
 }
 
-.my-nav>.container>.menu-place>.navbar-nav>li>a{
+.my-nav>.container>.menu-place>.navbar-nav>li>a {
     color: white;
     background-image: none;
 }
-.my-nav>.container>.menu-place>.navbar-nav>li>a:hover{
+
+.my-nav>.container>.menu-place>.navbar-nav>li>a:hover {
     color: white;
     background-color: red;
 }
-.my-nav>.container>.menu-place>.navbar-nav>.active>a{
+
+.my-nav>.container>.menu-place>.navbar-nav>.active>a {
     background-color: red;
 }
-.my-nav>.container>.menu-place>.navbar-nav>li>a:active{
+
+.my-nav>.container>.menu-place>.navbar-nav>li>a:active {
     color: white;
     background-color: red;
 }
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-     background-color: red; 
-    border-color: #337ab7; 
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: red;
+    border-color: #337ab7;
 }
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
     color: #555;
     background-color: red;
 }
-.my-nav>.container>.menu-place>.navbar-nav>li>ul>li>a:hover{
+
+.my-nav>.container>.menu-place>.navbar-nav>li>ul>li>a:hover {
     background-color: red;
     background-image: none;
 }
+
 
 /*---------------------
     Page

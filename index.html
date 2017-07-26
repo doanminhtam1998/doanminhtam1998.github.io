@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="scotchApp">
 
 <head>
     <meta charset="UTF-8">
@@ -17,9 +17,11 @@
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
     <link rel="stylesheet" type="text/css" href="style/main-blog.css">
+    <link rel="stylesheet" type="text/css" href="style/detail-blog.css">
+
 </head>
 
-<body>
+<body ng-controller="mainController">
 
 
     <div class="wrapped-page">
@@ -32,540 +34,196 @@
             <div class="container">
                 <h1>TOM BLOG</h1>
                 <div class="right-header ">
-                
+
                 </div>
                 <div class="right-header hidden-sm hidden-xs">
-                <a class="log-in" data-toggle="modal" href='#modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
-                    <div class="modal fade" id="modal-id">
-                        <div class="modal-dialog">
+                    <a class="log-in" data-toggle="modal" href='.modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
+
+
+
+
+                    <div class="modal fade bs-modal-sm modal-id" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Modal title</h4>
+                                <br>
+                                <div class="bs-example bs-example-tabs">
+                                    <ul id="myTab" class="nav nav-tabs">
+                                        <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+                                        <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+                                        <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
+                                    </ul>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
-                                        <input type="text" name="">
-                                    </form>
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane fade in" id="why">
+                                            <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
+                                            <p></p><br> Please contact
+                                            <a mailto:href="JoeSixPack@Sixpacksrus.com"></a>JoeSixPack@Sixpacksrus.com</a> for any other inquiries.</p>
+                                        </div>
+                                        <div class="tab-pane fade active in" id="signin">
+                                            <form class="form-horizontal" ng-submit="login()">
+                                                <fieldset>
+                                                    <!-- Sign In Form -->
+                                                    <!-- Text input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="userid">Alias:</label>
+                                                        <div class="controls">
+                                                            <input ng-model="loginUser.email" required="" id="userid" name="userid" type="text" class="form-control" placeholder="JoeSixpack" class="input-medium" required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Password input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="passwordinput">Password:</label>
+                                                        <div class="controls">
+                                                            <input ng-model="loginUser.password" required="" id="passwordinput" name="passwordinput" class="form-control" type="password" placeholder="********" class="input-medium">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Multiple Checkboxes (inline) -->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="rememberme"></label>
+                                                        <div class="controls">
+                                                            <label class="checkbox inline" for="rememberme-0">
+                  <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
+                  Remember me
+                </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Button -->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="signin"></label>
+                                                        <div class="controls">
+                                                            <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="signup">
+                                            <form class="form-horizontal">
+                                                <fieldset>
+                                                    <!-- Sign Up Form -->
+                                                    <!-- Text input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="Email">Email:</label>
+                                                        <div class="controls">
+                                                            <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Text input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="userid">Alias:</label>
+                                                        <div class="controls">
+                                                            <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Password input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="password">Password:</label>
+                                                        <div class="controls">
+                                                            <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                                                            <em>1-8 Characters</em>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Text input-->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+                                                        <div class="controls">
+                                                            <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Multiple Radios (inline) -->
+                                                    <br>
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="humancheck">Humanity Check:</label>
+                                                        <div class="controls">
+                                                            <label class="radio inline" for="humancheck-0">
+                  <input type="radio" name="humancheck" id="humancheck-0" value="robot" checked="checked">I'm a Robot</label>
+                                                            <label class="radio inline" for="humancheck-1">
+                  <input type="radio" name="humancheck" id="humancheck-1" value="human">I'm Human</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Button -->
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="confirmsignup"></label>
+                                                        <div class="controls">
+                                                            <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <center>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </center>
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
-                <a href=".search" data-toggle="collapse" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-                <form class="search collapse">
-                    <input type="text" name=""><button class="my-button"><b>Go !</b></button>
-                </form>
+                    <a href=".search" data-toggle="collapse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                    <form class="search collapse">
+                        <input type="text" name=""><button class="my-button"><b>Go !</b></button>
+                    </form>
                 </div>
-                </div>
-           
+            </div>
+
         </header>
         <!-- -----------------------------------------
             		Navigation
             	---------------------------------------- -->
 
-       <nav class="navbar navbar-default my-nav" role="navigation">
-           <div class="container">
-               <!-- Brand and toggle get grouped for better mobile display -->
-               <div class="navbar-header">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <nav class="navbar navbar-default my-nav" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                        <span class="sr-only">Toggle navigation</span>
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                        <span class="icon-bar"></span>
                    </button>
-               </div>
-       
-               <!-- Collect the nav links, forms, and other content for toggling -->
-               <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
-                   <ul class="nav navbar-nav">
-                       <li class="active"><a href="#">HOME</a></li>
-                       <li><a href="#">FOOTBALL</a></li>
-                       
-                       <li><a href="#">TENNIS</a></li>
-                       <li ><a href="#">WRC</a></li>
-                       <li ><a href="#">VIDEO</a></li>
-                       <li class="dropdown">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Our Company</a></li>
-                               <li><a href="#">Partners</a></li>
-                               
-                           </ul>
-                       </li>
-                   </ul>
-                   
-                   
-               </div><!-- /.navbar-collapse -->
-           </div>
-       </nav>
-        <!-- -----------------------------------------
-            		Main Page
-            	---------------------------------------- -->
-        <div class="container my-page">
-            <div class="new-post-text col-sm-12 hidden-sm col-xs-12 hidden-xs">
-                <div class="trending">
-                    Trending now
                 </div>
-                <!----------Please input Jquery here-------->
-                <marquee class="trending-info">Manchester City won the trophy >>> Everything is ready for the season >>> Tom Oliver had won the gold shirt.</marquee>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/">HOME</a></li>
+                        <li><a href="#detail">FOOTBALL</a></li>
+
+                        <li><a href="#detail">TENNIS</a></li>
+                        <li><a href="#detail">WRC</a></li>
+                        <li><a href="#detail">VIDEO</a></li>
+                        <li class="dropdown">
+                            <a href="#/" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Our Company</a></li>
+                                <li><a href="#">Partners</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
+        </nav>
 
-            <div class="image-category">
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 main-image">
-                        <div class="bg-image">
-                            <img src="http://via.placeholder.com/1200x940" class="img-responsive img-bg">
-                            <div class="cover-image">
-                                <a href="detail.html"><span class="trending">Football</span><br>
-	                						<h4>Manchester City won the troply</h4>
-	                						<p>Tom . July 5<sup>th</sup></p>
-								</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 other-image">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
-                                <div class="bg-image">
-                                    <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
-                                    <div class="cover-image">
-                                        <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
-                                <div class="bg-image">
-                                    <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
-                                    <div class="cover-image">
-                                        <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
-                                <div class="bg-image">
-                                    <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
-                                    <div class="cover-image">
-                                        <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
-                                <div class="bg-image">
-                                    <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
-                                    <div class="cover-image">
-                                        <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="main-blog">
-                <div class="row">
-                    <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 post-place">
-                        <div class="post-title">
-                            <p class="title">
-                                POPULAR NEWS
-                            </p>
-                        </div>
-                        <div class="row post-pop-detail">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a> href="detail.html"Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-
-                                <div class="include-post">
-                                    <div class="section">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                                <h5><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                                <p>May 8, 2015</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="section">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                                <h5><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                                <p>May 8, 2015</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a>Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                                <div class="include-post">
-                                    <div class="section">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                                <h5><a href=""><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                                <p>May 8, 2015</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="section">
-                                        <div class="row">
-                                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                            </div>
-                                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                                <h5><a href="detail.html" <b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                                <p>May 8, 2015</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <p class="title">
-                                FOOTBALL
-                            </p>
-
-                        </div>
-                        <div class="row post-pop-detail">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                        </div>
-
-                        <div class="post-title">
-                            <p class="title">
-                                WRC Rally Cup
-                            </p>
-
-                        </div>
-                        <div class="row post-pop-detail">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <p class="title">
-                                BOXING
-                            </p>
-
-                        </div>
-                        <div class="row post-pop-detail">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                                <div class="img-post-detail">
-                                    <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                                    <div class="trending category">Football</div>
-                                </div>
-                                <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                                <div class="post-info">
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <p class="title">
-                                LATEST POST
-                            </p>
-                        </div>
-                        <div class="latest-post">
-                            <div class="row post-latest-detail">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
-                                    <div class="post-info-latest">
-                                        <p class="emphasis">Cycling</p>
-                                        <p class="author">Tom . Apr 8, 2015</p>
-                                        <p class="comments">1</p>
-                                    </div>
-                                    <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
-                                    <div class="read-more">
-                                        <span class="rm"><a href="detail.html"> Read More</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row post-latest-detail">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
-                                    <div class="post-info-latest">
-                                        <p class="emphasis">Cycling</p>
-                                        <p class="author">Tom . Apr 8, 2015</p>
-                                        <p class="comments">1</p>
-                                    </div>
-                                    <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
-                                    <div class="read-more">
-                                        <span class="rm"><a href="detail.html"> Read More</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row post-latest-detail">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
-                                    <div class="post-info-latest">
-                                        <p class="emphasis">Cycling</p>
-                                        <p class="author">Tom . Apr 8, 2015</p>
-                                        <p class="comments">1</p>
-                                    </div>
-                                    <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
-                                    <div class="read-more">
-                                        <span class="rm"><a href="detail.html"> Read More</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
-                        <div class="post-title">
-                            <p class="title">
-                                OUR FACEBOOK
-                            </p>
-                        </div>
-                        <div class="widget-page">
-
-                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=200px&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="100%" height="200px"
-                                style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                        </div>
-                        <div class="post-title">
-                            <p class="emphasis">
-                                SPORTS NEWS
-                            </p>
-                        </div>
-                        <div class="widget-page">
-                            <div class="widget-page-section">
-                                <h4><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                                <p class="emphasis-small"> Cycling tour</p>
-                            </div>
-                            <div class="widget-page-section">
-                                <h4><a href="detail.html"> Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                                <p class="emphasis-small">Cycling tour</p>
-                            </div>
-                            <div class="widget-page-section">
-                                <h4><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                                <p class="emphasis-small">Cycling tour</p>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <p class="emphasis">
-                                MOST COMMENTS
-                            </p>
-                        </div>
-                        <div class="widget-page">
-                            <div class="widget-page-section">
-                                <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                                <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
-                                <div class="post-info-latest">
-                                    <p class="emphasis">Cycling</p>
-                                    <p class="author">Tom . Apr 8, 2015</p>
-                                    <p class="comments">1</p>
-                                </div>
-                                <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
-                            </div>
-                            <div class="widget-page-section">
-                                <div class="row">
-                                    <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                        <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                        <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                        <p>May 8, 2015</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-page-section">
-                                <div class="row">
-                                    <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                        <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                        <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                        <p>May 8, 2015</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-page-section">
-                                <div class="row">
-                                    <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                        <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                        <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                        <p>May 8, 2015</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-title">
-                                <p class="emphasis">
-                                    CATEGORY
-                                </p>
-                            </div>
-                            <div class="widget-page">
-                                <ul>
-                                    <li>Billiard</li>
-                                    <li>Featured </li>
-                                    <li>Sports News</li>
-                                    <ul>
-                                        <li>Tennis</li>
-                                        <li>Soccer</li>
-                                        <li>WRC</li>
-                                        <li>BOXING</li>
-                                    </ul>
-                                    <li>Sport Today</li>
-                                    <li>Video </li>
-
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
+        <div>
+            <div ng-view>
 
             </div>
         </div>
@@ -597,7 +255,7 @@
                                 <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                 <p class="for-info">May 8, 2015</p>
                             </div>
                         </div>
@@ -606,7 +264,7 @@
                                 <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                 <p class="for-info">May 8, 2015</p>
                             </div>
                         </div>
@@ -615,7 +273,7 @@
                                 <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                 <p class="for-info">May 8, 2015</p>
                             </div>
                         </div>
@@ -654,7 +312,12 @@
 <!--Latest compiled and minified JavaScript -->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/script/blog.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-<script src="script/blog.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+
+<script src="/script/app-index.js"></script>
 
 </html>

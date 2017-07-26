@@ -1,0 +1,9 @@
+.for-new {
+    padding-top: 20px;
+}
+
+.input-place {
+    width: 400px;
+    overflow-y: scroll;
+    margin-top: 20px;
+}
