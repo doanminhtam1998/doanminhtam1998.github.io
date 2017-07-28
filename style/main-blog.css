@@ -401,6 +401,31 @@ h5>a:hover {
     border-bottom: white solid 2px;
 }
 
+.trans-page{
+    margin: 0px;
+    padding:15px;
+    color:black;
+}
+.button-next-previous>.trans-page>li{
+    
+}
+.button-next-previous>.trans-page>li>.emphasis-small{
+    border-radius: 0px;
+    background-color: black;
+    color:white;
+    margin-right: 10px;
+
+}
+.button-next-previous>.trans-page>li>.emphasis-small:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+/*---------------------
+    Footer
+---------------------*/
+
+
 .foot-logo {
     margin-bottom: 10px;
 }

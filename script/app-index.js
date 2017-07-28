@@ -22,23 +22,54 @@ scotchApp.config(function($routeProvider) {
 
 });
 
-// create the controller and inject Angular's $scope
+// // create the controller and inject Angular's $scope
+// scotchApp.controller('mainController', function($scope, $http) {
+//     // create a message to display in our view
+//     $scope.message = 'Everyone come and see how good I look!';
+//     var root = 'https://green-web-blog.herokuapp.com/api'
+//     $http.get(root + "/categories")
+//         .then(function(response) {
+//             $scope.Categories = response;
+//             console.log($scope.Categories)
+//         });
+//     $scope.login = function() {
+
+//         $scope.login = function() {
+//         console.log($scope.user);
+
+//        //POST Login API below:
+//         $http.post(root + '/api/users/auth', $scope.user)
+//             .success(function(response) {
+//                 var isSuccess = response.success;
+//                 if (isSuccess) {
+//                     console.log(response);
+//                 } else {
+//                     //Raise Error
+//                     alert(response.message);
+//                 }
+//             }).error(function(data, status, headers, config) {
+//                 console.log(data, status, headers, config);
+//             });
+//     }
+// });
+
+
+
 scotchApp.controller('mainController', function($scope, $http) {
     // create a message to display in our view
-    $scope.message = 'Everyone come and see how good I look!';
-    var root = 'https://green-web-blog.herokuapp.com/api'
-    $http.get(root + "/categories")
-        .then(function(response) {
-            $scope.Categories = response;
-            console.log($scope.Categories)
-        });
-    $scope.login = function() {
+    var root = "https://green-web-blog.herokuapp.com";
 
-        $scope.summitLogin = function() {
-            $http.post(root + '/users/auth', $scope.loginUser).success(function(response) {
+   $scope.message = 'Everyone come and see how good I look!';
+
+   $scope.login = function() {
+        console.log($scope.user);
+
+       //POST Login API below:
+        $http.post(root + '/api/users/auth', $scope.user)
+            .success(function(response) {
                 var isSuccess = response.success;
                 if (isSuccess) {
-                    alert(response.message);
+                    console.log(response);
                 } else {
                     //Raise Error
                     alert(response.message);
@@ -47,13 +78,4 @@ scotchApp.controller('mainController', function($scope, $http) {
                 console.log(data, status, headers, config);
             });
         }
-    }
-});
-
-scotchApp.controller('aboutController', function($scope) {
-    $scope.message = 'Look! I am an about page.';
-});
-
-scotchApp.controller('contactController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-});
+    });
