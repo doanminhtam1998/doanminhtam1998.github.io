@@ -1,0 +1,20 @@
+.my-sign {
+    color: black;
+}
+
+.sign-control>li>a {
+    color: black;
+}
+
+.my-checkbox {
+    margin-left: 20px;
+}
+
+.normal {
+    cursor: pointer;
+    color: blue;
+}
+
+.normal:hover {
+    text-decoration: underline;
+}
