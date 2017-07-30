@@ -362,6 +362,15 @@ h5>a:hover {
     padding-top: 20px;
 }
 
+.text-for-latest {
+    max-height: 8.6em;
+}
+
+.text-for-title {
+    max-height: 2.7em;
+    display: inline-block;
+}
+
 .widget {}
 
 .widget-page {
@@ -401,30 +410,30 @@ h5>a:hover {
     border-bottom: white solid 2px;
 }
 
-.trans-page{
+.trans-page {
     margin: 0px;
-    padding:15px;
-    color:black;
+    padding: 15px;
+    color: black;
 }
-.button-next-previous>.trans-page>li{
-    
-}
-.button-next-previous>.trans-page>li>.emphasis-small{
+
+.button-next-previous>.trans-page>li {}
+
+.button-next-previous>.trans-page>li>.emphasis-small {
     border-radius: 0px;
     background-color: black;
-    color:white;
+    color: white;
     margin-right: 10px;
-
 }
-.button-next-previous>.trans-page>li>.emphasis-small:hover{
+
+.button-next-previous>.trans-page>li>.emphasis-small:hover {
     background-color: red;
     cursor: pointer;
 }
 
+
 /*---------------------
     Footer
 ---------------------*/
-
 
 .foot-logo {
     margin-bottom: 10px;

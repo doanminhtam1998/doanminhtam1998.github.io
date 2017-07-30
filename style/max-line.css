@@ -1,0 +1,25 @@
+/* ---------------------------
+    Max line
+--------------------------- */
+
+.text {
+    position: relative;
+    color: black;
+    /* width: 250px; */
+    /* Could be anything you like. */
+}
+
+.text-concat {
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    /* max-height: 3.6em; */
+    /* (Number of lines you want visible) * (line-height) */
+}
+
+.text.ellipsis::after {
+    content: "...";
+    position: absolute;
+    right: -12px;
+    bottom: 4px;
+}
