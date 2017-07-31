@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
 
 
-
     <link rel="stylesheet" type="text/css" href="style/admin.css">
+    <link rel="stylesheet" type="text/css" href="style/admin-new.css">
 </head>
 
 <body>
@@ -121,26 +121,23 @@
                     </div>
 
                     <div class="section-page">
-                        <h2 class="title-text">NEW POSTS</h2><a href="" class="btn btn-primary">Add New</a>
+                        <h2 class="title-text">NEW POSTS</h2>
 
 
 
-                        <form action="" method="POST" role="form">
-
-                            <select multiple data-role="tagsinput" class="tags-appear">
-                                <opttion value=""></opttion>
-                                
-                            </select>
-
+                        <form action="" method="POST" role="form" class="my-form">
+                            <h3>Add Categories</h3>
+                            <input type="text" value=""  data-role="tagsinput" class="tags-appear"><br>
+                            
                             <select class="cat-input">
                                 <option value=""></option>
                                 <option value="Amsterdam">Amsterdam</option>
                                 <option value="Washington">Washington</option>
                                 <option value="Sydney">Sydney</option>
                                 <option value="Beijing">Beijing</option>
-                                <option value="Cairo">Cairo</option>
+                                <option value="Cairo">Cairo</option>s
                             </select>
-
+                            <h3>Add Detail for post</h3>
                             <text-angular ng-model="htmlVariable"></text-angular>
                         </form>
 
@@ -173,8 +170,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
+<script src="/script/admin.js"></script>
 <script type="text/javascript" src="/script/admin-new.js"></script>
-<!--<script src="/script/admin.js"></script>-->
+
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
