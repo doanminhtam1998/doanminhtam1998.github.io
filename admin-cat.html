@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif">
-    <link rel="stylesheet" href="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css">
+
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
+    <link rel="stylesheet" href="style/bootstrap_overwrite_for_this_web.css">
+
 
 
     <link rel="stylesheet" type="text/css" href="style/admin.css">
-    <link rel="stylesheet" type="text/css" href="style/admin-new.css">
+    <link rel="stylesheet" href="style/admin-new.css">
 </head>
 
 <body ng-controller="myCtrl">
@@ -119,37 +121,59 @@
                         </div>
 
                     </div>
+                    <div class="page-section">
 
-                    <div class="section-page">
-                        <h2 class="title-text">NEW POSTS</h2>
+                        <h2 class="title-text">Categories</h2>
+                        <div class="row">
 
-
-
-                        <form action="" method="POST" role="form" class="my-form">
-                            <h3>Add Title</h3>
-                            <input type="text" class="form-control" class="input-title">
-                            <h3>Add Categories</h3>
-                            <input type="text" value="" data-role="tagsinput" class="tags-appear"><br>
-
-                            <select class="cat-input">
-                                <option value=""></option>
-                                <option value="Amsterdam">Amsterdam</option>
-                                <option value="Washington">Washington</option>
-                                <option value="Sydney">Sydney</option>
-                                <option value="Beijing">Beijing</option>
-                                <option value="Cairo">Cairo</option>s
-                            </select>
-
-                            <select name="" id="" ng-init="apiGetCat()">
-                                <option value="" ng-repeat="x in categories">{{x.name}}</option>
-                            </select>
-                            <h3>Add Detail for post</h3>
-                            <text-angular ng-model="htmlVariable"></text-angular>
-
-                            <button class="btn btn-success right clearfix ">Publish</button>
-                        </form>
+                            <div class="col-sm-12 col-xs-12 col-md-7 col-lg-7">
 
 
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-md-2 col-lg-2">
+                                                ID
+                                            </div>
+                                            <div class="col-md-2 col-lg-2">
+                                                TITLE
+                                            </div>
+                                            <div class="col-md-5 col-lg-5">
+                                                DESCRIPTION
+                                            </div>
+                                            <div class="col-md-3 col-lg-3">
+                                                DATE
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div ng-init="apiGetCat()" class="panel-body">
+                                        <div ng-repeat="x in categories" class="row">
+                                            <div class="col-md-2 col-lg-2">
+                                                {{x._id}}
+                                            </div>
+                                            <div class="col-md-2 col-lg-2">
+                                                {{x.name}}
+                                            </div>
+                                            <div class="col-md-5 col-lg-5">
+                                                {{x.description}}
+                                            </div>
+                                            <div class="col-md-3 col-lg-3">
+                                                {{x.create_date}}
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                </div>
+                                <div class="col-sm-12 col-xs-12 col-md-5 col-lg-5">
+
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -177,9 +201,9 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
-<script src="/script/admin.js"></script>
-<script type="text/javascript" src="/script/admin-new.js"></script>
+<script type="text/javascript" src="/script/admin.js"></script>
+<script src="/script/admin-new.js"></script>
+
 
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -188,6 +212,7 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
 <script src="/script/app-admin.js"></script>
+
 
 
 </html>
