@@ -43,3 +43,6 @@ div.form-control{
 	padding-top: 10px;
 }
 
+.fix-hack{
+	overflow: auto;
+}

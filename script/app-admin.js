@@ -13,7 +13,7 @@ app.controller("myCtrl", function($scope, $http) {
         $http.get(root + "/api/articles")
             .then(function(response) {
                 //
-                $scope.Articles = response.data;
+                $scope.articles = response.data;
             });
 
     };
@@ -30,9 +30,18 @@ app.controller("myCtrl", function($scope, $http) {
 
     // };
 
-    $scope.submitCreatArt = function() {
+    $scope.getCategoryNameOfArticle = function(id) {
 
-    };
+        if (undefined != $scope.categories) {
+            for (i = 0; i < $scope.categories.length; i++) {
+                var cat = $scope.categories[i];
+                if (cat._id == id) {
+                    return cat.name;
+                }
+            }
+        };
+
+    }
 
     // var init = function() {
     //     apiGetCat();
