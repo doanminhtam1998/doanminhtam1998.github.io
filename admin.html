@@ -120,10 +120,10 @@
 
                     </div>
 
-                    <div ng-init="apiGetArt()" class="section-page" >
+                    <div ng-init="apiGetArt()" class="section-page">
                         <h2 class="title-text">ALL POSTS</h2><a href="" class="btn btn-primary">Add New</a>
-						<br>
-						<p>	All: ({{articles.length+5}})</p>
+                        <br>
+                        <p> All: ({{articles.length}})</p>
 
                         <div class="panel panel-default">
 
@@ -131,7 +131,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
+                                        <p> <strong> Title</strong></p>
 
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 text-center">
@@ -150,130 +150,25 @@
 
                             </div>
 
-                            <div  class="panel-body" >
-                                <div class="row single-post-manage">
+                            <div class="panel-body">
+
+
+
+                                <div ng-repeat="art in articles" class="row ">
                                     <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
+                                        <p><strong> {{art.title}}</strong></p>
                                         <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>Tom</p>
+                                        <p>{{art._author.name}}</p>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                        <p>{{getCategoryNameOfArticle(x._category)}}</p>
+                                    </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>24 mins ago
-
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-primary">Publish</span>
-
-                                    </div>
-
-                                </div>
-                                <div class="row single-post-manage">
-                                    <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>Tom</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>24 mins ago
-
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-success">Draft</span>
-
-                                    </div>
-
-                                </div>
-                                <div class="row ">
-                                    <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>Tom</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>24 mins ago
-
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-primary">Publish</span>
-
-                                    </div>
-
-                                </div>
-                                <div class="row single-post-manage">
-                                    <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>Tom</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>24 mins ago
-
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-primary">Publish</span>
-
-                                    </div>
-
-                                </div>
-                                <div class="row ">
-                                    <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> Title</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>Tom</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>24 mins ago
-
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-primary">Publish</span>
-
-                                    </div>
-
-                                </div>
-                                <div ng-repeat="x in articles" class="row " >
-                                    <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""> <strong> {{x.title}}</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
-                                    </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>{{x._author.name}}</p>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">Travel</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>{{x.updatedDate}}</p>
+                                        <p>{{art.updatedDate}}</p>
 
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1">
@@ -288,7 +183,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><input type="checkbox" name=""><strong> Title</strong></p>
+                                        <p><strong> Title</strong></p>
 
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 text-center">
@@ -309,7 +204,7 @@
                     </div>
 
 
-                    
+
 
 
 

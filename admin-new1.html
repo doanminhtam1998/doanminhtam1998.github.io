@@ -15,16 +15,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif">
-
+    <link rel="stylesheet" href="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css">
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
 
 
-
-
     <link rel="stylesheet" type="text/css" href="style/admin.css">
-    <link rel="stylesheet" href="style/admin-cat.css">
-    <link rel="stylesheet" href="style/admin-new.css">
+    <link rel="stylesheet" type="text/css" href="style/admin-new.css">
 </head>
 
 <body ng-controller="myCtrl">
@@ -55,7 +52,7 @@
                             <a href="" class="single-detail-text" data-toggle="collapse" data-target=".post-show"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Post</span> </a>
                             <ul class="post-show collapse none-style in-menu">
                                 <li class="single-detail"><a href="" class="single-detail-text">All Post</a></li>
-                                <li class="single-detail"><a href="admin-new.html" class="single-detail-text">Add New</a></li>
+                                <li class="single-detail"><a href="" class="single-detail-text">Add New</a></li>
                             </ul>
                         </li>
                         <li class="single-detail">
@@ -122,165 +119,80 @@
                         </div>
 
                     </div>
-                    <div class="page-section">
 
-                        <h2 class="title-text">Categories</h2>
-                        <div class="row">
-
-                            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                    <div class="section-page">
+                        <h2 class="title-text">NEW POSTS</h2>
 
 
 
-                                <p> All: ({{categories.length+5}})</p>
+                        <form ng-submit="submitCreateArticle()" role="form" class="my-form fix-hack" ng-init="apiGetCat()">
+                            <h3>Add Title</h3>
+                            <input type="text" ng-model="newArticle.title" class="form-control" class="input-title">
+                            <h3>Add Categories</h3>
+                            <!--<input ng-model="newArticle.cat" type="text" value="" data-role="tagsinput" class="tags-appear"><br>
 
-                                <div ng-init="apiGetCat()" class="panel panel-default">
+                            <select class="cat-input">
+                                <option value=""></option>
+                                <option value="Amsterdam">Amsterdam</option>
+                                <option value="Washington">Washington</option>
+                                <option value="Sydney">Sydney</option>
+                                <option value="Beijing">Beijing</option>
+                                <option value="Cairo">Cairo</option>s
+                            </select>-->
 
-                                    <div class="panel-heading">
+                            <select name="" id="" class="form-control" ng-model="newArticle._category" ng-options="category as category.name for category in categories track by category._id">
+                                <!--<option value="" ng-repeat="x in categories">{{x.name}}</option>-->
+                            </select>
+                            <h3>Add Decriptions</h3>
+                            <input type="text" ng-model="newArticle.description" class="form-control" class="input-title">
+                            <h3>Add Detail for post</h3>
+                            <!--<text-angular ng-model="htmlVariable "></text-angular>-->
 
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> Title</strong></p>
-
-                                            </div>
-
-                                            <div class="col-lg-5 col-md-5 col-sm-2">Description</div>
-                                            <div class="col-lg-3 col-md-3 col-sm-3">Date</div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="panel-body">
-
-                                        <div ng-repeat="x in categories" class="row ">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> {{x.name}}</strong></p>
-                                                <span class="view-more"><p><a href="">View</a> | <a  data-toggle="modal" href='.modal-edit'>Edit</a> | <a href="">Delete</a></p></span>
-                                            </div>
-                                            <div class="col-lg-5 col-md-5 col-sm-5 ">
-                                                <p>{{x.description}}</p>
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-3 col-sm-3 sliceday">
-                                                <p>{{x.create_date}}</p>
-
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="panel-footer">
-
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> Title</strong></p>
-
-                                            </div>
-
-                                            <div class="col-lg-5 col-md-5 col-sm-2">Description</div>
-                                            <div class="col-lg-3 col-md-3 col-sm-3">Date</div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <textarea ng-model="newArticle.content" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                            <h3>Add Media for post</h3>
+                            <input type="text" ng-model="newArticle.media" class="form-control">
+                            <button type="submit" class="btn btn-success right clearfix clear ">Publish</button>
+                        </form>
 
 
 
-
-
-
-                            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
-                                <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
-                                    <h3 class="title_input">Add Title</h3>
-                                    <input type="text" val="" ng-model="newCategory.name" class="form-control input-title cat-input">
-                                    <h3 class="title_input">Add Description</h3>
-                                    <textarea class="form-control" val="" ng-model="newCategory.description" class="my-form-area cat-input" rows="5">
-
-                                    </textarea><br>
-
-
-                                    <button type="submit" class="btn btn-success right clearfix clear ">Publish</button>
-                                </form>
-                            </div>
-                        </div>
                     </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="modal fade" id="modal-id">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title text-center">Do you sure ?</h4>
-                </div>
-                <div class="modal-body">
-
-                    <button type="button" class="btn btn-primary right modal-btn" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-default right modal-btn">Yes</button>
                 </div>
 
             </div>
+
         </div>
-    </div>
-
-
-
-    <div class="modal fade modal-edit" id="modal-id">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST" role="form" class="my-form fix-hack">
+        <div class="modal fade" id="modal-id">
+            <div class="modal-dialog ">
+                <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h3 class="modal-title">Edit</h3>
+                        <h4 class="modal-title text-center">Do you sure ?</h4>
                     </div>
                     <div class="modal-body">
 
-                        <h3 class="title_input">Add Title</h3>
-                        <input type="text" val="" class="form-control input-title cat-input">
-                        <h3 class="title_input">Add Description</h3>
-                        <textarea class="form-control" val="" class="my-form-area cat-input" rows="5">
-
-                                    </textarea><br>
-
-
-
-
-
+                        <button type="button" class="btn btn-primary right modal-btn" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-default right modal-btn">Yes</button>
                     </div>
-                    <div class="modal-footer">
 
-                        <button type="button" class="btn btn-success">Save changes</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/script/admin.js"></script>
-<script src="/script/admin-cat.js"></script>
-
+<script src="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
+<script src="/script/admin.js"></script>
+<script type="text/javascript" src="/script/admin-new.js"></script>
 
 <!--Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
 <script src="/script/app-admin.js"></script>
-
 
 
 </html>
