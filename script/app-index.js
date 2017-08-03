@@ -86,28 +86,49 @@ scotchApp.controller('mainController', function($scope, $http) {
     init();
 
 
+    $scope.getCategoryNameOfArticle = function(id) {
+
+        if (undefined != $scope.categories) {
+            for (i = 0; i < $scope.categories.length; i++) {
+                var cat = $scope.categories[i];
+                if (cat._id == id) {
+                    return cat.name;
+                };
+            };
+        };
+
+    };
 
 
 
-    console.log($scope.Categories)
+
+
 
 
     $scope.login = function() {
         console.log($scope.user);
 
-        //POST Login API below:
         $http.post(root + '/api/users/auth', $scope.user)
-            .success(function(response) {
-                var isSuccess = response.success;
-                if (isSuccess) {
-                    console.log(response);
-                } else {
-                    //Raise Error
-                    alert(response.message);
-                }
-            }).error(function(data, status, headers, config) {
+            .then(function successCallbak(response) {
+                alert("Thành công");
+
+
+            }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
-    }
+    };
+
+    $scope.signup = function() {
+        console.log($scope.newUsers);
+
+        $http.post(root + '/api/users/auth', $scope.newUsers)
+            .then(function successCallbak(response) {
+                alert("Thành công");
+
+
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
+    };
 
 });

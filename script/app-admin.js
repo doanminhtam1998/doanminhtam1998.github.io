@@ -37,11 +37,11 @@ app.controller("myCtrl", function($scope, $http) {
                 var cat = $scope.categories[i];
                 if (cat._id == id) {
                     return cat.name;
-                }
-            }
+                };
+            };
         };
 
-    }
+    };
 
 
 

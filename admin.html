@@ -154,21 +154,21 @@
 
 
 
-                                <div ng-repeat="art in articles" class="row ">
+                                <div ng-repeat="x in articles" class="row ">
                                     <div class="col-lg-2 col-md-2 col-sm-12">
-                                        <p><strong> {{art.title}}</strong></p>
+                                        <p><strong> {{x.title}}</strong></p>
                                         <span class="view-more"><p><a href="">View</a> | <a href="">Edit</a> | <a href="">Delete</a></p></span>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                        <p>{{art._author.name}}</p>
+                                        <p>{{x._author.name}}</p>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div ng-init="apiGetCat()" class="col-lg-2 col-md-2 col-sm-2">
                                         <p>{{getCategoryNameOfArticle(x._category)}}</p>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">1</span></div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">{{x.tags.length}}</span></div>
                                     <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>{{art.updatedDate}}</p>
+                                        <p>{{x.updatedDate}}</p>
 
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-sm-1">
