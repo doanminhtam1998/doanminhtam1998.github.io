@@ -14,9 +14,9 @@ scotchApp.config(function($routeProvider) {
     })
 
     // route for the about page
-    .when('/detail', {
+    .when('/detail/:id', {
         templateUrl: 'pages/for-detail.html',
-        controller: 'aboutController'
+        controller: 'mainController'
     });
 
 
@@ -55,12 +55,12 @@ scotchApp.config(function($routeProvider) {
 
 
 
-scotchApp.controller('mainController', function($scope, $http) {
+scotchApp.controller('mainController', function($scope, $http, $routeParams) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
 
     $scope.message = 'Everyone come and see how good I look!';
-    var apiGetCat = function() {
+    $scope.apiGetCat = function() {
         $http.get(root + "/api/categories")
             .then(function(response) {
                 //
@@ -69,7 +69,7 @@ scotchApp.controller('mainController', function($scope, $http) {
 
     };
 
-    var apiGetArt = function() {
+    $scope.apiGetArt = function() {
         $http.get(root + "/api/articles")
             .then(function(response) {
                 //
@@ -78,12 +78,7 @@ scotchApp.controller('mainController', function($scope, $http) {
 
     };
 
-    var init = function() {
-        apiGetCat();
-        apiGetArt();
-    };
 
-    init();
 
 
     $scope.getCategoryNameOfArticle = function(id) {
@@ -101,7 +96,37 @@ scotchApp.controller('mainController', function($scope, $http) {
 
 
 
+    $scope.getArticleID = function() {
+        var id = $routeParams.id;
 
+        angular.forEach($scope.Articles, function(value, key) {
+            if (value._id === id) {
+                $scope.article = value;
+
+                return false;
+
+            };
+
+        });
+
+    };
+
+    // New
+
+    // $scope.getArticleID = function() {
+    //     $scope.currentArticleID = $routeParams.id;
+    // };
+
+    // End new
+
+
+
+
+    // $scope.getArticlebyCategory = function() {
+    //     var id = $routeParams.id;
+    //     var
+
+    // };
 
 
 
@@ -118,17 +143,27 @@ scotchApp.controller('mainController', function($scope, $http) {
             });
     };
 
-    $scope.signup = function() {
-        console.log($scope.newUsers);
+    $scope.summitSignup = function() {
+        $http.post(root + '/api/users/signup/', $scope.signUpUser).then(function successCallbak(response) {
+            var isSuccess = response.success;
+            if (isSuccess) {
+                $cookieStore.put('token', response.token);
+                $cookieStore.put('user', response.user);
+                $scope.user = $cookieStore.get('user');
+                $scope.token = $cookieStore.get('token');
+                //Redirect here
+                $location.url("/")
+            } else {
+                //Raise Error
+                alert(response.message);
+            }
+        }, function errorCallback(response) {
+            console.log(data, status, headers, config);
+        });
+    }
 
-        $http.post(root + '/api/users/auth', $scope.newUsers)
-            .then(function successCallbak(response) {
-                alert("Thành công");
+    // $scope.$watchCollection("Articles",function(new){
 
-
-            }, function errorCallback(response) {
-                console.log(data, status, headers, config);
-            });
-    };
+    // });
 
 });

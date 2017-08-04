@@ -338,20 +338,20 @@
                 <div class="latest-post">
                     <div ng-repeat="x in Articles" class="row post-latest-detail">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
+                            <img ng-src="{{x.media}}" alt="" class="img-responsive">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <h3 class="for-title"><a href="detail.html">{{x.title}}</a></h3>
+                            <h3 class="for-title"><a href="#detail">{{x.title}}</a></h3>
                             <div class="post-info-latest ">
                                 <p class="emphasis">Cycling</p>
-                                <p class="author">{{x._author.name}} . Apr 8, 2015</p>
+                                <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
                                 <p class="comments ">1</p>
                             </div>
                             <div class="text ellipsis">
                                 <p class="justified text-concat text-for-latest ">{{x.content}}</p>
                             </div>
                             <div class="read-more">
-                                <span class="rm"><a href="detail.html"> Read More</a></span>
+                                <span class="rm"><a href="#detail/{{x._id}}"> Read More</a></span>
                             </div>
                         </div>
                     </div>

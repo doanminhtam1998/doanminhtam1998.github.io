@@ -70,14 +70,10 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
+                <div ng-init="apiGetCat()" class="collapse navbar-collapse navbar-ex1-collapse menu-place">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#/">HOME</a></li>
-                        <li><a href="#detail">FOOTBALL</a></li>
 
-                        <li><a href="#detail">TENNIS</a></li>
-                        <li><a href="#detail">WRC</a></li>
-                        <li><a href="#detail">VIDEO</a></li>
                         <li ng-repeat=" x in Categories"><a>{{x.name}}</a></li>
                         <li class="dropdown">
                             <a href="#/" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
@@ -96,7 +92,7 @@
             </div>
         </nav>
 
-        <div>
+        <div ng-init="apiGetArt()">
             <div ng-view>
 
             </div>
@@ -156,20 +152,20 @@
                         <h3 class="for-title">POPULAR CATEGORY</h3>
                         <ul class="foot-cat">
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
 
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
                             <li>
-                                <a class="cat-name" href="">Football<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
 
                         </ul>
 
@@ -249,14 +245,14 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade signup" id="signup">
-                                <form ng-submit="signup()" class="form-horizontal">
+                                <form ng-submit="summitSignup()" class="form-horizontal">
                                     <fieldset>
                                         <!-- Sign Up Form -->
                                         <!-- Text input-->
                                         <div class="control-group">
                                             <label class="control-label" for="Email">Email:</label>
                                             <div class="controls">
-                                                <input ng-model="newUsers.email" id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                                                <input ng-model="signUpUser.email" id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
                                             </div>
                                         </div>
 
@@ -264,7 +260,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="userid">Name:</label>
                                             <div class="controls">
-                                                <input ng-model="newUsers.name" id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                                                <input ng-model="signUpUser.name" id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" class="input-large" required="">
                                             </div>
                                         </div>
 
@@ -272,7 +268,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="password">Password:</label>
                                             <div class="controls">
-                                                <input ng-model="newUsers.password" id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                                                <input ng-model="signUpUser.password" id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
                                                 <em>1-8 Characters</em>
                                             </div>
                                         </div>
