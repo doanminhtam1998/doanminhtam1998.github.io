@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif" rel="stylesheet">
-
+    <link rel="stylesheet" href="library/ng-tags-input/ng-tags-input.min.css">
+    <link rel="stylesheet" href="library/ng-tags-input/ng-tags-input.bootstrap.min.css">
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
     <link rel="stylesheet" type="text/css" href="style/main-blog.css">
@@ -74,7 +75,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#/">HOME</a></li>
 
-                        <li ng-repeat=" x in Categories"><a>{{x.name}}</a></li>
+                        <li ng-repeat=" x in Categories"><a href="#categories/{{x._id}}">{{x.name}}</a></li>
                         <li class="dropdown">
                             <a href="#/" class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
                             <ul class="dropdown-menu">

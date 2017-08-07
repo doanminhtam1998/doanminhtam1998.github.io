@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bellefair|Droid+Serif">
+
     <link rel="stylesheet" href="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.css">
+    <!-- <link rel="stylesheet" href="library/ng-tags-input/ng-tags-input.min.css">
+    <link rel="stylesheet" href="library/ng-tags-input/ng-tags-input.bootstrap.min.css"> -->
     <!-- This is bootsnipp -->
     <link rel="stylesheet" href="style/bootstrap_overwrite.css">
 
@@ -151,7 +154,12 @@
                             <textarea ng-model="newArticle.content" class="form-control" name="" id="" cols="30" rows="10"></textarea>
                             <h3>Add Media for post</h3>
                             <input type="text" ng-model="newArticle.media" class="form-control">
-                            <button type="submit" class="btn btn-success right clearfix clear ">Publish</button>
+
+                            <h3>Add Tags for post</h3>
+                            <select multiple data-role="tagsinput" ng-model="newArticle.tags"></select>
+                            <div class="fix-hack">
+                                <button class=" btn btn-success right clearfix clear ">Publish</button>
+                            </div>
                         </form>
 
 
@@ -162,17 +170,17 @@
             </div>
 
         </div>
-        <div class="modal fade" id="modal-id">
+        <div class="modal fade " id="modal-id ">
             <div class="modal-dialog ">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title text-center">Do you sure ?</h4>
+                <div class="modal-content ">
+                    <div class="modal-header ">
+                        <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;</button>
+                        <h4 class="modal-title text-center ">Do you sure ?</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body ">
 
-                        <button type="button" class="btn btn-primary right modal-btn" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-default right modal-btn">Yes</button>
+                        <button type="button " class="btn btn-primary right modal-btn " data-dismiss="modal ">No</button>
+                        <button type="button " class="btn btn-default right modal-btn ">Yes</button>
                     </div>
 
                 </div>
@@ -180,19 +188,24 @@
         </div>
 </body>
 
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
-<script src="/script/admin.js"></script>
-<script type="text/javascript" src="/script/admin-new.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
+<script src="/library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js"></script>
+<script src="/library/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
+<script>
+    document.write('<base href="' + document.location + '" />');
+</script>
+<script src="/script/admin.js "></script>
+<script type="text/javascript " src="/script/admin-new.js "></script>
 
 <!--Latest compiled and minified JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js "></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js "></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
-<script src="/script/app-admin.js"></script>
+
+<script src="/script/app-admin.js "></script>
 
 
 </html>

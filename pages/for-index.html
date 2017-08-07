@@ -337,13 +337,13 @@
                 </div>
                 <div class="latest-post">
                     <div ng-repeat="x in Articles" class="row post-latest-detail">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop">
                             <img ng-src="{{x.media}}" alt="" class="img-responsive">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <h3 class="for-title"><a href="#detail">{{x.title}}</a></h3>
+                            <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest ">
-                                <p class="emphasis">Cycling</p>
+                                <p class="emphasis">{{getCategoryNameOfArticle(x._category)}}</p>
                                 <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
                                 <p class="comments ">1</p>
                             </div>

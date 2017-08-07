@@ -77,7 +77,7 @@ app.controller("myCtrl", function($scope, $http) {
                 alert("Thành công");
                 window.location.href = 'admin.html';
             }, function errorCallback(response) {
-                console.log(data, status, headers, config);
+                // console.log(data, status, headers, config);
             });
     };
 
@@ -96,7 +96,7 @@ app.controller("myCtrl", function($scope, $http) {
                 }
             })
             .error(function(data, status, headers, config) {
-                console.log(data, status, headers, config);
+                // console.log(data, status, headers, config);
             });
 
     };
