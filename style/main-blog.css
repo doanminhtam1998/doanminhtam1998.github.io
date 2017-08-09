@@ -71,7 +71,15 @@ h5>a:hover {
     box-shadow: 1px 1px 2px #000;
 }
 
-
+.fix-hack{
+    clear: both;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
 /*---------------------
     Header Top
 ---------------------*/
@@ -261,6 +269,9 @@ h5>a:hover {
     color: red;
     text-decoration: none;
 }
+.my-img-cat{
+    height: 200px;
+}
 
 .other-image {}
 
@@ -393,6 +404,48 @@ h5>a:hover {
      Op 12.1+    *
 } */
 
+
+/* RESIZE IMAGE */
+.m-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.m-thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*height: 100%;*/
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+  
+  height: auto;
+}
+
+/*.thumb-center-crop {
+    position: relative;
+    width:370px;
+    height:250px;
+    overflow: hidden;
+}
+
+.thumb-center-crop img {
+    position: absolute;
+    left:50%;
+    top:50%;
+    height:100%;
+    width: auto;
+}
+.thumb-center-crop img.potrait {
+    width: 100%;
+    height: auto;
+}
+*/
 .widget {}
 
 .widget-page {
@@ -451,6 +504,7 @@ h5>a:hover {
     background-color: red;
     cursor: pointer;
 }
+
 
 
 /*---------------------
