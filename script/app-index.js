@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 
 // configure our routes
 scotchApp.config(['$locationProvider', function($locationProvider) {
@@ -63,6 +63,9 @@ scotchApp.config(function($routeProvider) {
 scotchApp.controller('mainController', function($scope, $http, $routeParams, $location) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
+    var maxRandomArticleNumber = 5;
+    var numberToGetArticle = 5;
+    
 
     $scope.message = 'Everyone come and see how good I look!';
     $scope.apiGetCat = function() {
@@ -124,6 +127,11 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         $scope.currentArticleID = id;
     };
 
+    $scope.getAllArticleinCategories = function(){
+        var id = $routeParams.id;
+        $scope.AllArticleinCategories = id;
+    }
+
 
     // End new
 
@@ -136,6 +144,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
     // };
 
+    
 
 
     $scope.login = function() {
@@ -172,14 +181,67 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
 
     $scope.$watchCollection("Articles", function(newArticles, oldArticles) {
-        angular.forEach(newArticles, function(value, key) {
+        
+        
+        if (newArticles != undefined) {
+            angular.forEach(newArticles, function(value, key) {
             if (value._id === $scope.currentArticleID) {
                 console.log("Find article of CurrentArticle");
                 $scope.article = value;
                 return false;
             }
         });
+            $scope.getArticleforCategoriesDA =function(){
+                var id = "5983510622fd58000478aaa8";
+                var arrayforarticle = [];
+                angular.forEach(newArticles, function(value, key) {
+                    if (value._category === id) {
+                        arrayforarticle.push(value); 
+
+                    };
+
+                });
+                $scope.articleCatDA = arrayforarticle;
+            };
+            $scope.viewby = 3;
+            $scope.totalItems = newArticles.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = $scope.viewby;
+            $scope.maxSize = 5;
+
+            $scope.setPage = function (pageNo) {
+            $scope.currentPage = pageNo;
+            };
+
+            $scope.pageChanged = function() {
+                console.log('Page changed to: ' + $scope.currentPage);
+              };
+
+            $scope.setItemsPerPage = function(num) {
+              $scope.itemsPerPage = num;
+              $scope.currentPage = 1; //reset to first pahe
+            }
+            //Update Popular Articles
+            $scope.listArticleForPoular = newArticles.slice(0, numberToGetArticle);
+            //Update random articles
+            $scope.randomArticles = [];
+                var listArticles = newArticles.slice();
+                for (var i = 0; i < maxRandomArticleNumber; i++) {
+                    if (listArticles.length > 0) {
+                        var random = Math.floor(Math.random() * listArticles.length);
+                        $scope.randomArticles.push(listArticles[random]);
+                        listArticles.splice(random, 1);
+                    };
+                };
+                console.log($scope.randomArticles);
+            }
+
+            
+
+            
     });
+
+    
 
 
 
@@ -197,4 +259,38 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     //         });
     // }
 
+    
+
+
+
+    // $scope.getArticleforCategoriesDA =function(){
+    //     var id = "5983510622fd58000478aaa8";
+        
+    //     $scope.DAid = id;
+        
+    // };
+
+    //  $scope.$watchCollection("Articles", function(newArticles, oldArticles) {
+    //     var arrayforarticle = [];
+    //     angular.forEach($scope.Articles, function(value, key) {
+    //         if (value._category === DAid) {
+    //             arrayforarticle.push(value);
+
+    //             $scope.articleCatDA = arrayforarticle;
+
+
+
+    //             return false;
+
+    //         };
+
+    //     });
+    // });
+
 });
+// .filter('startFrom',function(){
+//         return function(data,start){
+//             // start = 0 + start;
+//             return data.slice(start);
+//         }
+//     });

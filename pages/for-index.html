@@ -1,6 +1,6 @@
 <!-- -----------------------------------------
-            		Main Page
-            	---------------------------------------- -->
+                    Main Page
+                ---------------------------------------- -->
 
 
 
@@ -22,9 +22,9 @@
                     <img src="http://via.placeholder.com/1200x940" class="img-responsive img-bg">
                     <div class="cover-image">
                         <a href="detail.html"><span class="trending">Football</span><br>
-	                						<h4>Manchester City won the troply</h4>
-	                						<p>Tom . July 5<sup>th</sup></p>
-								</a>
+                                            <h4>Manchester City won the troply</h4>
+                                            <p>Tom . July 5<sup>th</sup></p>
+                                </a>
                     </div>
                 </div>
             </div>
@@ -35,9 +35,9 @@
                             <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
+                                                    <h4>Everything is ready for the season</h4>
+                                                    
+                                                    </a>
                             </div>
                         </div>
                     </div>
@@ -46,9 +46,9 @@
                             <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
+                                                    <h4>Everything is ready for the season</h4>
+                                                    
+                                                    </a>
                             </div>
                         </div>
                     </div>
@@ -57,9 +57,9 @@
                             <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
+                                                    <h4>Everything is ready for the season</h4>
+                                                    
+                                                    </a>
                             </div>
                         </div>
                     </div>
@@ -68,9 +68,9 @@
                             <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">Golf</span><br>
-			                						<h4>Everything is ready for the season</h4>
-			                						
-													</a>
+                                                    <h4>Everything is ready for the season</h4>
+                                                    
+                                                    </a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
     </div>
 
 
-    <div class="main-blog">
+    <div ng-init="apiGetArt()" class="main-blog">
         <div class="row">
             <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 post-place">
                 <div class="post-title">
@@ -170,51 +170,26 @@
                 </div>
                 <div class="post-title">
                     <p class="title">
-                        FOOTBALL
+                        Điện Ảnh
                     </p>
 
                 </div>
-                <div class="row post-pop-detail">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                        <div class="img-post-detail">
-                            <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                            <div class="trending category">Football</div>
+                <div ng-init="getArticleforCategoriesDA()" class="row post-pop-detail">
+                    <div ng-repeat="x in articleCatDA" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
+                        <div class="img-post-detail thumbnai">
+                            <img src="{{x.media}}"  class="img-responsive my-img-cat portrait">
+                            <div class="trending category">Điện Ảnh</div>
                         </div>
-                        <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
+                        <h4><a href="detail.html">{{x.title}}</a></h4>
                         <div class="post-info">
-                            <p class="author">Tom . Apr 8, 2015</p>
-                            <p class="comments">1</p>
+                            <p class="author">{{x._author.name}} . Apr 8, 2015</p>
+                            
                         </div>
-                        <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
+                        <p class="justified">{{x.description}}</p>
 
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                        <div class="img-post-detail">
-                            <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                            <div class="trending category">Football</div>
-                        </div>
-                        <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                        <div class="post-info">
-                            <p class="author">Tom . Apr 8, 2015</p>
-                            <p class="comments">1</p>
-                        </div>
-                        <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
-                        <div class="img-post-detail">
-                            <img src="http://via.placeholder.com/400x200" class="img-responsive">
-                            <div class="trending category">Football</div>
-                        </div>
-                        <h4><a href="detail.html">Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
-                        <div class="post-info">
-                            <p class="author">Tom . Apr 8, 2015</p>
-                            <p class="comments">1</p>
-                        </div>
-                        <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
-                    </div>
-
-                    <div class="button-next-previous left clearfix">
-                        <ul class="pagination trans-page">
+                    <div class="button-next-previous left clearfix fix-hack">
+                        <ul class="pagination trans-page left fix-hack">
                             <li><a class="emphasis-small"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
                             <li>
                                 <a class="emphasis-small"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
@@ -222,6 +197,7 @@
 
                         </ul>
                     </div>
+                    
                 </div>
 
                 <div class="post-title">
@@ -336,16 +312,18 @@
                     </p>
                 </div>
                 <div class="latest-post">
-                    <div ng-repeat="x in Articles" class="row post-latest-detail">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop">
-                            <img ng-src="{{x.media}}" alt="" class="img-responsive">
+                    <div ng-repeat="x in Articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="row post-latest-detail ">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop ">
+                        <div class="m-thumbnail">   
+                            <img ng-src="{{x.media}}" alt="" class=" portrait">
+                        </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest ">
                                 <p class="emphasis">{{getCategoryNameOfArticle(x._category)}}</p>
                                 <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
-                                <p class="comments ">1</p>
+                                
                             </div>
                             <div class="text ellipsis">
                                 <p class="justified text-concat text-for-latest ">{{x.content}}</p>
@@ -355,23 +333,28 @@
                             </div>
                         </div>
                     </div>
+                    
+
+                    
 
 
                     <div class="button-next-previous left clearfix">
                         <ul class="pagination trans-page">
                             <li><a class="emphasis-small"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
-                            <li><a class="emphasis-small">1</a></li>
-                            <li><a class="emphasis-small">2</a></li>
-                            <li><a class="emphasis-small">3</a></li>
-                            <li><a class="emphasis-small">...</a></li>
+                            <li><a ng-click="setPage(1)" class="emphasis-small">1</a></li>
+                            <li><a class="emphasis-small" ng-click="setPage(2)">2</a></li>
+                            
                             <li>
                                 <a class="emphasis-small"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
                             </li>
 
                         </ul>
                     </div>
+                    <div class="left clearfix fix-hack" class="view-page">
+                    View <select ng-model="viewby" ng-change="setItemsPerPage(viewby)"><option>3</option><option>5</option><option>10</option> records at a time.</select>
+                    </div>
                 </div>
-            </div>
+           </div>
 
 
 
@@ -392,18 +375,11 @@
                     </p>
                 </div>
                 <div class="widget-page">
-                    <div class="widget-page-section">
-                        <h4><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                        <p class="emphasis-small"> Cycling tour</p>
+                    <div ng-repeat="x in randomArticles " class="widget-page-section">
+                        <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
+                        <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category)}}</p>
                     </div>
-                    <div class="widget-page-section">
-                        <h4><a href="detail.html"> Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                        <p class="emphasis-small">Cycling tour</p>
-                    </div>
-                    <div class="widget-page-section">
-                        <h4><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                        <p class="emphasis-small">Cycling tour</p>
-                    </div>
+                   
                 </div>
                 <div class="post-title">
                     <p class="emphasis">
