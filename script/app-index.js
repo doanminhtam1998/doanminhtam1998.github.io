@@ -35,7 +35,30 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     var idCat1 = "5983510622fd58000478aaa8";
     var idCat2 = "5981d787b38ced0004f0c5db";
     var idCat3 = "5981d805b38ced0004f0c5dd";
+    //Begin Sort Array
+    var compareValues = function(key, order = 'asc') {
+        return function(a, b) {
+            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                // property doesn't exist on either object
+                return 0;
+            }
 
+            const varA = (typeof a[key] === 'string') ?
+                a[key].toUpperCase() : a[key];
+            const varB = (typeof b[key] === 'string') ?
+                b[key].toUpperCase() : b[key];
+
+            let comparison = 0;
+            if (varA > varB) {
+                comparison = 1;
+            } else if (varA < varB) {
+                comparison = -1;
+            }
+            return (
+                (order == 'desc') ? (comparison * -1) : comparison
+            );
+        };
+    }
 
     //Get Category and Article
     $scope.apiGetCat = function() {
@@ -60,13 +83,6 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         $scope.apiGetCat();
         $scope.apiGetArt();
     };
-
-
-
-
-
-
-
     $scope.getArticleID = function() {
         var id = $routeParams.id;
 
@@ -74,10 +90,12 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     };
 
     $scope.getAllArticleinCategories = function() {
-        $scope.currentCategoryID = $routeParams.id;
-        $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
+            $scope.currentCategoryID = $routeParams.id;
+            $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
+            $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
 
-    }
+        }
+        //Begin get articles by id
     var getArticlesById = function(id, maximumArticle) {
         if (maximumArticle === undefined) {
             if ($scope.Articles === undefined) {
@@ -93,9 +111,9 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             }
         });
         return articles;
-        console.log("Articles in Id:" + id + articles);
-    };
 
+    };
+    //Begin Get Category name  for article
     $scope.getCategoryNameOfArticle = function(id) {
 
         if (undefined != $scope.Categories) {
@@ -108,12 +126,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         };
 
     };
-
-
-
-
-
-
+    //Begin Login
     $scope.login = function() {
         console.log($scope.user);
 
@@ -146,7 +159,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         });
     }
 
-
+    //Scope watch
     $scope.$watchCollection("Articles", function(newArticles, oldArticles) {
 
 
@@ -190,6 +203,9 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                 //Update Popular Articles
             $scope.allArticles = newArticles;
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
+            //Update New Articles
+            var arrayallNewArticles = newArticles.slice();
+            $scope.allNewArticles = arrayallNewArticles.sort(compareValues('createdDate', 'desc'));
 
             //Update random articles
             $scope.randomArticles = [];
@@ -203,62 +219,5 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             };
 
         }
-
-
-
-
     });
-
-
-
-
-
-    // Use $location
-    // $scope.getArticleID = function() {
-    //     $http.get(root + "/api/articles")
-    //         .then(function(response) {
-    //             $scope.articles = response.data;
-    //             var id = $location.search().id;
-    //             for (i = 0; i < $scope.articles.length; ++i) {
-    //                 if ($scope.articles[i]._id == id) {
-    //                     $scope.art = $scope.articles[i];
-    //                 }
-    //             }
-    //         });
-    // }
-
-
-
-
-
-    // $scope.getArticleforCategoriesDA =function(){
-    //     var id = "5983510622fd58000478aaa8";
-
-    //     $scope.DAid = id;
-
-    // };
-
-    //  $scope.$watchCollection("Articles", function(newArticles, oldArticles) {
-    //     var arrayforarticle = [];
-    //     angular.forEach($scope.Articles, function(value, key) {
-    //         if (value._category === DAid) {
-    //             arrayforarticle.push(value);
-
-    //             $scope.articleCatDA = arrayforarticle;
-
-
-
-    //             return false;
-
-    //         };
-
-    //     });
-    // });
-
 });
-// .filter('startFrom',function(){
-//         return function(data,start){
-//             // start = 0 + start;
-//             return data.slice(start);
-//         }
-//     });

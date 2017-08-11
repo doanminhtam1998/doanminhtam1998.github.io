@@ -120,31 +120,15 @@
                     </div>
                     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 foot-col">
                         <h3 class="for-title">POPULAR POSTS</h3>
-                        <div class="row foot-pop">
+                        <div ng-repeat="x in allNewArticles.slice(0,3)" class="row foot-pop">
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
+                                <div class="m-thumbnail resize-height-for-main">
+                                    <img ng-src="{{x.media}}" alt="title" class="portrait beauty-img">
+                                </div>
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p class="for-info">May 8, 2015</p>
-                            </div>
-                        </div>
-                        <div class="row foot-pop">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p class="for-info">May 8, 2015</p>
-                            </div>
-                        </div>
-                        <div class="row foot-pop">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="#detail"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p class="for-info">May 8, 2015</p>
+                                <h5 class="for-title"><a href="#detail"><b>{{x.title}}</b></a></h5>
+                                <p class="for-info">{{x.createdDate | date: 'MMM d, y'}}</p>
                             </div>
                         </div>
                     </div>

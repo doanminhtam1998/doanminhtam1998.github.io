@@ -10,7 +10,7 @@
             Trending now
         </div>
         <!----------Please input Jquery here-------->
-        <marquee class="trending-info">Manchester City won the trophy >>> Everything is ready for the season >>> Tom Oliver had won the gold shirt.</marquee>
+        <marquee class="trending-info"><a ng-repeat="x in allNewArticles.slice(0,4)">{{x.title}}. >>></a></marquee>
     </div>
 
 
@@ -27,7 +27,7 @@
                     <div class="cover-image">
                         <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[0]._category)}}</span><br>
                                             <h4>{{allArticles[0].title}}</h4>
-                                            <p>{{allArticles[0]._author.name}} . {{allArticles[0].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            <p>{{allArticles[0]._author.name}} . {{allArticles[0].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
                     </div>
@@ -43,7 +43,7 @@
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[1]._category)}}</span><br>
                                             <h4>{{allArticles[1].title}}</h4>
-                                            <p>{{allArticles[1]._author.name}} . {{allArticles[1].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            <p>{{allArticles[1]._author.name}} . {{allArticles[1].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[2]._category)}}</span><br>
                                             <h4>{{allArticles[2].title}}</h4>
-                                            <p>{{allArticles[2]._author.name}} . {{allArticles[2].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            <p>{{allArticles[2]._author.name}} . {{allArticles[2].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
                             </div>
@@ -71,7 +71,7 @@
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[3]._category)}}</span><br>
                                             <h4>{{allArticles[3].title}}</h4>
-                                            <p>{{allArticles[3]._author.name}} . {{allArticles[3].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            <p>{{allArticles[3]._author.name}} . {{allArticles[3].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
                             </div>
@@ -85,7 +85,7 @@
                             <div class="cover-image">
                                 <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[4]._category)}}</span><br>
                                             <h4>{{allArticles[4].title}}</h4>
-                                            <p>{{allArticles[4]._author.name}} . {{allArticles[4].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            <p>{{allArticles[4]._author.name}} . {{allArticles[4].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
                             </div>
@@ -115,7 +115,7 @@
                         <h4><a href="detail.html"> Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
                         <div class="post-info">
                             <p class="author">Tom . Apr 8, 2015</p>
-                            <p class="comments">1</p>
+                            <p class="right">1</p>
                         </div>
                         <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
 
@@ -155,7 +155,7 @@
                         <h4><a>Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
                         <div class="post-info">
                             <p class="author">Tom . Apr 8, 2015</p>
-                            <p class="comments">1</p>
+                            <p class="right">1</p>
                         </div>
                         <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt...</p>
                         <div class="include-post">
@@ -291,7 +291,7 @@
                     </p>
                 </div>
                 <div class="latest-post">
-                    <div ng-repeat="x in Articles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="row post-latest-detail ">
+                    <div ng-repeat="x in allNewArticles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="row post-latest-detail ">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop ">
                             <div class="m-thumbnail resize-height-for-latest ">
                                 <img ng-src="{{x.media}}" alt="" class="portrait">

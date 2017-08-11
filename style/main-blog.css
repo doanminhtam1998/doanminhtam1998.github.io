@@ -428,6 +428,17 @@ h5>a:hover {
 }
 
 
+/* For Footer Image   */
+
+.resize-height-for-main {
+    height: 56px;
+}
+
+.beauty-img {
+    width: 100%;
+}
+
+
 /*Wiget Place  */
 
 .widget {}
