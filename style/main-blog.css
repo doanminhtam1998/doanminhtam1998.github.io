@@ -71,15 +71,19 @@ h5>a:hover {
     box-shadow: 1px 1px 2px #000;
 }
 
-.fix-hack{
+.fix-hack {
     clear: both;
 }
-.left{
+
+.left {
     float: left;
 }
-.right{
+
+.right {
     float: right;
 }
+
+
 /*---------------------
     Header Top
 ---------------------*/
@@ -269,7 +273,8 @@ h5>a:hover {
     color: red;
     text-decoration: none;
 }
-.my-img-cat{
+
+.my-img-cat {
     height: 200px;
 }
 
@@ -383,69 +388,41 @@ h5>a:hover {
 }
 
 
-/* .crop {
-    height: 300px;
-    /* width: 200px; *
-    overflow: hidden;
-}
-
-.crop img {
-    width: 100%;
-    height: auto;
-    top: 50%;
-    position: relative;
-    -webkit-transform: translateY(-50%);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4  *
-    -ms-transform: translateY(-50%);
-    /*  IE 9 *
-    transform: translateY(-50%);
-    /* IE 10,
-    Fx 16+,
-     Op 12.1+    *
-} */
-
-
 /* RESIZE IMAGE */
-.m-thumbnail {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.m-thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  /*height: 100%;*/
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-}
-.thumbnail img.portrait {
-  
-  height: auto;
-}
 
-/*.thumb-center-crop {
+.m-thumbnail {
     position: relative;
-    width:370px;
-    height:250px;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
 }
 
-.thumb-center-crop img {
+.m-thumbnail img {
     position: absolute;
-    left:50%;
-    top:50%;
-    height:100%;
+    left: 50%;
+    top: 50%;
+    /*height: 100%;*/
     width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
-.thumb-center-crop img.potrait {
-    width: 100%;
-    height: auto;
+
+.m-thumbnail img.portrait {
+    min-width: 100%;
+    min-height: 100%;
 }
-*/
+
+
+/* For Image Latest Post  */
+
+.resize-height-for-latest {
+    height: 265px;
+}
+
+
+/*Wiget Place  */
+
 .widget {}
 
 .widget-page {
@@ -504,7 +481,6 @@ h5>a:hover {
     background-color: red;
     cursor: pointer;
 }
-
 
 
 /*---------------------

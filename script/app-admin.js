@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['textAngular']);
+var app = angular.module('myApp', ['textAngular', 'ngTagsInput']);
 app.controller("myCtrl", function($scope, $http) {
     var root = "https://green-web-blog.herokuapp.com";
 
@@ -18,17 +18,9 @@ app.controller("myCtrl", function($scope, $http) {
 
     };
 
-    // $scope.getCatNameOFArt = function() {
-    //     if (!undefined = $scope.categories) {
-    //         for (i = 0; i < $scope.categories.length; i++) {
-    //             var cat = $scope.categories[i];
-    //             if (cat._id == id) {
-    //                 return cat.name
-    //             };
-    //         };
-    //     };
 
-    // };
+
+
 
     $scope.getCategoryNameOfArticle = function(id) {
 
@@ -80,6 +72,7 @@ app.controller("myCtrl", function($scope, $http) {
                 // console.log(data, status, headers, config);
             });
     };
+
 
     $scope.login = function() {
         //console.log($scope.user);
