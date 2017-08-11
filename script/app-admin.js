@@ -36,7 +36,19 @@ app.controller("myCtrl", function($scope, $http) {
     };
 
 
+    $scope.getArticleID = function(id) {
 
+
+
+
+        angular.forEach($scope.articles, function(value, key) {
+            if (value._id === id) {
+
+                $scope.article = value;
+                return false;
+            }
+        });
+    };
 
     $scope.submitCreateCategory = function() {
 
@@ -67,7 +79,7 @@ app.controller("myCtrl", function($scope, $http) {
         $http.post(root + '/api/articles/', $scope.newArticle)
             .then(function successCallbak(response) {
                 alert("Thành công");
-                window.location.href = 'admin.html';
+                window.location.href = 'admin-article-list.html';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
@@ -95,10 +107,4 @@ app.controller("myCtrl", function($scope, $http) {
     };
 
 
-
-
-    // var init = function() {
-    //     apiGetCat();
-    // }
-    // init();
 });

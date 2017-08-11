@@ -1,7 +1,7 @@
 .wrapped-page {}
 
 * {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Lora', serif;
 }
 
 h4>a {
@@ -417,24 +417,24 @@ h5>a:hover {
 /* For Image Latest Post  */
 
 .resize-height-for-latest {
-    height: 265px;
+    height: 245px;
 }
 
 
 /* For Main Image   */
 
 .resize-height-for-main {
-    height: 436px;
+    height: 430px;
 }
 
 
 /* For Footer Image   */
 
-.resize-height-for-main {
+.resize-height-for-footer-post {
     height: 56px;
 }
 
-.beauty-img {
+.m-thumbnail img.beauty-img {
     width: 100%;
 }
 
