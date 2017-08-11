@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize']);
 
 // configure our routes
 scotchApp.config(['$locationProvider', function($locationProvider) {
@@ -27,11 +27,11 @@ scotchApp.config(function($routeProvider) {
 
 });
 
-scotchApp.controller('mainController', function($scope, $http, $routeParams, $location) {
+scotchApp.controller('mainController', function($scope, $http, $routeParams, $location, $sanitize) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
     var maxRandomArticleNumber = 5;
-    var numberToGetArticle = 5;
+    var maxPopularArticlesNumber = 5;
     var idCat1 = "5983510622fd58000478aaa8";
     var idCat2 = "5981d787b38ced0004f0c5db";
     var idCat3 = "5981d805b38ced0004f0c5dd";
@@ -64,18 +64,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
 
 
-    $scope.getCategoryNameOfArticle = function(id) {
 
-        if (undefined != $scope.Categories) {
-            for (i = 0; i < $scope.Categories.length; i++) {
-                var cat = $scope.Categories[i];
-                if (cat._id == id) {
-                    return cat.name;
-                };
-            };
-        };
-
-    };
 
 
     $scope.getArticleID = function() {
@@ -87,6 +76,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     $scope.getAllArticleinCategories = function() {
         $scope.currentCategoryID = $routeParams.id;
         $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
+
     }
     var getArticlesById = function(id, maximumArticle) {
         if (maximumArticle === undefined) {
@@ -105,6 +95,20 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         return articles;
         console.log("Articles in Id:" + id + articles);
     };
+
+    $scope.getCategoryNameOfArticle = function(id) {
+
+        if (undefined != $scope.Categories) {
+            for (i = 0; i < $scope.Categories.length; i++) {
+                var cat = $scope.Categories[i];
+                if (cat._id == id) {
+                    return cat.name;
+                };
+            };
+        };
+
+    };
+
 
 
 
@@ -184,7 +188,9 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                     $scope.currentPage = 1; //reset to first pahe
                 }
                 //Update Popular Articles
-            $scope.listArticleForPoular = newArticles.slice(0, numberToGetArticle);
+            $scope.allArticles = newArticles;
+            $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
+
             //Update random articles
             $scope.randomArticles = [];
             var listArticles = newArticles.slice();

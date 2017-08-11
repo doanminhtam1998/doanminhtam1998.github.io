@@ -5,7 +5,7 @@
                 <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="">Tennis</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="">{{article.title}}</a>
             </div>
             <div class="main-title">
-                <span class="emphasis">Tennis</span>
+                <span class="emphasis">{{Tennis}}</span>
                 <h1 class="text-in-page">{{article.title}}</h1>
                 <p class="author text-in-page">By {{article.author.name}} . {{article.createdDate | date:'dd-MM-yyyy HH:mm:ss'}} <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
             </div>
@@ -52,11 +52,7 @@
                                 <figcaption class="figure text-in-page for-info">Write something there</figcaption>
                             </figure>
 
-                            <p class="text-in-page justified">
-                                {{article.content}}
-
-
-                            </p>
+                            <div ng-bind-html="article.content"></div>
                             <div class="place-share">
                                 <p class="share-text"><b>Share        </b></p>
                                 <a class="socialbox facebook" href="https://www.facebook.com">
@@ -197,7 +193,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 widget">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
                     <div class="post-title">
                         <p class="title">
                             OUR FACEBOOK
@@ -214,18 +210,11 @@
                         </p>
                     </div>
                     <div class="widget-page">
-                        <div class="widget-page-section">
-                            <h4><a href="">Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                            <p class="emphasis-small"> Cycling tour</p>
+                        <div ng-repeat="x in randomArticles " class="widget-page-section">
+                            <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
+                            <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category)}}</p>
                         </div>
-                        <div class="widget-page-section">
-                            <h4><a> Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                            <p class="emphasis-small">Cycling tour</p>
-                        </div>
-                        <div class="widget-page-section">
-                            <h4><a>Pedal power sees Amy complete world toughest cycle challenge</a></h4>
-                            <p class="emphasis-small">Cycling tour</p>
-                        </div>
+
                     </div>
                     <div class="post-title">
                         <p class="emphasis">
@@ -235,7 +224,7 @@
                     <div class="widget-page">
                         <div class="widget-page-section">
                             <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                            <h3 class="for-title"><a href="">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
+                            <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
                             <div class="post-info-latest">
                                 <p class="emphasis">Cycling</p>
                                 <p class="author">Tom . Apr 8, 2015</p>
@@ -249,7 +238,7 @@
                                     <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                                 </div>
                                 <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                    <h5 class="for-title"><a href=""><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                    <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                     <p>May 8, 2015</p>
                                 </div>
                             </div>
@@ -260,7 +249,7 @@
                                     <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                                 </div>
                                 <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                    <h5 class="for-title"><a href=""><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                    <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                     <p>May 8, 2015</p>
                                 </div>
                             </div>
@@ -271,7 +260,7 @@
                                     <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
                                 </div>
                                 <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                    <h5 class="for-title"><a href=""><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
+                                    <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
                                     <p>May 8, 2015</p>
                                 </div>
                             </div>
@@ -283,17 +272,7 @@
                         </div>
                         <div class="widget-page">
                             <ul>
-                                <li>Billiard</li>
-                                <li>Featured </li>
-                                <li>Sports News</li>
-                                <ul>
-                                    <li>Tennis</li>
-                                    <li>Soccer</li>
-                                    <li>WRC</li>
-                                    <li>BOXING</li>
-                                </ul>
-                                <li>Sport Today</li>
-                                <li>Video </li>
+                                <li ng-repeat="x in Categories">{{x.name}}</li>
 
                             </ul>
                         </div>

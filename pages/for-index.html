@@ -19,11 +19,16 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 main-image">
                 <div class="bg-image">
-                    <img src="http://via.placeholder.com/1200x940" class="img-responsive img-bg">
+                    <div class="img-post-detail">
+                        <div class="m-thumbnail resize-height-for-main">
+                            <img ng-src="{{allArticles[0].media}}" class="portrait ">
+                        </div>
+                    </div>
                     <div class="cover-image">
-                        <a href="detail.html"><span class="trending">Football</span><br>
-                                            <h4>Manchester City won the troply</h4>
-                                            <p>Tom . July 5<sup>th</sup></p>
+                        <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[0]._category)}}</span><br>
+                                            <h4>{{allArticles[0].title}}</h4>
+                                            <p>{{allArticles[0]._author.name}} . {{allArticles[0].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            
                                 </a>
                     </div>
                 </div>
@@ -32,48 +37,61 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
                         <div class="bg-image">
-                            <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+                            <div class="m-thumbnail ">
+                                <img ng-src="{{allArticles[1].media}}" class="portrait ">
+                            </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">Golf</span><br>
-                                                    <h4>Everything is ready for the season</h4>
-                                                    
-                                                    </a>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[1]._category)}}</span><br>
+                                            <h4>{{allArticles[1].title}}</h4>
+                                            <p>{{allArticles[1]._author.name}} . {{allArticles[1].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
                         <div class="bg-image">
-                            <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+                            <div class="m-thumbnail ">
+                                <img ng-src="{{allArticles[2].media}}" class="portrait ">
+                            </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">Golf</span><br>
-                                                    <h4>Everything is ready for the season</h4>
-                                                    
-                                                    </a>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[2]._category)}}</span><br>
+                                            <h4>{{allArticles[2].title}}</h4>
+                                            <p>{{allArticles[2]._author.name}} . {{allArticles[2].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
                         <div class="bg-image">
-                            <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+                            <div class="m-thumbnail ">
+                                <img ng-src="{{allArticles[3].media}}" class="portrait ">
+                            </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">Golf</span><br>
-                                                    <h4>Everything is ready for the season</h4>
-                                                    
-                                                    </a>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[3]._category)}}</span><br>
+                                            <h4>{{allArticles[3].title}}</h4>
+                                            <p>{{allArticles[3]._author.name}} . {{allArticles[3].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6 small-image">
                         <div class="bg-image">
-                            <img src="http://via.placeholder.com/600x460" class="img-responsive img-bg">
+                            <div class="m-thumbnail ">
+                                <img ng-src="{{allArticles[4].media}}" class="portrait ">
+                            </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">Golf</span><br>
-                                                    <h4>Everything is ready for the season</h4>
-                                                    
-                                                    </a>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[4]._category)}}</span><br>
+                                            <h4>{{allArticles[4].title}}</h4>
+                                            <p>{{allArticles[4]._author.name}} . {{allArticles[4].createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                            
+                                </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -94,7 +112,7 @@
                             <img src="http://via.placeholder.com/400x200" class="img-responsive">
                             <div class="trending category">Football</div>
                         </div>
-                        <h4><a> href="detail.html"Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
+                        <h4><a href="detail.html"> Brazil-Ecuador Preview: Dunga men on road to redemption</a></h4>
                         <div class="post-info">
                             <p class="author">Tom . Apr 8, 2015</p>
                             <p class="comments">1</p>
@@ -177,7 +195,7 @@
                 <div class="row post-pop-detail">
                     <div ng-repeat="x in articlesInCat1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
                         <div class="img-post-detail thumbnai">
-                            <div class="m-thumnail">
+                            <div class="m-thumbnail">
                                 <img src="{{x.media}}" class="my-img-cat portrait">
                             </div>
                             <div class="trending category">Điện Ảnh</div>
@@ -287,7 +305,7 @@
 
                             </div>
                             <div class="text ellipsis">
-                                <p class="justified text-concat text-for-latest ">{{x.content}}</p>
+                                <p ng-bind-html="x.content" class="justified text-concat text-for-latest "></p>
                             </div>
                             <div class="read-more">
                                 <span class="rm"><a href="#detail/{{x._id}}"> Read More</a></span>
@@ -317,7 +335,7 @@
                 </div>
             </div>
 
-
+            <!-- Widget -->
 
             <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
                 <div class="post-title">
