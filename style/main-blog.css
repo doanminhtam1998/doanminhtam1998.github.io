@@ -4,6 +4,11 @@
     font-family: 'Lora', serif;
 }
 
+a {
+    color: black;
+    cursor: pointer;
+}
+
 h4>a {
     color: black;
     cursor: pointer;
@@ -261,6 +266,8 @@ h5>a:hover {
     bottom: 30px;
     left: 20px;
     padding-right: 10px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .image-category .cover-image a {
@@ -273,6 +280,8 @@ h5>a:hover {
     color: red;
     text-decoration: none;
 }
+
+.image-category .cover-around-image {}
 
 .my-img-cat {
     height: 200px;
@@ -379,7 +388,7 @@ h5>a:hover {
 }
 
 .text-for-latest {
-    max-height: 8.6em;
+    max-height: 4.2em;
 }
 
 .text-for-title {
@@ -413,11 +422,22 @@ h5>a:hover {
     min-height: 100%;
 }
 
+.rm>.read-more {
+    color: white;
+    margin-top: 10px;
+}
+
+.rm>.read-more:hover {
+    color: white;
+    background-color: red;
+    text-decoration: none;
+}
+
 
 /* For Image Latest Post  */
 
 .resize-height-for-latest {
-    height: 245px;
+    height: 225px;
 }
 
 

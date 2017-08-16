@@ -224,6 +224,14 @@ My Page
     display: inline-block;
 }
 
+.my-article {
+    padding: 10px 0px;
+}
+
+.my-article:nth-child(even) {
+    background-color: #e0dbdb;
+}
+
 
 /*-------------------------------
 Modal 

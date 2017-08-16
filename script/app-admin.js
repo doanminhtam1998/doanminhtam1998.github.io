@@ -37,10 +37,6 @@ app.controller("myCtrl", function($scope, $http) {
 
 
     $scope.getArticleID = function(id) {
-
-
-
-
         angular.forEach($scope.articles, function(value, key) {
             if (value._id === id) {
 
@@ -49,6 +45,27 @@ app.controller("myCtrl", function($scope, $http) {
             }
         });
     };
+
+    $scope.updateArticle = function() {
+        $scope.article._author = "5981d84fb38ced0004f0c5df";
+        $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
+            .then(function successCallback(response) {
+
+                window.location.href = 'admin-article-list.html';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
+
+    $scope.deleteArticle = function() {
+        $http.delete(root + '/api/articles/' + $scope.article._id)
+            .then(function successCallback(response) {
+                console.log('You have already deleted the articles')
+                window.location.href = 'admin-article-list.html';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
 
     $scope.submitCreateCategory = function() {
 

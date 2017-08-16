@@ -20,16 +20,20 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 main-image">
                 <div class="bg-image">
                     <div class="img-post-detail">
+
                         <div class="m-thumbnail resize-height-for-main">
                             <img ng-src="{{allArticles[0].media}}" class="portrait ">
                         </div>
+
                     </div>
-                    <div class="cover-image">
-                        <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[0]._category)}}</span><br>
+                    <div class="cover-around-image">
+                        <div class="cover-image">
+                            <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[0]._category._id)}}</span><br>
                                             <h4>{{allArticles[0].title}}</h4>
                                             <p>{{allArticles[0]._author.name}} . {{allArticles[0].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
                                 </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,7 +45,7 @@
                                 <img ng-src="{{allArticles[1].media}}" class="portrait ">
                             </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[1]._category)}}</span><br>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[1]._category._id)}}</span><br>
                                             <h4>{{allArticles[1].title}}</h4>
                                             <p>{{allArticles[1]._author.name}} . {{allArticles[1].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
@@ -55,7 +59,7 @@
                                 <img ng-src="{{allArticles[2].media}}" class="portrait ">
                             </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[2]._category)}}</span><br>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[2]._category._id)}}</span><br>
                                             <h4>{{allArticles[2].title}}</h4>
                                             <p>{{allArticles[2]._author.name}} . {{allArticles[2].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
@@ -69,7 +73,7 @@
                                 <img ng-src="{{allArticles[3].media}}" class="portrait ">
                             </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[3]._category)}}</span><br>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[3]._category._id)}}</span><br>
                                             <h4>{{allArticles[3].title}}</h4>
                                             <p>{{allArticles[3]._author.name}} . {{allArticles[3].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
@@ -83,7 +87,7 @@
                                 <img ng-src="{{allArticles[4].media}}" class="portrait ">
                             </div>
                             <div class="cover-image">
-                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[4]._category)}}</span><br>
+                                <a href="detail.html"><span class="trending">{{getCategoryNameOfArticle(allArticles[4]._category._id)}}</span><br>
                                             <h4>{{allArticles[4].title}}</h4>
                                             <p>{{allArticles[4]._author.name}} . {{allArticles[4].createdDate | date:'dd-MM-yyyy'}}</p>
                                             
@@ -300,22 +304,22 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest ">
-                                <p class="emphasis">{{getCategoryNameOfArticle(x._category)}}</p>
-                                <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                                <p class="emphasis">{{getCategoryNameOfArticle(x._category._id)}}</p>
+                                <a href="#categories/{{x._author._id}}" class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</a>
 
                             </div>
                             <div class="text ellipsis">
                                 <p ng-bind-html="x.content" class="justified text-concat text-for-latest "></p>
                             </div>
                             <div class="read-more">
-                                <span class="rm"><a href="#detail/{{x._id}}"> Read More</a></span>
+                                <span class="rm"><a class="emphasis read-more" href="#detail/{{x._id}}"> Read More</a></span>
                             </div>
                         </div>
                     </div>
 
 
 
-
+                    <ul uib-pagination total-items="totalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
 
                     <div class="button-next-previous left clearfix">
                         <ul class="pagination trans-page">
@@ -356,7 +360,7 @@
                 <div class="widget-page">
                     <div ng-repeat="x in randomArticles " class="widget-page-section">
                         <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
-                        <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category)}}</p>
+                        <p class="emphasis-small">{{x._category.name}}</p>
                     </div>
 
                 </div>
@@ -423,6 +427,7 @@
 
                 </div>
             </div>
+
 
         </div>
 

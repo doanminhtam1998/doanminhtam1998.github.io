@@ -89,6 +89,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         $scope.currentArticleID = id;
     };
 
+
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
@@ -106,13 +107,16 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         }
         var articles = [];
         angular.forEach($scope.Articles, function(value, key) {
-            if (value._category === id && articles.length < maximumArticle) {
+            if (value._category._id === id && articles.length < maximumArticle) {
                 articles.push(value);
             }
         });
         return articles;
 
     };
+
+
+
     //Begin Get Category name  for article
     $scope.getCategoryNameOfArticle = function(id) {
 

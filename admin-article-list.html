@@ -19,10 +19,6 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/ng-tags-input/ng-tags-input.css">
 
     <!-- This is bootsnipp -->
-    <link rel="stylesheet" href="style/bootstrap_overwrite.css">
-
-
-
     <link rel="stylesheet" type="text/css" href="style/admin-article-list.css">
 </head>
 
@@ -127,7 +123,7 @@
                         <br>
                         <p> All: ({{articles.length}})</p>
 
-                        <div class="panel panel-default">
+                        <div class="panel panel-primary">
 
                             <div class="panel-heading">
 
@@ -136,17 +132,16 @@
                                         <p> <strong> Title</strong></p>
 
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 ">
                                         <p>Author</p>
                                     </div>
                                     <div class="col-lg-2 col-md-2 col-sm-2">Categories</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">Tags</div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 text-right"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="col-lg-2 col-md-2 col-sm-2">Tags</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2">
                                         <p>Date</p>
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-                                        <p>Status</p>
+                                    <div class="col-lg-2 col-md-2 col-sm-1">
+                                        Manipulation
                                     </div>
                                 </div>
 
@@ -156,26 +151,29 @@
 
 
 
-                                <div ng-repeat="x in articles" class="row ">
+                                <div ng-repeat="x in articles" class="row my-article">
                                     <div class="col-lg-2 col-md-2 col-sm-12">
                                         <p><strong> {{x.title}}</strong></p>
-                                        <span class="view-more"><p><a href="">View</a> | <a ng-click="getArticleID(x._id)" data-toggle="modal" href='#edit-modal'>Edit</a> | <a href="">Delete</a></p></span>
+
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-center">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 ">
                                         <p>{{x._author.name}}</p>
                                     </div>
                                     <div ng-init="apiGetCat()" class="col-lg-2 col-md-2 col-sm-2">
-                                        <p>{{getCategoryNameOfArticle(x._category)}}</p>
+                                        <p>{{getCategoryNameOfArticle(x._category._id)}}</p>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 ">travel, train</div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1 text-right"><span class="badge">{{x.tags.length}}</span></div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3">
-                                        <p>{{x.updatedDate}}</p>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 ">
+                                        <p ng-repeat="tag in x.tags">{{tag}}, </p>
+                                    </div>
+
+                                    <div class="col-lg-2 col-md-2 col-sm-3">
+                                        <p>{{x.updatedDate|date:'dd-MM-yyyy'}}</p>
 
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-1">
-
-                                        <span class="label label-primary">Publish</span>
+                                    <div class="col-lg-2 col-md-2 col-sm-1">
+                                        <a class="btn btn-primary btn-sm" ng-click="getArticleID(x._id)" data-toggle="modal" href='#edit-modal'>Edit</a> | <a class="btn btn-danger btn-sm" data-toggle="modal" href='#delete-modal' ng-click="getArticleID(x._id)">Delete</a></p>
+                                        </span>
+                                        <span class="label label-primary"></span>
 
                                     </div>
 
@@ -234,32 +232,52 @@
     </div>
 
 
+
+    <div class="modal fade" id='delete-modal'>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Do you sure?</h4>
+                </div>
+                <div class="modal-footer">
+                    <form ng-submit="deleteArticle()">
+                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="modal fade" id="edit-modal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Edit Article</h4>
+                    <h4 class="modal-title text-center"><b>Edit Article</b></h4>
                 </div>
                 <div class="modal-body">
                     <form ng-submit="submitCreateArticle()" role="form" class="my-form fix-hack" ng-init="apiGetCat()">
                         <label>Add Title</label>
                         <input type="text" ng-model="article.title" class="form-control" class="input-title">
-                        <h3>Add Categories</h3>
+                        <label>Add Categories</label>
 
-                        <select name="" id="" class="form-control" ng-selected="article._category" ng-model="article._category" ng-options="category as category.name for category in categories track by category._id">
-                               
-                            </select>
-                        <h3>Add Decriptions</h3>
+                        <select ng-model="article._category" ng-required="true" class="form-control" ng-options="category as category.name for category in categories track by category._id" />
+
+                        </select>
+                        <label>Add Description</label>
                         <input type="text" ng-model="article.description" class="form-control" class="input-title">
-                        <h3>Add Detail for post</h3>
+                        <label>Add Content</label>
                         <text-angular ng-model="article.content"></text-angular>
 
 
-                        <h3>Add Media for post</h3>
+                        <label>Add Media</label>
                         <input type="text" ng-model="article.media" class="form-control">
 
-                        <h3>Add Tags for post</h3>
+                        <label>Add Tags</label>
                         <tags-input use-strings="true" ng-model="article.tags">
 
                         </tags-input>
@@ -270,7 +288,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Update</button>
+                    <button ng-click="updateArticle()" type="button" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
