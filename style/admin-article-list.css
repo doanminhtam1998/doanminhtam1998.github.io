@@ -224,6 +224,11 @@ My Page
     display: inline-block;
 }
 
+.btn-add-new {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 .my-article {
     padding: 10px 0px;
 }

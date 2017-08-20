@@ -35,7 +35,25 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     var idCat1 = "5983510622fd58000478aaa8";
     var idCat2 = "5981d787b38ced0004f0c5db";
     var idCat3 = "5981d805b38ced0004f0c5dd";
-    //Begin Sort Array
+    var myId = "5981d84fb38ced0004f0c5df";
+    $scope.myComments = "";
+    $scope.newComment = {
+        '_user': {
+            '_id': '5981d84fb38ced0004f0c5df'
+
+        },
+        'commentContent': 'Hello everybody',
+        'createdDate': {
+
+            'default': Date.now()
+        },
+        'updatedDate': {
+
+            'default': Date.now()
+        },
+    };
+    console.log($scope.newComment)
+        //Begin Sort Array
     var compareValues = function(key, order = 'asc') {
         return function(a, b) {
             if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -163,6 +181,32 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         });
     }
 
+
+    // Add comments for detail
+
+    $scope.addCommentforArticle = function() {
+
+        if ($scope.myComments != "") {
+            $scope.article._author = "5981d84fb38ced0004f0c5df";
+
+            $scope.newComment._user._id = myId;
+            $scope.newComment.commentContent = $scope.myComments;
+            $scope.article.comments.push($scope.newComment);
+            $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
+                .then(function successCallback(response) {
+
+                    alert("Success");
+                    $scope.myComments = "";
+
+                }, function errorCallback(response) {
+                    // console.log(data, status, headers, config);
+                });
+        } else {
+            alert('Please enter your comments');
+        }
+
+    }
+
     //Scope watch
     $scope.$watchCollection("Articles", function(newArticles, oldArticles) {
 
@@ -186,7 +230,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             $scope.getAllArticleinCategories();
 
             //Begin Pagination
-            $scope.viewby = 3;
+            $scope.viewby = 5;
             $scope.totalItems = newArticles.length;
             $scope.currentPage = 1;
             $scope.itemsPerPage = $scope.viewby;
@@ -201,10 +245,12 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             };
 
             $scope.setItemsPerPage = function(num) {
-                    $scope.itemsPerPage = num;
-                    $scope.currentPage = 1; //reset to first pahe
-                }
-                //Update Popular Articles
+                $scope.itemsPerPage = num;
+                $scope.currentPage = 1;
+            }
+
+
+            //Update Popular Articles
             $scope.allArticles = newArticles;
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
             //Update New Articles

@@ -2,10 +2,11 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    line-height: 15pt;
 }
 
 a {
-    color: black;
+    color: #383737;
     cursor: pointer;
 }
 
@@ -176,7 +177,7 @@ h5>a:hover {
 .my-nav {
     background-color: #383737;
     background-image: none;
-    border: 1px #000 solid;
+    border: 1px #383737 solid;
     border-radius: 0px;
     font-size: 16px;
 }
@@ -231,15 +232,14 @@ h5>a:hover {
 
 .trending {
     float: left;
-    border: 1px #000 solid;
-    box-shadow: 1px 1px 2px #000;
+    border: 1px #383737 solid;
     padding: 3px 12px;
-    background-color: #000;
+    background-color: #383737;
     color: white;
 }
 
 .trending-info {
-    width: 998px;
+    width: 988px;
     padding-top: 2px;
 }
 
@@ -256,7 +256,7 @@ h5>a:hover {
 
 .main-image {
     position: relative;
-    height: 430px;
+    height: 460px;
 }
 
 .bg-image {
@@ -289,20 +289,20 @@ h5>a:hover {
     position: relative;
     top: -430px;
     /* background-color: rgba(0,0,0,0.2); */
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.6));
-    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
 
 .image-category .cover-around-other-image {
     height: 200px;
     top: -200px;
     position: relative;
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.6));
-    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
 
 
@@ -333,23 +333,23 @@ h5>a:hover {
     padding-bottom: 20px;
 }
 .post-title {
-    border-bottom: #000 1px solid;
+    border-bottom: #383737 1px solid;
 }
 .post-title>.emphasis {
     font-size: 14px;
 }
 .post-title>.title {
     color: white;
-    background-color: #000;
-    border: 1px #000 solid;
+    background-color: #383737;
+    border: 1px #383737 solid;
     display: inline-block;
     padding: 5px;
     margin-bottom: 0px;
-    box-shadow: 1px 1px 2px #000;
+    box-shadow: 1px 1px 2px #383737;
 }
 .post-pop-detail {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .post-pop-detail>.pop-col {
     position: relative;
@@ -394,7 +394,10 @@ h5>a:hover {
     left: 50%;
 }
 .post-latest-detail {
-    padding-top: 20px;
+    padding-top: 40px;
+}
+.post-content {
+    padding: 10px 0px;
 }
 .text-for-latest {
     max-height: 4.2em;
@@ -429,6 +432,7 @@ h5>a:hover {
 .rm>.read-more {
     color: white;
     margin-top: 10px;
+    padding: 11px 18px;
 }
 .rm>.read-more:hover {
     color: white;
@@ -465,11 +469,10 @@ h5>a:hover {
 }
 .emphasis {
     color: white;
-    background-color: #000;
-    border: 1px #000 solid;
+    background-color: #383737;
+    border: 1px #383737 solid;
     display: inline-block;
     margin-bottom: 0px;
-    box-shadow: 1px 1px 2px #000;
     font-size: 12px;
     padding: 2px 9px;
 }
@@ -558,4 +561,9 @@ h5>a:hover {
     padding-right: 10px;
     float: left;
     font-size: 25px;
+}
+.footer-title {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
 }

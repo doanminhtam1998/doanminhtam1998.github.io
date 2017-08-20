@@ -46,6 +46,27 @@ app.controller("myCtrl", function($scope, $http) {
         });
     };
 
+    $scope.getCategoryId = function(id) {
+        angular.forEach($scope.categories, function(value, key) {
+            if (value._id === id) {
+
+                $scope.category = value;
+                return false;
+            }
+        });
+    }
+
+    $scope.deleteCategory = function() {
+        $http.delete(root + '/api/categories/' + $scope.category._id)
+            .then(function successCallback(response) {
+                window.location.href = 'admin-category-list.html';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
+
+    // Article delete and update
+
     $scope.updateArticle = function() {
         $scope.article._author = "5981d84fb38ced0004f0c5df";
         $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
@@ -60,12 +81,15 @@ app.controller("myCtrl", function($scope, $http) {
     $scope.deleteArticle = function() {
         $http.delete(root + '/api/articles/' + $scope.article._id)
             .then(function successCallback(response) {
-                console.log('You have already deleted the articles')
                 window.location.href = 'admin-article-list.html';
             }, function errorCallback(response) {
                 // console.log(data, status, headers, config);
             });
     }
+
+    // Category delete and update
+
+
 
     $scope.submitCreateCategory = function() {
 

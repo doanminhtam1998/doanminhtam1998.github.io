@@ -156,7 +156,7 @@
                                         <div ng-repeat="x in categories" class="row ">
                                             <div class="col-lg-4 col-md-4 col-sm-12">
                                                 <p><input type="checkbox" name=""> <strong> {{x.name}}</strong></p>
-                                                <span class="view-more"><p><a href="">View</a> | <a  data-toggle="modal" href='.modal-edit'>Edit</a> | <a href="">Delete</a></p></span>
+                                                <span class="view-more"><a  data-toggle="modal" href='#delete-modal' ng-click="getCategoryId(x._id)">Delete</a></span>
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-5 ">
                                                 <p>{{x.description}}</p>
@@ -194,9 +194,9 @@
 
                             <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
                                 <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
-                                    <h3 class="title_input">Add Title</h3>
+                                    <label class="title_input">Add Title</label>
                                     <input type="text" val="" ng-model="newCategory.name" class="form-control input-title cat-input">
-                                    <h3 class="title_input">Add Description</h3>
+                                    <label class="title_input">Add Description</label>
                                     <textarea class="form-control" val="" ng-model="newCategory.description" class="my-form-area cat-input" rows="5">
 
                                     </textarea><br>
@@ -231,7 +231,22 @@
         </div>
     </div>
 
-
+    <div class="modal fade" id='delete-modal'>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center">Do you sure?</h4>
+                </div>
+                <div class="modal-footer">
+                    <form ng-submit="deleteCategory()">
+                        <button type="submit" class="btn btn-danger">Yes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade modal-edit" id="modal-id">
         <div class="modal-dialog">

@@ -1,19 +1,21 @@
 <div ng-init="getArticleID()" class="container my-page">
     <div>
-        <header class="detail-header">
-            <div class="link-post">
-                <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#categories/{{article._category}}">{{getCategoryNameOfArticle(article._category)}}</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#detail/{{article._id}}">{{article.title}}</a>
-            </div>
-            <div class="main-title">
-                <span class="emphasis">{{getCategoryNameOfArticle(article._category)}}</span>
-                <h1 class="text-in-page">{{article.title}}</h1>
-                <p class="author text-in-page">By {{article._author.name}} . {{article.createdDate | date:'dd-MM-yyyy HH:mm:ss'}} <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
-            </div>
 
-        </header>
         <div class="post-section">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 main-page">
+                    <header class="detail-header">
+                        <div class="link-post">
+                            <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#categories/{{article._category}}">{{getCategoryNameOfArticle(article._category._id)}}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            <a href="#detail/{{article._id}}">{{article.title}}</a>
+                        </div>
+                        <div class="main-title">
+                            <span class="emphasis">{{getCategoryNameOfArticle(article._category._id)}}</span>
+                            <h1 class="text-in-page">{{article.title}}</h1>
+                            <p class="author text-in-page">By {{article._author.name}} . {{article.createdDate | date:'dd-MM-yyyy HH:mm:ss'}} <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
+                        </div>
+
+                    </header>
                     <div class="share-place">
                         <div>
                             <a class="socialbox facebook" href="https://www.facebook.com">
@@ -104,16 +106,13 @@
                                 </p>
 
                             </div>
-                            <form role="form" class="comments-place">
+                            <form ng-submit="addCommentforArticle()" role="form" class="comments-place">
 
 
                                 <div class="form-group">
-                                    <label for="">Name*:</label>
-                                    <input type="text" class="form-control input-place" id="" placeholder="Your email" ng-model="name" required="required"><br>
-                                    <label for="">Email*:</label>
-                                    <input type="email" class="form-control input-place" id="" placeholder="Your email" ng-model="email" required="required"><br>
+
                                     <label for="">Comments*:</label>
-                                    <textarea name="" id="input" class="form-control input-place" rows="4" required="required" placeholder="Your comments" ng-model="comments"></textarea>
+                                    <textarea name="" id="input" class="form-control input-place" rows="4" required="required" placeholder="Your comments" ng-model="myComments"></textarea>
                                 </div>
 
                                 <button type="submit" class="my-button">Send it</button>
@@ -193,7 +192,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 widget">
                     <div class="post-title">
                         <p class="title">
                             OUR FACEBOOK
@@ -212,7 +211,7 @@
                     <div class="widget-page">
                         <div ng-repeat="x in randomArticles " class="widget-page-section">
                             <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
-                            <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category)}}</p>
+                            <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category._id)}}</p>
                         </div>
 
                     </div>

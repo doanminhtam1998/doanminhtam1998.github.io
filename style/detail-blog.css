@@ -83,20 +83,6 @@ h5>a:hover {
     left: 50%;
 }
 
-.post-title {
-    border-bottom: #000 1px solid;
-}
-
-.post-title>.title {
-    color: white;
-    background-color: #000;
-    border: 1px #000 solid;
-    display: inline-block;
-    padding: 5px;
-    margin-bottom: 0px;
-    box-shadow: 1px 1px 2px #000;
-}
-
 .figure {
     font-size: 12px;
 }
@@ -239,15 +225,6 @@ h5>a:hover {
     Navigation
 ---------------------*/
 
-.my-nav {
-    background-color: #0a0a0a;
-    background-image: none;
-    border: 1px #000 solid;
-    border-radius: 0px;
-    font-size: 16px;
-    margin-bottom: 0px;
-}
-
 .menu-place {
     padding-left: 0px;
 }
@@ -297,7 +274,8 @@ h5>a:hover {
 
 .post-section {
     background-color: white;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     min-width: 300px;
 }
 
