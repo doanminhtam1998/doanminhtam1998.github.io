@@ -465,7 +465,7 @@ h5>a:hover {
     margin-bottom: 20px;
 }
 .widget-page-section {
-    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .emphasis {
     color: white;
@@ -473,8 +473,8 @@ h5>a:hover {
     border: 1px #383737 solid;
     display: inline-block;
     margin-bottom: 0px;
-    font-size: 12px;
-    padding: 2px 9px;
+    font-size: 10px;
+    padding: 1px 9px;
 }
 .emphasis:hover {
     background-color: #ff4141;
@@ -566,4 +566,9 @@ h5>a:hover {
     padding-top: 10px;
     padding-bottom: 20px;
     text-align: center;
+}
+
+/* More effect */
+.not-visible {
+    visibility: hidden;
 }

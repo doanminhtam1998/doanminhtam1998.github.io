@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- This is bootsnipp -->
-
+    <link rel="stylesheet" href="/bower_components/angular-scroll-animate/dist/animate.css">
     <link rel="stylesheet" type="text/css" href="style/main-blog.css">
     <link rel="stylesheet" type="text/css" href="style/detail-blog.css">
     <link rel="stylesheet" href="style/login-register.css">
@@ -72,7 +72,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse menu-place">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/">HOME</a></li>
+                        <li class="active"><a href="#">HOME</a></li>
 
                         <li ng-repeat=" x in Categories"><a href="#categories/{{x._id}}">{{x.name}}</a></li>
                         <li class="dropdown">
@@ -314,7 +314,7 @@
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 <script type="text/javascript" src="library/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
-
+<script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
 <script src="/script/app-index.js"></script>
 
 </html>

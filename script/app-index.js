@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize', 'angular-scroll-animate']);
 
 // configure our routes
 scotchApp.config(['$locationProvider', function($locationProvider) {
@@ -52,31 +52,42 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             'default': Date.now()
         },
     };
-    console.log($scope.newComment)
-        //Begin Sort Array
+
+    //Begin Sort Array
     var compareValues = function(key, order = 'asc') {
-        return function(a, b) {
-            if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-                // property doesn't exist on either object
-                return 0;
-            }
+            return function(a, b) {
+                if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                    // property doesn't exist on either object
+                    return 0;
+                }
 
-            const varA = (typeof a[key] === 'string') ?
-                a[key].toUpperCase() : a[key];
-            const varB = (typeof b[key] === 'string') ?
-                b[key].toUpperCase() : b[key];
+                const varA = (typeof a[key] === 'string') ?
+                    a[key].toUpperCase() : a[key];
+                const varB = (typeof b[key] === 'string') ?
+                    b[key].toUpperCase() : b[key];
 
-            let comparison = 0;
-            if (varA > varB) {
-                comparison = 1;
-            } else if (varA < varB) {
-                comparison = -1;
-            }
-            return (
-                (order == 'desc') ? (comparison * -1) : comparison
-            );
-        };
-    }
+                let comparison = 0;
+                if (varA > varB) {
+                    comparison = 1;
+                } else if (varA < varB) {
+                    comparison = -1;
+                }
+                return (
+                    (order == 'desc') ? (comparison * -1) : comparison
+                );
+            };
+        }
+        //begin Animation
+
+    $scope.animateElementIn = function($el) {
+        $el.removeClass('hidden');
+        $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+    };
+
+    $scope.animateElementOut = function($el) {
+        $el.addClass('hidden');
+        $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+    };
 
     //Get Category and Article
     $scope.apiGetCat = function() {
@@ -212,6 +223,15 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
 
         if (newArticles != undefined) {
+            $scope.animateElementIn = function($el) {
+                $el.removeClass('hidden');
+                $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+            };
+
+            $scope.animateElementOut = function($el) {
+                $el.addClass('hidden');
+                $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+            };
             //Begin Find current article
             angular.forEach(newArticles, function(value, key) {
                 if (value._id === $scope.currentArticleID) {

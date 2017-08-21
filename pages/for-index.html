@@ -116,12 +116,13 @@
 
     <div class="main-blog">
         <div class="row">
-            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 post-place">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 post-place">
                 <div class="post-title">
                     <p class="title">
                         POPULAR NEWS
                     </p>
                 </div>
+
                 <div class="row post-pop-detail">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pop-col">
                         <div class="img-post-detail">
@@ -202,6 +203,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="post-title">
                     <p class="title">
                         Điện Ảnh
@@ -209,14 +211,14 @@
 
                 </div>
                 <div class="row post-pop-detail">
-                    <div ng-repeat="x in articlesInCat1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col">
+                    <div ng-repeat="x in articlesInCat1" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pop-col animated fadeInUp">
                         <div class="img-post-detail thumbnai">
                             <div class="m-thumbnail">
                                 <img src="{{x.media}}" class="my-img-cat portrait">
                             </div>
                             <div class="emphasis category">Điện Ảnh</div>
                         </div>
-                        <h4><a href="#detail/{{x.id}}">{{x.title}}</a></h4>
+                        <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
                         <div class="post-info">
                             <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 
@@ -318,10 +320,12 @@
 
                 </div>
             </div>
+            <div class="col-lg-1 col-md-1">
 
+            </div>
             <!-- Widget -->
 
-            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 widget">
                 <div class="post-title">
                     <p class="title">
                         OUR FACEBOOK
@@ -339,7 +343,7 @@
                 </div>
                 <div class="widget-page">
                     <div ng-repeat="x in randomArticles " class="widget-page-section">
-                        <h5><a href="#detail/{{x._id}}">{{x.title}}</a></h5>
+                        <h5><a href="#detail/{{x._id}}"><b>{{x.title}}</b></a></h5>
                         <p class="emphasis-small">{{x._category.name}}</p>
                     </div>
 

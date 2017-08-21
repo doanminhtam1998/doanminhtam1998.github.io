@@ -1,20 +1,26 @@
 <div ng-init="getArticleID()" class="container my-page">
     <div>
-
+        <div class="link-post">
+            <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <a href="#categories/{{article._category._id}}">{{getCategoryNameOfArticle(article._category._id)}}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <a href="#detail/{{article._id}}">{{article.title}}</a>
+        </div>
         <div class="post-section">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 main-page">
                     <header class="detail-header">
-                        <div class="link-post">
-                            <a href=""> Home</a><i class="fa fa-chevron-right" aria-hidden="true"></i><a href="#categories/{{article._category}}">{{getCategoryNameOfArticle(article._category._id)}}</a><i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            <a href="#detail/{{article._id}}">{{article.title}}</a>
+                        <div class="bg-image">
+                            <div class="m-thumbnail resize-height-for-header">
+                                <img ng-src="{{article.media}}" class="portrait">
+                            </div>
                         </div>
-                        <div class="main-title">
-                            <span class="emphasis">{{getCategoryNameOfArticle(article._category._id)}}</span>
-                            <h1 class="text-in-page">{{article.title}}</h1>
-                            <p class="author text-in-page">By {{article._author.name}} . {{article.createdDate | date:'dd-MM-yyyy HH:mm:ss'}} <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
+                        <div class="cover-around-image">
+                            <div class="main-title">
+                                <span class="emphasis">{{getCategoryNameOfArticle(article._category._id)}}</span>
+                                <h1 class="text-in-page">{{article.title}}</h1>
+                                <p class="author text-in-page">By {{article._author.name}} . {{article.createdDate | date:'dd-MM-yyyy HH:mm:ss'}} <span class="more-inf"><i class="fa fa-eye" aria-hidden="true"></i> 450</span> <span class="more-inf"><i class="fa fa-comments" aria-hidden="true"></i> 2</span></p>
+                            </div>
                         </div>
-
                     </header>
                     <div class="share-place">
                         <div>
@@ -47,14 +53,7 @@
                             </a>
                             <p class="text-in-page justified"><i>{{article.description}}.</i></p>
 
-                            <figure class="text-in-page">
-                                <a href="">
-                                    <img ng-src="{{article.media}}" alt="" class="img-responsive">
-                                </a>
-                                <figcaption class="figure text-in-page for-info">Write something there</figcaption>
-                            </figure>
-
-                            <div ng-bind-html="article.content"></div>
+                            <div class="text-in-page" ng-bind-html="article.content"></div>
                             <div class="place-share">
                                 <p class="share-text"><b>Share        </b></p>
                                 <a class="socialbox facebook" href="https://www.facebook.com">
@@ -192,7 +191,12 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 widget">
+                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+
+                </div>
+                <!-- Widget -->
+
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 widget">
                     <div class="post-title">
                         <p class="title">
                             OUR FACEBOOK
@@ -204,19 +208,19 @@
                             style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </div>
                     <div class="post-title">
-                        <p class="emphasis">
+                        <p class="title">
                             SPORTS NEWS
                         </p>
                     </div>
                     <div class="widget-page">
                         <div ng-repeat="x in randomArticles " class="widget-page-section">
-                            <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
-                            <p class="emphasis-small"> {{getCategoryNameOfArticle(x._category._id)}}</p>
+                            <h5><a href="#detail/{{x._id}}"><b>{{x.title}}</b></a></h5>
+                            <p class="emphasis-small">{{x._category.name}}</p>
                         </div>
 
                     </div>
                     <div class="post-title">
-                        <p class="emphasis">
+                        <p class="title">
                             MOST COMMENTS
                         </p>
                     </div>
@@ -227,7 +231,7 @@
                             <div class="post-info-latest">
                                 <p class="emphasis">Cycling</p>
                                 <p class="author">Tom . Apr 8, 2015</p>
-                                <p class="right">1</p>
+                                <p class="comments">1</p>
                             </div>
                             <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
                         </div>
@@ -265,7 +269,7 @@
                             </div>
                         </div>
                         <div class="post-title">
-                            <p class="emphasis">
+                            <p class="title">
                                 CATEGORY
                             </p>
                         </div>
