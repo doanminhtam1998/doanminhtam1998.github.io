@@ -47,7 +47,7 @@
 
                     <a href=".search" data-toggle="collapse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
                     <form class="search collapse">
-                        <input type="text" name=""><button class="my-button"><b>Go !</b></button>
+                        <input type="text" ng-model="keySearch" name=""><a href="#search/{{keySearch}}" type="submit" class="my-button"><b>Go !</b></a>
                     </form>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="#detail"><b>{{x.title}}</b></a></h5>
+                                <h5 class="for-title"><a href="#detail/{{x._id}}"><b>{{x.title}}</b></a></h5>
                                 <p class="for-info">{{x.createdDate | date: 'MMM d, y'}}</p>
                             </div>
                         </div>

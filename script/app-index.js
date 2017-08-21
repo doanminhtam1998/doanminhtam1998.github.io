@@ -22,8 +22,12 @@ scotchApp.config(function($routeProvider) {
     .when('/categories/:id', {
         templateUrl: 'pages/for-categories.html',
         controller: 'mainController'
-    });
+    })
 
+    .when('/search/:_term', {
+        templateUrl: 'pages/for-search.html',
+        controller: 'mainController'
+    });
 
 });
 
@@ -36,24 +40,24 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     var idCat2 = "5981d787b38ced0004f0c5db";
     var idCat3 = "5981d805b38ced0004f0c5dd";
     var myId = "5981d84fb38ced0004f0c5df";
-    $scope.myComments = "";
-    $scope.newComment = {
-        '_user': {
-            '_id': '5981d84fb38ced0004f0c5df'
-
-        },
-        'commentContent': 'Hello everybody',
-        'createdDate': {
-
-            'default': Date.now()
-        },
-        'updatedDate': {
-
-            'default': Date.now()
-        },
-    };
+    $scope.keySearch = "";
 
     //Begin Sort Array
+    var compare = function(a, b) {
+        // Use toUpperCase() to ignore character casing
+        const genreA = a.comments.length;
+        const genreB = b.comments.length;
+
+        let comparison = 0;
+        if (genreA > genreB) {
+            comparison = -1;
+        } else if (genreA < genreB) {
+            comparison = 1;
+        }
+        return comparison;
+    }
+
+
     var compareValues = function(key, order = 'asc') {
             return function(a, b) {
                 if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -114,10 +118,18 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     };
     $scope.getArticleID = function() {
         var id = $routeParams.id;
-
         $scope.currentArticleID = id;
     };
-
+    //Search Aritcle
+    $scope.getArticleBySearchKey = function() {
+        $scope.keyWord = $routeParams._term;
+        $http.get(root + '/api/articles/search/' + $scope.keyWord)
+            .then(function successCallbak(response) {
+                $scope.articleGetByKey = response.data;
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
+    }
 
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
@@ -196,26 +208,15 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     // Add comments for detail
 
     $scope.addCommentforArticle = function() {
+        $scope.newComment._user = myId;
+        $http.put(root + '/api/article/comment/' + $scope.article._id, $scope.newComment)
+            .then(function successCallbak(response) {
+                $scope.newComment.commentContent = "";
+                $scope.article = response.data;
 
-        if ($scope.myComments != "") {
-            $scope.article._author = "5981d84fb38ced0004f0c5df";
-
-            $scope.newComment._user._id = myId;
-            $scope.newComment.commentContent = $scope.myComments;
-            $scope.article.comments.push($scope.newComment);
-            $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
-                .then(function successCallback(response) {
-
-                    alert("Success");
-                    $scope.myComments = "";
-
-                }, function errorCallback(response) {
-                    // console.log(data, status, headers, config);
-                });
-        } else {
-            alert('Please enter your comments');
-        }
-
+            }, function errorCallback(response) {
+                console.log(data, status, headers, config);
+            });
     }
 
     //Scope watch
@@ -240,6 +241,9 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                     return false;
                 }
             });
+
+
+
             //Begin Find Article in Category
 
             //Const
@@ -269,10 +273,13 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                 $scope.currentPage = 1;
             }
 
-
+            //Update Most Comments Articles
+            $scope.mostCommentsArticles = newArticles.sort(compare);
+            console.log($scope.mostCommentsArticles);
             //Update Popular Articles
             $scope.allArticles = newArticles;
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
+
             //Update New Articles
             var arrayallNewArticles = newArticles.slice();
             $scope.allNewArticles = arrayallNewArticles.sort(compareValues('createdDate', 'desc'));
