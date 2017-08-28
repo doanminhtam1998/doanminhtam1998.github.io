@@ -150,11 +150,10 @@ h5>a:hover {
 .search>.my-button {
     color: white;
     background-color: #000;
-    border: 2px #000 solid;
-    display: inline-block;
+    display: inline;
     padding: 5px;
     margin-bottom: 0px;
-    box-shadow: 1px 1px 2px #000;
+    margin-left: 0px;
 }
 
 .search>.my-button:hover {
@@ -413,6 +412,8 @@ h5>a:hover {
     position: relative;
     width: 100%;
     height: 200px;
+    /* Custom height */
+    
     overflow: hidden;
 }
 .m-thumbnail img {
@@ -443,7 +444,7 @@ h5>a:hover {
 
 /* For Image Latest Post  */
 .resize-height-for-latest {
-    height: 256px;
+    height: 260px;
 }
 
 /* For Main Image   */
@@ -480,10 +481,9 @@ h5>a:hover {
 .emphasis:hover {
     background-color: #ff4141;
 }
-
-}
 .post-info-latest {
     padding: 10px 0px;
+    padding-top: 15px;
 }
 .my-extra-footer {
     background-color: #35373a;
@@ -529,7 +529,7 @@ h5>a:hover {
     color: red
 }
 .foot-pop {
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 .foot-col h3 {
     padding-bottom: 20px;
@@ -564,9 +564,15 @@ h5>a:hover {
     font-size: 25px;
 }
 .footer-title {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
+}
+.title-footer {
+    max-height: 2.6em
+}
+.foot-pop .text.ellipsis::after {
+    color: white;
 }
 
 /* More effect */

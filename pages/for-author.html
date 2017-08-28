@@ -73,70 +73,39 @@
 
                 </div>
                 <div class="post-title">
-                    <p class="emphasis">
+                    <p class="title">
                         MOST COMMENTS
                     </p>
                 </div>
                 <div class="widget-page">
                     <div class="widget-page-section">
-                        <img src="http://via.placeholder.com/400x240" alt="" class="img-responsive">
-                        <h3 class="for-title"><a href="detail.html">Pedal power sees Amy complete world toughest cycle challenge</a></h3>
+                        <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="img-responsive">
+                        <h4 class="for-title"><a href="detail.html">{{mostCommentsArticles[0].title}}</a></h4>
                         <div class="post-info-latest">
-                            <p class="emphasis">Cycling</p>
-                            <p class="author">Tom . Apr 8, 2015</p>
-
+                            <p class="emphasis">{{mostCommentsArticles[0]._category.name}}</p>
+                            <p class="author">{{mostCommentsArticles[0]._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
+                            <p class="right">{{mostCommentsArticles[0].comments.length}}</p>
                         </div>
-                        <p class="justified">All right. Well, take care yourself. I guess that's what you're best, presence old master? A tremor in the Force. The last time felt it was in the presence of my old master. I have traced the Rebel spies...</p>
+                        <p class="justified">{{mostCommentsArticles[0].description}}</p>
                     </div>
                     <div class="widget-page-section">
-                        <div class="row">
+                        <div ng-repeat="x in mostCommentsArticles.slice(1,4)" class="row">
                             <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
+                                <img ng-src="{{x.media}}" alt="title" class="img-responsive">
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p>May 8, 2015</p>
+                                <h5 class="for-title"><a href="detail.html"><b> {{x.title}}</b></a></h5>
+                                <p>{{x.createdDate | date: "dd-mm-yyyy"}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-page-section">
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p>May 8, 2015</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget-page-section">
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img src="http://via.placeholder.com/400x200" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> Sports Bloopers 2015 Funny Sport Fails Compilation</b></a></h5>
-                                <p>May 8, 2015</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-title">
-                        <p class="emphasis">
-                            CATEGORY
-                        </p>
-                    </div>
-                    <div class="widget-page">
-                        <ul>
-                            <li ng-repeat="x in Categories">{{x.name}}</li>
-
-                        </ul>
-                    </div>
-
                 </div>
-            </div>
 
+
+            </div>
         </div>
 
     </div>
+
+</div>
 </div>

@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Tom Blog | News for you</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" href="http://icons.iconarchive.com/icons/benjigarner/summer-collection/256/Network-Web-icon.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -127,7 +127,9 @@
                                 </div>
                             </div>
                             <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="#detail/{{x._id}}"><b>{{x.title}}</b></a></h5>
+                                <div class="text ellipsis">
+                                    <h5 class="text-concat for-title title-footer"><a href="#detail/{{x._id}}"><b>{{x.title}}</b></a></h5>
+                                </div>
                                 <p class="for-info">{{x.createdDate | date: 'MMM d, y'}}</p>
                             </div>
                         </div>
@@ -135,21 +137,8 @@
                     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 foot-col">
                         <h4 class="for-title footer-title">POPULAR CATEGORY</h4>
                         <ul class="foot-cat">
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
-                            <li>
-                                <a class="cat-name" href="#detail">Football<span class="cat-no">10</span></a></li>
+                            <li ng-repeat="x in Categories.slice(0,7)">
+                                <a class="cat-name" href="#category/{{x._category._id}}">{{x.name}}<span class="cat-no">10</span></a></li>
 
                         </ul>
 

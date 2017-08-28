@@ -212,24 +212,9 @@ h5>a:hover {
     float: right;
 }
 
-.search>.my-button {
-    color: white;
-    background-color: #000;
-    border: 2px #000 solid;
-    display: inline-block;
-    padding: 5px;
-    margin-bottom: 0px;
-    box-shadow: 1px 1px 2px #000;
-}
-
-.search>.my-button:hover {
-    background-color: white;
-    color: black;
-}
-
 .search>input {
     color: black;
-    width: 80%;
+    width: 70%;
     font-size: 14px;
     height: 33px;
 }
@@ -446,10 +431,6 @@ a.socialbox .description span {
     margin-bottom: 20px;
 }
 
-.post-info-latest {
-    padding: 10px 0px;
-}
-
 .my-extra-footer {
     background-color: #35373a;
     padding: 20px 0px;
@@ -478,10 +459,6 @@ a.socialbox .description span {
 
 .foot-col .for-title a:hover {
     color: red
-}
-
-.foot-pop {
-    padding-bottom: 10px;
 }
 
 .foot-col h3 {
