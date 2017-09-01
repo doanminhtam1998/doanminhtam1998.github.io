@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize', 'angular-scroll-animate']);
+var scotchApp = angular.module('scotchApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize', 'angular-scroll-animate', 'ngCookies']);
 
 // configure our routes
 scotchApp.config(['$locationProvider', function($locationProvider) {
@@ -24,6 +24,11 @@ scotchApp.config(function($routeProvider) {
         controller: 'mainController'
     })
 
+    .when('/author/:id', {
+        templateUrl: 'pages/for-author.html',
+        controller: 'mainController'
+    })
+
     .when('/search/:_term', {
         templateUrl: 'pages/for-search.html',
         controller: 'mainController'
@@ -31,7 +36,7 @@ scotchApp.config(function($routeProvider) {
 
 });
 
-scotchApp.controller('mainController', function($scope, $http, $routeParams, $location, $sanitize) {
+scotchApp.controller('mainController', function($scope, $http, $routeParams, $location, $sanitize, $cookieStore) {
     // create a message to display in our view
     var root = "https://green-web-blog.herokuapp.com";
     var maxRandomArticleNumber = 5;
@@ -40,7 +45,14 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     var idCat2 = "5981d787b38ced0004f0c5db";
     var idCat3 = "5981d805b38ced0004f0c5dd";
     var myId = "5981d84fb38ced0004f0c5df";
+    var config = {
+        headers: {
+            'Accept': 'application/json;odata=verbose',
+            "x-access-token": $scope.token
+        }
+    };
     $scope.keySearch = "";
+
 
     //Begin Sort Array
     var compare = function(a, b) {
@@ -115,6 +127,8 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     $scope.init = function() {
         $scope.apiGetCat();
         $scope.apiGetArt();
+        $scope.user = $cookieStore.get('user');
+        $scope.token = $cookieStore.get('token');
     };
     $scope.getArticleID = function() {
         var id = $routeParams.id;
@@ -131,13 +145,38 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             });
     }
 
+    $scope.getAllArticleByAuthor = function() {
+        $scope.currentAuthorID = $routeParams.id;
+        $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentAuthorID);
+    }
+
+    //Begin get articles by author id
+
+    var getArticlesByAuthorId = function(id, maximumArticle) {
+        if (maximumArticle === undefined) {
+            if ($scope.Articles === undefined) {
+                maximumArticle = 0;
+            } else {
+                maximumArticle = $scope.Articles.length;
+            }
+        }
+        var articles = [];
+        angular.forEach($scope.Articles, function(value, key) {
+            if (value._author._id === id && articles.length < maximumArticle) {
+                articles.push(value);
+            }
+        });
+        return articles;
+
+    };
+
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
             $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
 
         }
-        //Begin get articles by id
+        //Begin get articles by category id
     var getArticlesById = function(id, maximumArticle) {
         if (maximumArticle === undefined) {
             if ($scope.Articles === undefined) {
@@ -177,13 +216,37 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
         $http.post(root + '/api/users/auth', $scope.user)
             .then(function successCallbak(response) {
-                alert("Thành công");
-
-
+                var isSuccess = response.success;
+                if (isSuccess) {
+                    $cookieStore.put('token', response.token);
+                    $cookieStore.put('user', response.user);
+                    $scope.user = $cookieStore.get('user');
+                    $scope.token = $cookieStore.get('token');
+                    //Redirect here
+                    window.location.href = '#'
+                } else {
+                    //Raise Error
+                    // alert(response.message);
+                }
             }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
     };
+
+
+
+    $scope.isLogged = function() {
+        if ($cookieStore.get('token') != undefined) {
+
+            return false;
+
+        } else {
+            return true;
+        }
+    }
+
+
+    // Begin Signup
 
     $scope.summitSignup = function() {
         $http.post(root + '/api/users/signup/', $scope.signUpUser).then(function successCallbak(response) {
@@ -252,6 +315,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             $scope.articlesInCat3 = getArticlesById(idCat3, 3);
             //Dynamic
             $scope.getAllArticleinCategories();
+            $scope.getAllArticleByAuthor();
 
             //Begin Pagination
             $scope.viewby = 5;
@@ -275,7 +339,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
             //Update Most Comments Articles
             $scope.mostCommentsArticles = newArticles.sort(compare);
-            console.log($scope.mostCommentsArticles);
+
             //Update Popular Articles
             $scope.allArticles = newArticles;
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);

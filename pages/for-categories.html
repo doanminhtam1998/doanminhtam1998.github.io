@@ -1,12 +1,17 @@
 <div class="container my-page post-section">
     <div class="main-blog">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 post-place">
-                <div class="post-title">
-                    <p class="title">
-                        {{getCategoryNameOfArticle(currentCategoryID)}}
-                    </p>
+            <div class="col-lg-12 col-xs-12 col-sm-12">
+                <div class="category-image-for-all">
+                    <img src="http://resources.guinnesspartnership.com.s3-eu-west-1.amazonaws.com/wp-content/uploads/2017/06/News-Stock-Image.jpg" alt="">
+                    <div class="cover-around-image">
+                        <div class="text-inside">
+                            <h1 class="category-text title" class="text-center">{{getCategoryNameOfArticle(currentCategoryID)}}</h1>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 post-place">
                 <div class="latest-post">
                     <div ng-repeat="x in articlesInCategorySortedByDate" class="row post-latest-detail">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop ">

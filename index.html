@@ -39,11 +39,9 @@
 
                 </div>
                 <div class="right-header hidden-sm hidden-xs">
-                    <a class="log-in" data-toggle="modal" href='.modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
 
-
-
-
+                    <a ng-show="isLogged()" class="log-in" data-toggle="modal" data-target='.modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
+                    <a ng-hide="isLogged()" class="log-in">{{user.name}}</a>
 
                     <a href=".search" data-toggle="collapse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
                     <form class="search collapse">
@@ -302,6 +300,7 @@
 <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 <script type="text/javascript" src="library/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
 
 <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
 <script src="/script/app-index.js"></script>

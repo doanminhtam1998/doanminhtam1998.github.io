@@ -300,8 +300,8 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest">
-                                <p class="emphasis">{{getCategoryNameOfArticle(x._category._id)}}</p>
-                                <a href="#categories/{{x._author._id}}" class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</a>
+                                <a class="emphasis" href="#categories/{{x._category._id}}">{{getCategoryNameOfArticle(x._category._id)}}</a>
+                                <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> . <a class="author">{{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</a>
 
                             </div>
                             <div class="text ellipsis post-content">

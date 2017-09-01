@@ -512,6 +512,51 @@ h5>a:hover {
     background-color: red;
     cursor: pointer;
 }
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: red;
+    border: white 1px solid;
+}
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: white;
+    text-decoration: none;
+    background-color: #383737;
+    border: 1px white solid;
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>span,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover {
+    color: #777;
+    cursor: not-allowed;
+    background-color: black;
+    border-color: white;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 40px 0;
+    border-radius: 4px;
+}
+a.emphasis:hover {
+    color: white;
+    text-decoration: none;
+}
 
 /*---------------------
     Footer
@@ -579,3 +624,26 @@ h5>a:hover {
 .not-visible {
     visibility: hidden;
 }
+
+/* For-category-only */
+.category-image-for-all {
+    margin-bottom: 40px;
+    max-height: 600px;
+    overflow: hidden;
+}
+.category-image-for-all img {
+    width: 100%;
+}
+.category-image-for-all>.cover-around-image {
+    height: 600px;
+    position: relative;
+    top: -661px;
+    /* background-color: rgba(0,0,0,0.2); */
+    
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.category-text {
+    color: white;
+}
+.text-inside {}
+.category-text.title {}
