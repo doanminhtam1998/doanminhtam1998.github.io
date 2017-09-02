@@ -127,13 +127,20 @@
 
 
 
-                        <form ng-submit="submitCreateArticle()" role="form" class="form-group my-form fix-hack" ng-init="apiGetCat()">
+                        <form ng-submit="submitCreateArticle()" name="form" role="form" class="form-group my-form fix-hack" ng-init="apiGetCat()">
                             <label>Add Title</label>
-                            <input type="text" ng-model="newArticle.title" class="form-control" class="input-title">
+                            <input name="uName" type="text" ng-model="newArticle.title" class="form-control" class="input-title" required>
+                            <!-- Messenge show -->
+                            <div ng-show="form.$submitted || form.uName.$touched">
+                                <div ng-show="form.uName.$error.required">Tell us your name.</div>
+                            </div>
                             <label>Add Categories</label>
 
-                            <select name="" id="" class="form-control" ng-model="newArticle._category" ng-options="category as category.name for category in categories track by category._id">
-                               
+                            <select name="uCategory" id="" class="form-control" ng-model="newArticle._category" ng-options="category as category.name for category in categories track by category._id" required> 
+                            <!-- Messenge show -->
+                            <div ng-show="form.$submitted || form.uCategory.$touched">
+                                <div ng-show="form.uCategory.$pristine">Please choose the category</div>
+                            </div>  
                             </select>
                             <label>Add Decriptions</label>
                             <input type="text" ng-model="newArticle.description" class="form-control" class="input-title">

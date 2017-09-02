@@ -40,9 +40,15 @@
                 </div>
                 <div class="right-header hidden-sm hidden-xs">
 
-                    <a ng-show="isLogged()" class="log-in" data-toggle="modal" data-target='.modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
-                    <a ng-hide="isLogged()" class="log-in">{{user.name}}</a>
-
+                    <a ng-hide="isLogged()" class="log-in" data-toggle="modal" data-target='.modal-id'><span class="glyphicon glyphicon-user" aria-hidden="true"></span> LOG IN</a>
+                    <span uib-dropdown on-toggle="toggled(open)">
+                    <a href="" id="simple-dropdown" uib-dropdown-toggle ng-show="isLogged()">{{user.name}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li>
+                            <a ng-click="logOut()">Log out</a>
+                        </li>
+                    </ul>
+                    </span>
                     <a href=".search" data-toggle="collapse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
                     <form class="search collapse">
                         <input type="text" ng-model="keySearch" name=""><a href="#search/{{keySearch}}" type="submit" class="my-button"><b>Go !</b></a>
@@ -91,7 +97,7 @@
         </nav>
 
         <div ng-init="init()">
-            <div ng-view>
+            <div ng-view class="review">
 
             </div>
         </div>
@@ -136,7 +142,7 @@
                         <h4 class="for-title footer-title">POPULAR CATEGORY</h4>
                         <ul class="foot-cat">
                             <li ng-repeat="x in Categories.slice(0,7)">
-                                <a class="cat-name" href="#category/{{x._category._id}}">{{x.name}}<span class="cat-no">10</span></a></li>
+                                <a class="cat-name" href="#categories/{{x._id}}">{{x.name}}<span class="cat-no">{{getNumbersOfArticleInCategories(x._id)}}</span></a></li>
 
                         </ul>
 
@@ -300,7 +306,7 @@
 <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
 <script type="text/javascript" src="library/ui-bootstrap-tpls-2.5.0.min.js"></script>
-<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
 
 <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
 <script src="/script/app-index.js"></script>

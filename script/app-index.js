@@ -54,6 +54,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     $scope.keySearch = "";
 
 
+
     //Begin Sort Array
     var compare = function(a, b) {
         // Use toUpperCase() to ignore character casing
@@ -170,10 +171,21 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
     };
 
+    $scope.getNumbersOfArticleInCategories = function(id) {
+        var arrayArticles = [];
+        angular.forEach($scope.Articles, function(value, key) {
+            if (value._category._id === id) {
+                arrayArticles.push(value);
+            }
+        });
+        return arrayArticles.length;
+    }
+
     $scope.getAllArticleinCategories = function() {
             $scope.currentCategoryID = $routeParams.id;
             $scope.articlesInCategory = getArticlesById($scope.currentCategoryID);
             $scope.articlesInCategorySortedByDate = $scope.articlesInCategory.sort(compareValues('createdDate', 'desc'))
+            $scope.totalItemsCategory = $scope.articlesInCategorySortedByDate.length;
 
         }
         //Begin get articles by category id
@@ -215,15 +227,16 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         console.log($scope.user);
 
         $http.post(root + '/api/users/auth', $scope.user)
-            .then(function successCallbak(response) {
-                var isSuccess = response.success;
-                if (isSuccess) {
-                    $cookieStore.put('token', response.token);
-                    $cookieStore.put('user', response.user);
+            .then(function successCallback(response) {
+                var isSuccess = response.data.success;
+                if (isSuccess === true) {
+                    $cookieStore.put('token', response.data.token);
+                    $cookieStore.put('user', response.data.user);
                     $scope.user = $cookieStore.get('user');
                     $scope.token = $cookieStore.get('token');
                     //Redirect here
                     window.location.href = '#'
+                    $scope.init();
                 } else {
                     //Raise Error
                     // alert(response.message);
@@ -233,20 +246,28 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             });
     };
 
-
+    $scope.loadLogin = function() {
+        var token = $cookieStore.get('token');
+        if (token !== undefined) {
+            $location.url("/")
+        }
+    }
 
     $scope.isLogged = function() {
         if ($cookieStore.get('token') != undefined) {
 
-            return false;
+            return true;
 
         } else {
-            return true;
+            return false;
         }
     }
 
-
-    // Begin Signup
+    $scope.logOut = function() {
+            $cookieStore.remove('token');
+            $cookieStore.remove('user');
+        }
+        // Begin Signup
 
     $scope.summitSignup = function() {
         $http.post(root + '/api/users/signup/', $scope.signUpUser).then(function successCallbak(response) {
@@ -319,6 +340,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
             //Begin Pagination
             $scope.viewby = 5;
+
             $scope.totalItems = newArticles.length;
             $scope.currentPage = 1;
             $scope.itemsPerPage = $scope.viewby;

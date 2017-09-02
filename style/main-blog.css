@@ -238,7 +238,7 @@ h5>a:hover {
 }
 
 .trending-info {
-    width: 988px;
+    width: 85%;
     padding-top: 2px;
 }
 
@@ -595,6 +595,14 @@ a.emphasis:hover {
     font-weight: 700;
 }
 .cat-name:hover {
+    color: red;
+    text-decoration: none;
+}
+.cat-name:active {
+    color: red;
+    text-decoration: none;
+}
+.cat-name:focus {
     color: red;
     text-decoration: none;
 }
