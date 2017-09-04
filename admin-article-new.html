@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" type="text/css" href="style/admin-article-list.css">
     <link rel="stylesheet" type="text/css" href="style/admin-article-new.css">
+
 </head>
 
 <body ng-controller="myCtrl">
@@ -47,7 +48,7 @@
                     <p class="place-title hidden-sm hidden-xs"><strong>General</strong></p>
                     <ul class="nav-detail none-style">
                         <li class="single-detail">
-                            <a href="" class="single-detail-text"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Dashboard</span> </a>
+                            <a href="index.html" class="single-detail-text"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Home</span> </a>
 
                         </li>
                         <li class="single-detail">
@@ -125,15 +126,14 @@
                     <div class="section-page">
                         <h2 class="title-text">NEW POSTS</h2>
 
-
-
                         <form ng-submit="submitCreateArticle()" name="form" role="form" class="form-group my-form fix-hack" ng-init="apiGetCat()">
                             <label>Add Title</label>
                             <input name="uName" type="text" ng-model="newArticle.title" class="form-control" class="input-title" required>
                             <!-- Messenge show -->
                             <div ng-show="form.$submitted || form.uName.$touched">
-                                <div ng-show="form.uName.$error.required">Tell us your name.</div>
+                                <div ng-show="form.uName.$error.required">You forget to put the title.</div>
                             </div>
+                            <br>
                             <label>Add Categories</label>
 
                             <select name="uCategory" id="" class="form-control" ng-model="newArticle._category" ng-options="category as category.name for category in categories track by category._id" required> 
@@ -142,22 +142,32 @@
                                 <div ng-show="form.uCategory.$pristine">Please choose the category</div>
                             </div>  
                             </select>
+                            <br>
                             <label>Add Decriptions</label>
-                            <input type="text" ng-model="newArticle.description" class="form-control" class="input-title">
+                            <input name="uDescrip" type="text" ng-model="newArticle.description" class="form-control" class="input-title" required>
+                            <div ng-show="form.$submitted || form.uDescrip.$touched">
+                                <div ng-show="form.uDescrip.$error.required">You forget to add the description.</div>
+                            </div>
+                            <br>
                             <label>Add Detail for post</label>
-                            <text-angular ng-model="newArticle.content"></text-angular>
-
-
+                            <text-angular name="uContent" ng-model="newArticle.content" required></text-angular>
+                            <div ng-show="form.$submitted || form.uContent.$touched">
+                                <div ng-show="form.uContent.$error.required">You forget to add content.</div>
+                            </div>
+                            <br>
                             <label>Add Media for post</label>
-                            <input type="text" ng-model="newArticle.media" class="form-control">
-
+                            <input name="uMeida" type="text" ng-model="newArticle.media" class="form-control" required>
+                            <div ng-show="form.$submitted || form.uMeida.$touched">
+                                <div ng-show="form.uMeida.$error.required">You forget to add content.</div>
+                            </div>
+                            <br>
                             <label>Add Tags for post</label>
                             <tags-input use-strings="true" ng-model="newArticle.tags">
 
                             </tags-input>
 
                             <div class="fix-hack">
-                                <button class=" btn btn-success right clearfix clear ">Publish</button>
+                                <button ng-disabled="form.uName.$invalid||form.uContent.$invalid||form.uMedia.$invalid||form.uCategory.$dirty" class=" btn btn-success right clearfix clear ">Publish</button>
                             </div>
                         </form>
 

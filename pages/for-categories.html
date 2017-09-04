@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 <div class="latest-post">
-                    <div ng-repeat="x in allNewArticles.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="row post-latest-detail ">
+                    <div ng-repeat="x in articlesInCategorySortedByDate.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) " class="row post-latest-detail ">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop ">
                             <div class="m-thumbnail resize-height-for-latest ">
                                 <img ng-src="{{x.media}}" alt="" class="portrait">

@@ -147,8 +147,8 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     }
 
     $scope.getAllArticleByAuthor = function() {
-        $scope.currentAuthorID = $routeParams.id;
-        $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentAuthorID);
+        $scope.currentCategoryID = $routeParams.id;
+        $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentCategoryID);
     }
 
     //Begin get articles by author id
@@ -271,10 +271,10 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
 
     $scope.summitSignup = function() {
         $http.post(root + '/api/users/signup/', $scope.signUpUser).then(function successCallbak(response) {
-            var isSuccess = response.success;
-            if (isSuccess) {
-                $cookieStore.put('token', response.token);
-                $cookieStore.put('user', response.user);
+            var isSuccess = response.data.success;
+            if (isSuccess === true) {
+                $cookieStore.put('token', response.data.token);
+                $cookieStore.put('user', response.data.user);
                 $scope.user = $cookieStore.get('user');
                 $scope.token = $cookieStore.get('token');
                 //Redirect here
@@ -360,10 +360,11 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             }
 
             //Update Most Comments Articles
-            $scope.mostCommentsArticles = newArticles.sort(compare);
+            $scope.allArticles = newArticles.slice();
+            $scope.mostCommentsArticles = $scope.allArticles.sort(compare);
 
             //Update Popular Articles
-            $scope.allArticles = newArticles;
+
             $scope.popularArticles = newArticles.slice(0, maxPopularArticlesNumber);
 
             //Update New Articles

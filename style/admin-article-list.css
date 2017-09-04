@@ -249,3 +249,12 @@ Modal
 .ta-hidden-input {
     display: none;
 }
+
+
+/* Validation */
+
+input>.ng-invalid {
+    border: 1px solid red;
+    box-shadow: 1px 1px 1px red;
+    background-color: red;
+}

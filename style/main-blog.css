@@ -655,3 +655,9 @@ a.emphasis:hover {
 }
 .text-inside {}
 .category-text.title {}
+
+/* Validation */
+input>.ng-invalid {
+    border: 1px solid red;
+    box-shadow: 1px 1px 1px red;
+}
