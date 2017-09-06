@@ -26,7 +26,8 @@
                             <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest">
                                 <a class="emphasis" href="#categories/{{x._category._id}}">{{getCategoryNameOfArticle(x._category._id)}}</a>
-                                <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> . <a class="author">{{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</a>
+                                <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> .
+                                <p class="author">{{x.createDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 
                             </div>
                             <div class="text ellipsis post-content">

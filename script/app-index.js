@@ -224,9 +224,9 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     };
     //Begin Login
     $scope.login = function() {
-        console.log($scope.user);
+        console.log($scope.loginUser);
 
-        $http.post(root + '/api/users/auth', $scope.user)
+        $http.post(root + '/api/users/auth', $scope.loginUser)
             .then(function successCallback(response) {
                 var isSuccess = response.data.success;
                 if (isSuccess === true) {
@@ -292,7 +292,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     // Add comments for detail
 
     $scope.addCommentforArticle = function() {
-        $scope.newComment._user = myId;
+        $scope.newComment._user = $scope.user;
         $http.put(root + '/api/article/comment/' + $scope.article._id, $scope.newComment)
             .then(function successCallbak(response) {
                 $scope.newComment.commentContent = "";

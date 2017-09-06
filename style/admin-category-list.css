@@ -6,3 +6,12 @@
 .title_input {
     padding-top: 10px;
 }
+
+.single-list-category {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.single-list-category:nth-child(even) {
+    background-color: #e0dbdb;
+}

@@ -47,15 +47,15 @@ app.controller("myCtrl", function($scope, $http) {
     };
 
     $scope.getCategoryId = function(id) {
-        angular.forEach($scope.categories, function(value, key) {
-            if (value._id === id) {
+            angular.forEach($scope.categories, function(value, key) {
+                if (value._id === id) {
 
-                $scope.category = value;
-                return false;
-            }
-        });
-    }
-
+                    $scope.category = value;
+                    return false;
+                }
+            });
+        }
+        // Category update and delete
     $scope.deleteCategory = function() {
         $http.delete(root + '/api/categories/' + $scope.category._id)
             .then(function successCallback(response) {
@@ -66,6 +66,7 @@ app.controller("myCtrl", function($scope, $http) {
     }
 
     // Article delete and update
+
 
     $scope.updateArticle = function() {
         $scope.article._author = "5981d84fb38ced0004f0c5df";

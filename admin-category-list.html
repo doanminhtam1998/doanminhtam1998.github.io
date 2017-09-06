@@ -63,11 +63,7 @@
 
                         </li>
                         <li class="single-detail">
-                            <a href="" class="single-detail-text" data-toggle="collapse" data-target=".cat-show"><i class="fa fa-list-alt" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Categories </span></a>
-                            <ul class="none-style cat-show collapse in-menu">
-                                <li class="single-detail"><a href="admin-category-list.html" class="single-detail-text">All Categories</a></li>
-                                <li class="single-detail"><a href="" class="single-detail-text">Add New</a></li>
-                            </ul>
+                            <a href="admin-category-list.html" class="single-detail-text"><i class="fa fa-list-alt" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Categories </span></a>
                         </li>
                         <li class="single-detail">
                             <a href="" class="single-detail-text"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="hidden-sm hidden-xs ">Messengers </span> <span class=" hidden-sm hidden-xs right number">1</span></a>
@@ -127,19 +123,19 @@
                         <h2 class="title-text">Categories</h2>
                         <div class="row">
 
-                            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                            <div class="col-sm-12 col-xs-12 col-md-8 col-lg-8">
 
 
 
                                 <p> All: ({{categories.length}})</p>
 
-                                <div class="panel panel-default">
+                                <div class="panel panel-primary">
 
                                     <div class="panel-heading">
 
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> Title</strong></p>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <p> <strong> Title</strong></p>
 
                                             </div>
 
@@ -151,20 +147,23 @@
 
                                     </div>
 
-                                    <div class="panel-body">
+                                    <div class="panel-body ">
 
-                                        <div ng-repeat="x in categories" class="row ">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> {{x.name}}</strong></p>
-                                                <span class="view-more"><a  data-toggle="modal" href='#delete-modal' ng-click="getCategoryId(x._id)">Delete</a></span>
+                                        <div ng-repeat="x in categories" class="row single-list-category ">
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <p><strong> {{x.name}}</strong></p>
+
                                             </div>
                                             <div class="col-lg-5 col-md-5 col-sm-5 ">
                                                 <p>{{x.description}}</p>
                                             </div>
 
-                                            <div class="col-lg-3 col-md-3 col-sm-3 sliceday">
-                                                <p>{{x.create_date}}</p>
+                                            <div class="col-lg-2 col-md-2 col-sm-2 sliceday">
+                                                <p>{{x.create_date | date:'dd-MM-yyyy'}}</p>
 
+                                            </div>
+                                            <div class="col-lg-1 col-md-1 col-xs-1">
+                                                <a class="btn btn-primary btn-sm" data-toggle="modal" data-target=".modal-edit">Edit</a>
                                             </div>
 
 
@@ -173,8 +172,8 @@
                                     <div class="panel-footer">
 
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                                <p><input type="checkbox" name=""> <strong> Title</strong></p>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <p> <strong> Title</strong></p>
 
                                             </div>
 
@@ -192,7 +191,7 @@
 
 
 
-                            <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                            <div class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
                                 <form ng-submit="submitCreateCategory()" method="POST" role="form" class="my-form fix-hack">
                                     <label class="title_input">Add Title</label>
                                     <input type="text" val="" ng-model="newCategory.name" class="form-control input-title cat-input">
