@@ -78,16 +78,16 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">HOME</a></li>
 
-                        <li ng-repeat=" x in Categories"><a href="#categories/{{x._id}}">{{x.name}}</a></li>
+
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown">MORE <b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown">CATEGORY <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Our Company</a></li>
-                                <li><a href="#">Partners</a></li>
-                                <li><a ng-show="isLogged()" href="admin-article-list.html">Admin</a></li>
+
+                                <li ng-repeat=" x in Categories"><a href="#categories/{{x._id}}">{{x.name}}</a></li>
 
                             </ul>
                         </li>
+                        <li><a ng-show="isLogged()" href="admin-article-list.html">Admin</a></li>
                     </ul>
 
 
@@ -107,7 +107,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 foot-col">
-
+                        <h4 class="for-title footer-title">ABOUT US</h4>
                         <p class="footer-detail"> Landmark Digital Ltd, <br> Company Number 523737,<br> Linn Dubh, Assumption Road,<br> Blackpool, Cork. T23 RCH6</p>
                         <p class="footer-detail">+353 21 4802214<br><a href="mailto:tomthomas@gmail.com">tomthomas@gmail.com</a></p>
                         <ul class="social-foot">

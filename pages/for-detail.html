@@ -105,7 +105,11 @@
                                 </p>
 
                             </div>
-                            <form ng-submit="addCommentforArticle()" role="form" class="comments-place">
+                            <div ng-hide="isLogged()" class="text-center">
+                                <p class="anoucement text-center">You have to login to comment for this post</p>
+                                <a class="text-center" data-toggle="modal" data-target=".modal-id">Login here</a>
+                            </div>
+                            <form ng-show="isLogged()" ng-submit="addCommentforArticle()" role="form" class="comments-place">
 
 
                                 <div class="form-group">
@@ -118,7 +122,7 @@
                             </form>
 
                             <div class="all-comments">
-                                <div ng-repeat="x in article.comments" class="row comments-out">
+                                <div ng-repeat="x in commentSortByDate" class="row comments-out">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 image-com">
                                         <img src="images/user.jpg" class="img-comments">
                                     </div>

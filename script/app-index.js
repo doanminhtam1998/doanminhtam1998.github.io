@@ -141,6 +141,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
         $http.get(root + '/api/articles/search/' + $scope.keyWord)
             .then(function successCallbak(response) {
                 $scope.articleGetByKey = response.data;
+
             }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
@@ -322,6 +323,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                 if (value._id === $scope.currentArticleID) {
 
                     $scope.article = value;
+                    $scope.commentSortByDate = $scope.article.comments.sort(compareValues('updatedDate', 'desc'));
                     return false;
                 }
             });
