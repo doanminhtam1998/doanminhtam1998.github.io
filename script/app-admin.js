@@ -56,6 +56,18 @@ app.controller("myCtrl", function($scope, $http) {
             });
         }
         // Category update and delete
+
+    $scope.updateCategory = function() {
+        $scope.category._author = "5981d84fb38ced0004f0c5df";
+        $http.patch(root + '/api/articles/' + $scope.article._id, $scope.article)
+            .then(function successCallback(response) {
+
+                window.location.href = 'admin-article-list.html';
+            }, function errorCallback(response) {
+                // console.log(data, status, headers, config);
+            });
+    }
+    
     $scope.deleteCategory = function() {
         $http.delete(root + '/api/categories/' + $scope.category._id)
             .then(function successCallback(response) {

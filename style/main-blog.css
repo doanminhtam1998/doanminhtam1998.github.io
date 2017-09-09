@@ -661,3 +661,6 @@ input>.ng-invalid {
     border: 1px solid red;
     box-shadow: 1px 1px 1px red;
 }
+.img-most-comment {
+    margin-bottom: 10px;
+}

@@ -135,7 +135,8 @@
                         </div>
                         <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
                         <div class="post-info">
-                            <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy'}}</p>
+                            <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> .
+                            <p class="author">{{x.createdDate | date:'dd-MM-yyyy'}}</p>
 
                         </div>
                         <div class="text ellipsis">
@@ -163,7 +164,8 @@
                         </div>
                         <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
                         <div class="post-info">
-                            <p class="author">{{x._author.name}} .{{x.createdDate | date:'dd-MM-yyyy'}}</p>
+                            <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> .
+                            <p class="author">{{x.createdDate | date:'dd-MM-yyyy'}}</p>
 
                         </div>
                         <div class="text ellipsis">
@@ -190,12 +192,14 @@
                         </div>
                         <h4><a href="#detail/{{x._id}}">{{x.title}}</a></h4>
                         <div class="post-info">
-                            <p class="author">{{x._author.name}} . {{x.createdDate | date:'dd-MM-yyyy'}}</p>
+                            <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> .
+                            <p class="author">{{x.createdDate | date:'dd-MM-yyyy'}}</p>
 
                         </div>
                         <div class="text ellipsis ">
                             <p ng-bind-html="x.description" class="justified text-concat text-for-latest "></p>
                         </div>
+
                     </div>
 
 
@@ -216,7 +220,8 @@
                             <h3 class="for-title"><a href="#detail/{{x._id}}">{{x.title}}</a></h3>
                             <div class="post-info-latest">
                                 <a class="emphasis" href="#categories/{{x._category._id}}">{{getCategoryNameOfArticle(x._category._id)}}</a>
-                                <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> . <a class="author">{{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</a>
+                                <a href="#author/{{x._author._id}}" class="author"><strong>{{x._author.name}}</strong></a> .
+                                <p class="author">{{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
 
                             </div>
                             <div class="text ellipsis post-content">
@@ -270,23 +275,25 @@
                 </div>
                 <div class="widget-page">
                     <div class="widget-page-section">
-                        <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="img-responsive">
+                        <div class="m-thumbnail img-most-comment">
+                            <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="portrait">
+                        </div>
                         <h4 class="for-title"><a href="#detail/{{mostCommentsArticles[0]._id}}">{{mostCommentsArticles[0].title}}</a></h4>
                         <div class="post-info-latest">
                             <p class="emphasis">{{mostCommentsArticles[0]._category.name}}</p>
                             <p class="author">{{mostCommentsArticles[0]._author.name}} . {{x.createdDate | date:'dd-MM-yyyy HH:mm:ss'}}</p>
                             <p class="right">{{mostCommentsArticles[0].comments.length}}</p>
                         </div>
-                        <p class="justified">{{mostCommentsArticles[0].description}}</p>
+                        <div class="text ellipsis">
+                            <p ng-bind-html="mostCommentsArticles[0].description" class="justified text-concat text-for-latest "></p>
+                        </div>
                     </div>
                     <div class="widget-page-section">
                         <div ng-repeat="x in mostCommentsArticles.slice(1,4)" class="row">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img ng-src="{{x.media}}" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                                 <h5 class="for-title"><a href="#detail/{{x._id}}"><b> {{x.title}}</b></a></h5>
-                                <p>{{x.createdDate | date: "dd-mm-yyyy"}}</p>
+                                <p class="author">{{x.createdDate | date: "dd-mm-yyyy"}}</p>
                             </div>
                         </div>
                     </div>

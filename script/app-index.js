@@ -142,6 +142,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             .then(function successCallbak(response) {
                 $scope.articleGetByKey = response.data;
 
+
             }, function errorCallback(response) {
                 console.log(data, status, headers, config);
             });
@@ -150,6 +151,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
     $scope.getAllArticleByAuthor = function() {
         $scope.currentCategoryID = $routeParams.id;
         $scope.articlesByAuthor = getArticlesByAuthorId($scope.currentCategoryID);
+        $scope.totalItemsAuthor = $scope.articlesByAuthor.length;
     }
 
     //Begin get articles by author id
@@ -218,6 +220,20 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                 var cat = $scope.Categories[i];
                 if (cat._id == id) {
                     return cat.name;
+                };
+            };
+        };
+
+    };
+
+    //Begin Get Author's name for aritcle
+    $scope.getAuthorNameOfArticle = function(id) {
+
+        if (undefined != $scope.Articles) {
+            for (i = 0; i < $scope.Articles.length; i++) {
+                var aut = $scope.Articles[i];
+                if (aut._author._id == id) {
+                    return aut._author.name;
                 };
             };
         };
@@ -328,6 +344,10 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
                 }
             });
 
+            if ($scope.articleGetByKey != undefined) {
+                $scope.totalItemsForSearch = $scope.articleGetByKey.length
+                console.log($scope.totalItemsForSearch);
+            };
 
 
             //Begin Find Article in Category
@@ -344,6 +364,7 @@ scotchApp.controller('mainController', function($scope, $http, $routeParams, $lo
             $scope.viewby = 5;
 
             $scope.totalItems = newArticles.length;
+
             $scope.currentPage = 1;
             $scope.itemsPerPage = $scope.viewby;
             $scope.maxSize = 5;

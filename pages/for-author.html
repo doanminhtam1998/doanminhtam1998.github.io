@@ -4,11 +4,11 @@
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 post-place">
                 <div class="post-title">
                     <p class="title">
-                        {{getAuthorNameOfArticle(currentAuthorID)}}
+                        Author: {{getAuthorNameOfArticle(currentCategoryID)}}
                     </p>
                 </div>
                 <div class="latest-post">
-                    <div ng-repeat="x in articlesByAuthor" class="row post-latest-detail">
+                    <div ng-repeat="x in articlesByAuthor.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" class="row post-latest-detail">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 crop ">
                             <div class="m-thumbnail resize-height-for-latest ">
                                 <img ng-src="{{x.media}}" alt="" class="portrait">
@@ -32,19 +32,7 @@
                     </div>
 
 
-                    <div class="button-next-previous left clearfix">
-                        <ul class="pagination trans-page">
-                            <li><a class="emphasis-small"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
-                            <li><a class="emphasis-small">1</a></li>
-                            <li><a class="emphasis-small">2</a></li>
-                            <li><a class="emphasis-small">3</a></li>
-                            <li><a class="emphasis-small">...</a></li>
-                            <li>
-                                <a class="emphasis-small"> <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
-                            </li>
-
-                        </ul>
-                    </div>
+                    <ul uib-pagination total-items="totalItemsAuthor" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" items-per-page="itemsPerPage" boundary-links="true" force-ellipses="true"></ul>
                 </div>
             </div>
 
@@ -80,7 +68,9 @@
                 </div>
                 <div class="widget-page">
                     <div class="widget-page-section">
-                        <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="img-responsive">
+                        <div class="m-thumbnail img-most-comment">
+                            <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="portrait">
+                        </div>
                         <h4 class="for-title"><a href="#detail/{{mostCommentsArticles[0]._id}}">{{mostCommentsArticles[0].title}}</a></h4>
                         <div class="post-info-latest">
                             <p class="emphasis">{{mostCommentsArticles[0]._category.name}}</p>
@@ -91,12 +81,10 @@
                     </div>
                     <div class="widget-page-section">
                         <div ng-repeat="x in mostCommentsArticles.slice(1,4)" class="row">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img ng-src="{{x.media}}" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                                 <h5 class="for-title"><a href="#detail/{{x._id}}"><b> {{x.title}}</b></a></h5>
-                                <p>{{x.createdDate | date: "dd-mm-yyyy"}}</p>
+                                <p class="author">{{x.createdDate | date: "dd-mm-yyyy"}}</p>
                             </div>
                         </div>
                     </div>

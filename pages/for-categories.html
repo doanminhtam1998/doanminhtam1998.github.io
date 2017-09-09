@@ -77,7 +77,9 @@
                 </div>
                 <div class="widget-page">
                     <div class="widget-page-section">
-                        <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="img-responsive">
+                        <div class="m-thumbnail img-most-comment">
+                            <img ng-src="{{mostCommentsArticles[0].media}}" alt="" class="portrait">
+                        </div>
                         <h4 class="for-title"><a href="detail.html">{{mostCommentsArticles[0].title}}</a></h4>
                         <div class="post-info-latest">
                             <p class="emphasis">{{mostCommentsArticles[0]._category.name}}</p>
@@ -88,12 +90,10 @@
                     </div>
                     <div class="widget-page-section">
                         <div ng-repeat="x in mostCommentsArticles.slice(1,4)" class="row">
-                            <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-                                <img ng-src="{{x.media}}" alt="title" class="img-responsive">
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
-                                <h5 class="for-title"><a href="detail.html"><b> {{x.title}}</b></a></h5>
-                                <p>{{x.createdDate | date: "dd-mm-yyyy"}}</p>
+
+                            <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+                                <h5 class="for-title"><a href="#detail/{{x._id}}"><b> {{x.title}}</b></a></h5>
+                                <p class="author">{{x.createdDate | date: "dd-mm-yyyy"}}</p>
                             </div>
                         </div>
                     </div>
